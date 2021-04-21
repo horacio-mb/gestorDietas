@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TipoComida extends Model
+class Comida extends Model
 {
-    protected $table="tipo_comida";
+    protected $table="comida";
     protected $fillable=[
-        'nombre'
+        'descripcion',
+        'id_tipo_comida'
     ];
     public $timestamps=false;
-    public function comidas(){
-        return $this->hasMany('App\Models\Comida');
+    public function tipocomida(){
+        return $this->belongsTo('App\Models\TipoComida');
     }
+
 }
