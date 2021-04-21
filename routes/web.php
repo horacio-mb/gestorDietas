@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Rutas para Cliente
+Route::get('/cliente',[ClienteController::class,'index']);
+Route::post('/cliente/registrar',[ClienteController::class,'store']);
+Route::put('/cliente/modificar',[ClienteController::class,'update']);
+Route::put('/cliente/eliminar',[ClienteController::class,'delete']);
+Route::get('/cliente/selectCliente',[ClienteController::class,'selectCliente']);

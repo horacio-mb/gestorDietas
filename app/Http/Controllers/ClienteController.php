@@ -12,20 +12,19 @@ class ClienteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $buscar= $request->buscar;
+        if($buscar==''){
+            $cliente=Cliente::all();
+        }
+        else{
+            $cliente=Cliente::where('nombre','like','%'.$buscar.'%')
+            ->get();
+        }
+        return $cliente;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -33,53 +32,34 @@ class ClienteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request){
+        $cliente = new Cliente;
+        $cliente->nombre=$request->nombre;
+        $cliente->apellidos=$request->apellidos;
+        $cliente->correo=$request->correo;
+        $cliente->telefono=$request->telefono;
+        $cliente->save();
+
+    }
+    public function update(Request $request){
+        $cliente = Cliente::findOrFail($request->id);
+        $cliente->nombre=$request->nombre;
+        $cliente->apellidos=$request->apellidos;
+        $cliente->correo=$request->correo;
+        $cliente->telefono=$request->telefono;
+        $cliente->save();
+    }
+    public function delete(Request $request){
+        $cliente = Cliente::findOrFail($request->id);
+        $cliente->delete();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function selectCliente(Request $request){
+        $filtro = $request->filtro;
+        $cliente = Cliente::where('nombre','like','%'.$filtro.'%')
+        ->orWhere('empresa','like','%'.$filtro.'%')
+        ->select('id','nombre','apellidos','empresa', 'telefono', 'direccion')
+        ->get();
+        return $cliente;
     }
 }
