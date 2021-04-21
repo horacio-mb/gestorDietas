@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Cliente extends Model
+class Dieta extends Model
 {
-    protected $table='cliente';
+    protected $table="dieta";
     protected $fillable=[
         'nombre',
-        'apellidos',
-        'correo',
-        'telefono'
+        'fechaInicio',
+        'fechaFinal',
+        'id_cliente'
     ];
     public $timestamps=false;
-    public function dietas(){
-        return $this->hasMany('App\Models\Dieta');
+    public function cliente(){
+        return $this->belongsTo('App\Models\Cliente');
     }
 }
