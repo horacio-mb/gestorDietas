@@ -15,7 +15,7 @@ class CreateComidaTable extends Migration
     {
         Schema::create('comida', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion',30);
+            $table->string('descripcion',150);
             $table->foreignId('id_tipo_comida');
             $table->foreign('id_tipo_comida')->references('id')->on('tipo_comida');
         });
