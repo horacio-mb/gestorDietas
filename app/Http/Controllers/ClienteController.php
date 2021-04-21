@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+ 
 
 class ClienteController extends Controller
 {
@@ -57,8 +58,8 @@ class ClienteController extends Controller
     public function selectCliente(Request $request){
         $filtro = $request->filtro;
         $cliente = Cliente::where('nombre','like','%'.$filtro.'%')
-        ->orWhere('empresa','like','%'.$filtro.'%')
-        ->select('id','nombre','apellidos','empresa', 'telefono', 'direccion')
+        ->orWhere('correo','like','%'.$filtro.'%')
+        ->select('id','nombre','apellidos','correo', 'telefono')
         ->get();
         return $cliente;
     }
