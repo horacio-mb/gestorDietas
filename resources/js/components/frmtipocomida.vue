@@ -39,6 +39,7 @@
         data () {
             return{
                 nombre:'',
+                buscar : '',
                 arrayTipoComida:[]
             }
         },
@@ -68,7 +69,7 @@
             },
         },
         mounted() {
-            this.listarTipoComida(this.buscar);
+            this.listar(this.buscar);
         }
     }
 </script>

@@ -1920,6 +1920,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       nombre: '',
+      buscar: '',
       arrayTipoComida: []
     };
   },
@@ -1948,7 +1949,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.listarTipoComida(this.buscar);
+    this.listar(this.buscar);
   }
 });
 
