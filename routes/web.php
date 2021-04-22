@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComidaController;
 use App\Http\Controllers\DietaController;
+use App\Http\Controllers\TipoComidaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,14 +18,16 @@ use App\Http\Controllers\DietaController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Rutas para tipo Comida
-
+Route::get('/tipo_comida',[TipoComidaController::class,'index']);
+Route::post('/tipo_comida/registrar',[TipoComidaController::class,'store']);
+Route::get('/tipo_comida/selectTipoComida',[TipoComidaController::class,'selectTipoComida']);
 //Rutas para Comida
 Route::get('/comida',[ComidaController::class,'index']);
 Route::post('/comida/registrar',[ComidaController::class,'store']);
