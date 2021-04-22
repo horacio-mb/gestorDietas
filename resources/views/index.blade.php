@@ -47,7 +47,7 @@
             </template>
             <template v-if="menu==3">
                 <br><br>
-                
+                <frmcliente></frmcliente>
             </template>
             <template v-if="menu==4">
                 <frmdieta></frmdieta>
