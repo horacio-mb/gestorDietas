@@ -21,6 +21,7 @@
  
  Vue.component('example-component', require('./components/ExampleComponent.vue').default);
  Vue.component('frmtipocomida', require('./components/frmtipocomida.vue').default);
+ Vue.component('frmcomida', require('./components/frmcomida.vue').default);
 
  Vue.component('frmdieta', require('./components/frmdieta.vue').default);
  /**

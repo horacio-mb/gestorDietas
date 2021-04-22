@@ -43,7 +43,7 @@
             </template>
             <template v-if="menu==2">
                 <br><br>
-                
+                <frmcomida></frmcomida>
             </template>
             <template v-if="menu==3">
                 <br><br>
