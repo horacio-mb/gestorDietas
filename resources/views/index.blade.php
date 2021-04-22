@@ -19,6 +19,15 @@
                         <li @click="menu=1">
                             <a class="nav-link" href="#">Tipo de Comida</a>
                         </li>
+                        <li @click="menu=2">
+                            <a class="nav-link" href="#">Comida</a>
+                        </li>
+                        <li @click="menu=3">
+                            <a class="nav-link" href="#">Clientes</a>
+                        </li>
+                        <li @click="menu=4">
+                            <a class="nav-link" href="#">Dietas</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -31,6 +40,17 @@
                 
                 <frmtipocomida></frmtipocomida>
                 
+            </template>
+            <template v-if="menu==2">
+                <br><br>
+                
+            </template>
+            <template v-if="menu==3">
+                <br><br>
+                
+            </template>
+            <template v-if="menu==4">
+                <frmdieta></frmdieta>
             </template>
             <!-- Fin Menu Principal --> 
         </div>
