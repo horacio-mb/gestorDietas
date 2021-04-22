@@ -191,19 +191,19 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Seleccione una o varias comidas</h4>
-                        <button type="button" data-dismiss="modal">X</button>
+                        <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
                         <label for="" v-text="errorMsj"></label>
-                        <table border="1">
+                        <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>
                                     
@@ -222,7 +222,7 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-dismiss="modal">Cerrar</button>
+                        <button class="btn btn-danger"  type="button" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>

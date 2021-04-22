@@ -39862,6 +39862,7 @@ var render = function() {
                     _c(
                       "button",
                       {
+                        staticClass: "btn btn-primary",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -39880,40 +39881,47 @@ var render = function() {
                 domProps: { textContent: _vm._s(_vm.errorMsj) }
               }),
               _vm._v(" "),
-              _c("table", { attrs: { border: "1" } }, [
-                _vm._m(4),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.arrayComida, function(comida) {
-                    return _c("tr", { key: comida.id }, [
-                      _c("td", {
-                        domProps: { textContent: _vm._s(comida.descripcion) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(comida.nom_comida) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "#" },
-                            on: {
-                              click: function($event) {
-                                return _vm.seleccionarComida(comida)
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarComida(comida)
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("Seleccionar")]
-                        )
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
                       ])
-                    ])
-                  }),
-                  0
-                )
-              ])
+                    }),
+                    0
+                  )
+                ]
+              )
             ]),
             _vm._v(" "),
             _vm._m(5)
@@ -39987,9 +39995,14 @@ var staticRenderFns = [
         _vm._v("Seleccione una o varias comidas")
       ]),
       _vm._v(" "),
-      _c("button", { attrs: { type: "button", "data-dismiss": "modal" } }, [
-        _vm._v("X")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
     ])
   },
   function() {
@@ -40011,9 +40024,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-footer" }, [
-      _c("button", { attrs: { type: "button", "data-dismiss": "modal" } }, [
-        _vm._v("Cerrar")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
     ])
   }
 ]
