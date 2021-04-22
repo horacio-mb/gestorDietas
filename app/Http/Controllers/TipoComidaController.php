@@ -48,4 +48,19 @@ class TipoComidaController extends Controller
         $tipocomida = TipoComida::findOrFail($request->id);
         $tipocomida->delete();
     }
+    public function selectComida(Request $request){
+        $buscar=$request->buscar;
+        if($buscar==''){
+            $comida =TipoComida::join('comida','tipo_comida.id_tipo_comida','=','comida.id_tipo_comida')
+            ->select('tipo_comida.id','tipo_comida.nombre',)
+            ->get();
+        }
+        else{
+            $comida =TipoComida::join('comida','tipo_comida.id_tipo_comida','=','comida.id_tipo_comida')
+            ->select('tipo_comida.id','tipo_comida.nombre')
+            ->where('nombre','like','%'.$buscar.'%')
+            ->get();
+        }
+        return $comida;        
+    }
 }

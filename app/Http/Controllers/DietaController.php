@@ -15,13 +15,13 @@ class DietaController extends Controller
         $buscar = $request->buscar;
         if($buscar==''){
             $dieta = Dieta::join('cliente','dieta.id_cliente', '=', 'cliente.id')
-            ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaFinal','cliente.nombre','cliente.apellidos')
+            ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaFinal','cliente.nombre as nombreC','cliente.apellidos')
             ->orderBy('dieta.id','desc')
             ->get();
         }
         else{
             $dieta = Dieta::join('cliente','dieta.id_cliente', '=', 'cliente.id')
-            ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaFinal','cliente.nombre','cliente.apellidos')
+            ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaFinal','cliente.nombre as nombreC','cliente.apellidos')
             ->where('cliente.nombre','like','%'.$buscar.'%')
             ->orderBy('dieta.id','desc')
             ->get();
@@ -100,9 +100,9 @@ class DietaController extends Controller
     public function obtenerCabecera(Request $request){
         $id=$request->id;
         $dieta= Dieta::join('cliente','dieta.id_cliente', '=', 'cliente.id')
-        ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaInicio','cliente.nombre','cliente.apellidos', 'dieta.id_cliente')
+        ->select('dieta.id','dieta.nombre','dieta.fechaInicio','dieta.fechaFinal','cliente.nombre as nombrec','cliente.apellidos', 'dieta.id_cliente')
         ->Find($id);
-        return ['venta'=>$dieta];
+        return ['dieta'=>$dieta];
     }
 
     public function eliminarDetalle(Request $request){
@@ -113,8 +113,7 @@ class DietaController extends Controller
     public function obtenerDetalles2(Request $request){
         $id=$request->id;
         $detalle = DietaComida::join('comida','dieta_comida.id_comida','=','comida.id')
-        ->select('dieta_comida.distribucion','dieta_comida.id_comida', 
-        'comida.descripcion as comida')
+        ->select('dieta_comida.distribucion','dieta_comida.id_comida', 'comida.descripcion as comida','comida.id_tipo_comida as nomC')
         ->where('dieta_comida.id_dieta','=',$id)
         ->get();
         return['detalle' => $detalle];

@@ -2028,27 +2028,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2284,48 +2265,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       listado: 0,
-      fecha_venta: '',
+      nombreDieta: '',
+      fecha_inicio_dieta: '',
+      fecha_final_dieta: '',
       arrayCliente: [],
       buscarC: '',
       cliente: '',
       id_cliente: 0,
-      arrayProducto: [],
-      buscarP: '',
+      arrayComida: [],
+      buscarComid: '',
       errorMsj: '',
-      producto: '',
-      id_producto: 0,
-      preciov: 0.0,
-      cantidad: 0,
-      stock: 0,
+      id_comida: '',
+      distribucion: '',
       respt: '',
-      arrayDetalle: [],
+      arrayDietaComida: [],
       total: 0.0,
       buscar: '',
-      arrayDieta: [],
-      id_venta: 0
-    };
+      arrayDieta: []
+    }, _defineProperty(_ref, "id_comida", ''), _defineProperty(_ref, "comida", ''), _defineProperty(_ref, "id_dieta", 0), _ref;
   },
-  computed: {
-    calcularTotal: function calcularTotal() {
-      var resultado = 0.0;
-
-      for (var i = 0; i < this.arrayDetalle.length; i++) {
-        resultado = resultado + this.arrayDetalle[i].precio * this.arrayDetalle[i].cantidad;
-      }
-
-      return resultado;
-    }
-  },
+  // volar esta mierda
+  computed: {},
   methods: {
     frmBuscarCliente: function frmBuscarCliente() {
       this.arrayCliente = [];
       this.buscarC = '';
     },
-    frmBuscarProducto: function frmBuscarProducto() {
-      this.arrayProducto = [];
-      this.buscarP = '';
+    frmBuscarComida: function frmBuscarComida() {
+      this.arrayComida = [];
+      this.buscarComid = '';
       this.errorMsj = '';
     },
     buscarCliente: function buscarCliente(buscarC) {
@@ -2342,84 +2314,60 @@ __webpack_require__.r(__webpack_exports__);
       this.id_cliente = data['id'];
       this.cliente = data['nombre'] + ' ' + data['apellidos'];
     },
-    buscarProducto: function buscarProducto(buscarP) {
+    buscarComida: function buscarComida(buscarComid) {
       var me = this;
-      var url = '/producto/selectProducto?buscar=' + buscarP;
+      var url = '/comida/selectComida?buscar=' + buscarComid;
       axios.get(url).then(function (response) {
-        me.arrayProducto = response.data;
+        me.arrayComida = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
-    encuentra: function encuentra(id) {
-      var sw = 0;
-
-      for (var i = 0; i < this.arrayDetalle.length; i++) {
-        if (this.arrayDetalle[i].id_producto == id) {
-          sw = true;
-        }
-      }
-
-      return sw;
-    },
-    seleccionarProducto: function seleccionarProducto() {
+    seleccionarComida: function seleccionarComida() {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
       var me = this;
-
-      if (me.encuentra(data['id'])) {
-        this.errorMsj = 'Ya se encuentra agregado...';
-      } else {
-        me.arrayDetalle.push({
-          id_producto: data['id'],
-          producto: data['descripcion'],
-          cantidad: 1,
-          precio: data['precio'],
-          preciov: 0.0,
-          stock: data['stock']
-        });
-      }
+      me.arrayDietaComida.push({
+        id_comida: data['id'],
+        comida: data['descripcion'],
+        distribucion: data['nom_comida']
+      });
+      this.errorMsj = 'Agregado...';
     },
-    eliminarDetalle: function eliminarDetalle(index) {
+    eliminarComida: function eliminarComida(index) {
       var me = this;
-      me.arrayDetalle.splice(index, 1);
+      me.arrayDietaComida.splice(index, 1);
     },
     nuevo: function nuevo() {
-      this.id_cliente = 0;
+      this.nombreDieta = '', this.fecha_inicio_dieta = '', this.fecha_final_dieta = '', this.id_cliente = 0;
       this.cliente = '';
-      this.fecha_venta = '';
-      this.total = 0.0;
-      this.id_producto = 0;
-      this.producto = '';
-      this.cantidad = 0;
-      this.preciov = 0.0;
-      this.stock = 0;
-      this.arrayDetalle = [];
+      this.id_comida = '', this.descripcion = '', this.arrayDietaComida = [];
       this.errorMsj = '';
       this.respt = '';
     },
-    guardarVenta: function guardarVenta() {
+    guardarDieta: function guardarDieta() {
       var me = this;
-      axios.post('/venta/registrar', {
-        fecha: this.fecha_venta,
-        monto: this.total,
+      axios.post('/dieta/registrar', {
+        nombre: this.nombreDieta,
+        fechaInicio: this.fecha_inicio_dieta,
+        fechaFinal: this.fecha_final_dieta,
         id_cliente: this.id_cliente,
-        data: this.arrayDetalle
+        data: this.arrayDietaComida
       }).then(function (response) {
-        me.respt = 'Venta Registrada...!';
+        me.respt = 'Dieta Registrada...!';
       })["catch"](function (error) {
         console.log(error);
       });
     },
     listar: function listar(buscar) {
       var me = this;
-      var url = '/venta?buscar=' + buscar;
+      var url = '/dieta?buscar=' + buscar;
       axios.get(url).then(function (response) {
-        me.arrayVenta = response.data;
+        me.arrayDieta = response.data;
       })["catch"](function (error) {
         console.log(error);
       });
     },
-    buscarVenta: function buscarVenta() {
+    buscarDieta: function buscarDieta() {
       this.listado = 1;
       this.listar('');
     },
@@ -2427,46 +2375,32 @@ __webpack_require__.r(__webpack_exports__);
       var me = this;
       me.listado = 0;
       me.respt = '';
-      me.total = 0.0;
-      me.id_producto = 0;
-      me.producto = '';
-      me.cantidad = 0;
-      me.preciov = 0.0;
-      me.cliente = '';
+      me.id_comida = 0;
+      me.comida = '';
+      me.fecha_inicio_dieta = '', me.fecha_final_dieta = '', me.cliente = '';
       me.fecha_venta = '';
       me.id_cliente = 0;
-      me.arrayDetalle = [];
+      me.arrayDietaComida = [];
     },
-    verVenta: function verVenta(id) {
+    verDieta: function verDieta(id) {
       var me = this;
       me.listado = 2;
-      var arrayVentaT = [];
-      var url = '/venta/obtenerCabecera?id=' + id;
+      var arrayDietaT = [];
+      var url = '/dieta/obtenerCabecera?id=' + id;
       axios.get(url).then(function (response) {
-        arrayVentaT = response.data.venta;
-        console.log(arrayVentaT);
-        me.cliente = arrayVentaT.nombre + ' ' + arrayVentaT.apellidos;
-        me.id_venta = arrayVentaT.id;
-        me.id_cliente = arrayVentaT.id_cliente;
-        me.fecha_venta = arrayVentaT.fecha;
-        me.total = arrayVentaT.monto;
+        arrayDietaT = response.data.dieta;
+        console.log(arrayDietaT);
+        me.cliente = arrayDietaT.nombrec + ' ' + arrayDietaT.apellidos;
+        me.id_dieta = arrayDietaT.id;
+        me.id_cliente = arrayDietaT.id_cliente;
+        me.fecha_inicio_dieta = arrayDietaT.fechaInicio;
+        me.fecha_final_dieta = arrayDietaT.fechaFinal;
       })["catch"](function (error) {
         console.log(error);
       });
-      var url1 = '/venta/obtenerDetalles?id=' + id;
+      var url1 = '/dieta/obtenerDetalles?id=' + id;
       axios.get(url1).then(function (response) {
-        me.arrayDetalle = response.data.detalle;
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    },
-    anularVenta: function anularVenta() {
-      var me = this;
-      axios.put('/venta/anular', {
-        'id': this.id_venta
-      }).then(function (response) {
-        // me.listar('');
-        me.respt = 'Venta Eliminada...!';
+        me.arrayDietaComida = response.data.detalle;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -2479,42 +2413,45 @@ __webpack_require__.r(__webpack_exports__);
       var me = this;
       me.listado = 0;
       this.respt = '';
-      var arrayVentaT = [];
-      var url = '/venta/obtenerCabecera?id=' + id;
+      var arrayDietaT = [];
+      var url = '/dieta/obtenerCabecera?id=' + id;
       axios.get(url).then(function (response) {
-        arrayVentaT = response.data.venta;
-        console.log(arrayVentaT);
-        me.cliente = arrayVentaT.nombre + ' ' + arrayVentaT.apellidos;
-        me.id_venta = arrayVentaT.id;
-        me.id_cliente = arrayVentaT.id_cliente;
-        me.fecha_venta = arrayVentaT.fecha;
-        me.total = arrayVentaT.monto;
+        arrayDietaT = response.data.dieta;
+        console.log(arrayDietaT);
+        me.id_dieta = arrayDietaT.id;
+        me.nombreDieta = arrayDietaT.nombre;
+        me.cliente = arrayDietaT.nombrec + ' ' + arrayDietaT.apellidos;
+        me.id_dieta = arrayDietaT.id;
+        me.id_cliente = arrayDietaT.id_cliente;
+        me.fecha_inicio_dieta = arrayDietaT.fechaInicio;
+        me.fecha_final_dieta = arrayDietaT.fechaFinal;
       })["catch"](function (error) {
         console.log(error);
       });
-      var url1 = '/venta/obtenerDetalles2?id=' + id;
+      var url1 = '/dieta/obtenerDetalles2?id=' + id;
       axios.get(url1).then(function (response) {
-        me.arrayDetalle = response.data.detalle;
+        me.arrayDietaComida = response.data.detalle;
       })["catch"](function (error) {
         console.log(error);
       });
     },
-    modificarVenta: function modificarVenta() {
+    modificarDieta: function modificarDieta() {
       var me = this;
       axios.put('detalle/eliminar', {
-        id: this.id_venta
+        id: this.id_dieta
       }).then(function (error) {//
       })["catch"](function (error) {
         console.log(error);
       });
-      axios.put('/venta/modificar', {
-        fecha: this.fecha_venta,
-        monto: this.total,
+      axios.put('/dieta/modificar', {
+        nombre: this.nombreDieta,
+        fechaInicio: this.fecha_inicio_dieta,
+        fechaFinal: this.fecha_final_dieta,
         id_cliente: this.id_cliente,
-        id: this.id_venta,
-        data: this.arrayDetalle
+        id: this.id_dieta,
+        data: this.arrayDietaComida
       }).then(function (response) {
-        me.respt = 'Venta Modificada...!';
+        me.respt = 'Dieta Modificada...!';
       })["catch"](function (error) {
         console.log(error);
       });
@@ -38786,7 +38723,7 @@ var render = function() {
                   _c("thead", [
                     _c("th", [_vm._v("IdDieta")]),
                     _vm._v(" "),
-                    _c("table", [_vm._v("Nombre Dieta")]),
+                    _c("th", [_vm._v("Nombre Dieta")]),
                     _vm._v(" "),
                     _c("th", [_vm._v("Cliente")]),
                     _vm._v(" "),
@@ -39020,111 +38957,39 @@ var render = function() {
                   _vm.arrayDietaComida.length
                     ? _c(
                         "tbody",
-                        [
-                          _vm._l(_vm.arrayDietaComida, function(
-                            detalle,
-                            index
-                          ) {
-                            return _c("tr", { key: detalle.id }, [
-                              _c("td", [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: { href: "#" },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.eliminarDetalle(index)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Quitar")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(detalle.producto)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(detalle.precio)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", [
-                                _c(
-                                  "span",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "show",
-                                        rawName: "v-show",
-                                        value: detalle.cantidad > detalle.stock,
-                                        expression:
-                                          "detalle.cantidad>detalle.stock"
-                                      }
-                                    ],
-                                    staticStyle: { color: "red" }
-                                  },
-                                  [_vm._v("Stock: " + _vm._s(detalle.stock))]
-                                ),
-                                _vm._v(" "),
-                                _c("input", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: detalle.cantidad,
-                                      expression: "detalle.cantidad"
-                                    }
-                                  ],
-                                  attrs: { type: "number" },
-                                  domProps: { value: detalle.cantidad },
+                        _vm._l(_vm.arrayDietaComida, function(
+                          comida,
+                          tipo_comida,
+                          index
+                        ) {
+                          return _c("tr", { key: comida.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
                                   on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        detalle,
-                                        "cantidad",
-                                        $event.target.value
-                                      )
+                                    click: function($event) {
+                                      return _vm.eliminarComida(index)
                                     }
                                   }
-                                })
-                              ]),
-                              _vm._v(" "),
-                              _c("td", [
-                                _vm._v(
-                                  _vm._s(
-                                    (detalle.preciov =
-                                      detalle.precio * detalle.cantidad)
-                                  )
-                                )
-                              ])
-                            ])
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "tr",
-                            { staticStyle: { "background-color": "#CEECF5" } },
-                            [
-                              _c(
-                                "td",
-                                { attrs: { colspan: "4", align: "right" } },
-                                [_c("strong", [_vm._v("Total Neto: bs")])]
-                              ),
-                              _vm._v(" "),
-                              _c("td", [
-                                _vm._v(_vm._s((_vm.total = _vm.calcularTotal)))
-                              ])
-                            ]
-                          )
-                        ],
-                        2
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(comida.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(comida.distribucion)
+                              }
+                            })
+                          ])
+                        }),
+                        0
                       )
                     : _vm._e()
                 ]),
@@ -39152,7 +39017,7 @@ var render = function() {
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
-                        return _vm.guardarVenta()
+                        return _vm.guardarDieta()
                       }
                     }
                   },
@@ -39165,20 +39030,7 @@ var render = function() {
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
-                        return _vm.modificarVenta()
-                      }
-                    }
-                  },
-                  [_vm._v("Modificar")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    attrs: { type: "button" },
-                    on: {
-                      click: function($event) {
-                        return _vm.anularVenta()
+                        return _vm.anularDieta()
                       }
                     }
                   },
@@ -39191,7 +39043,7 @@ var render = function() {
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
-                        return _vm.buscarVenta()
+                        return _vm.buscarDieta()
                       }
                     }
                   },
@@ -39202,13 +39054,13 @@ var render = function() {
           : _vm.listado == 2
           ? [
               _c("center", [
-                _c("h3", [_vm._v("Busqueda de Ventas")]),
+                _c("h3", [_vm._v("Busqueda de Dietas")]),
                 _vm._v(" "),
                 _c("table", [
                   _c("tr", [
-                    _c("td", [_c("b", [_vm._v("IDVenta:")])]),
+                    _c("td", [_c("b", [_vm._v("IdDieta:")])]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(_vm.id_venta))])
+                    _c("td", [_vm._v(_vm._s(_vm.id_dieta))])
                   ]),
                   _vm._v(" "),
                   _c("tr", [
@@ -39224,9 +39076,15 @@ var render = function() {
                   ]),
                   _vm._v(" "),
                   _c("tr", [
-                    _c("td", [_c("b", [_vm._v("FechaVenta:")])]),
+                    _c("td", [_c("b", [_vm._v("Fecha Inicio:")])]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(_vm.fecha_venta))])
+                    _c("td", [_vm._v(_vm._s(_vm.fecha_inicio_dieta))])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_c("b", [_vm._v("Fecha Final:")])]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm.fecha_final_dieta))])
                   ])
                 ]),
                 _vm._v(" "),
@@ -39235,65 +39093,27 @@ var render = function() {
                 _c("table", { attrs: { border: "1" } }, [
                   _c("thead", [
                     _c("tr", [
-                      _c("th", [_vm._v("Producto")]),
+                      _c("th", [_vm._v("Comida")]),
                       _vm._v(" "),
-                      _c("th", [_vm._v("Precio")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Cantidad")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Subtotal")])
+                      _c("th", [_vm._v("Distribucion")])
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm.arrayDetalle.length
+                  _vm.arrayDietaComida.length
                     ? _c(
                         "tbody",
-                        [
-                          _vm._l(_vm.arrayDetalle, function(detalle) {
-                            return _c("tr", { key: detalle.id }, [
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(
-                                    detalle.producto.descripcion
-                                  )
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(detalle.producto.precio)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(detalle.cantidad)
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("td", {
-                                domProps: {
-                                  textContent: _vm._s(detalle.preciov)
-                                }
-                              })
-                            ])
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "tr",
-                            { staticStyle: { "background-color": "#CEECF5" } },
-                            [
-                              _c(
-                                "td",
-                                { attrs: { colspan: "3", align: "right" } },
-                                [_c("strong", [_vm._v("Total Neto: bs")])]
-                              ),
-                              _vm._v(" "),
-                              _c("td", [_vm._v(_vm._s(_vm.total))])
-                            ]
-                          )
-                        ],
-                        2
+                        _vm._l(_vm.arrayDietaComida, function(detalle) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.nomC) }
+                            })
+                          ])
+                        }),
+                        0
                       )
                     : _vm._e()
                 ]),
@@ -39348,7 +39168,7 @@ var render = function() {
                           expression: "buscarC"
                         }
                       ],
-                      attrs: { type: "text", placeholder: "Nombre ó Empresa" },
+                      attrs: { type: "text", placeholder: "Nombre o coreo" },
                       domProps: { value: _vm.buscarC },
                       on: {
                         input: function($event) {
@@ -39396,15 +39216,11 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("td", {
-                        domProps: { textContent: _vm._s(cliente.empresa) }
+                        domProps: { textContent: _vm._s(cliente.correo) }
                       }),
                       _vm._v(" "),
                       _c("td", {
                         domProps: { textContent: _vm._s(cliente.telefono) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.direccion) }
                       }),
                       _vm._v(" "),
                       _c("td", [
@@ -39440,7 +39256,7 @@ var render = function() {
         staticClass: "modal fade",
         staticStyle: { display: "none" },
         attrs: {
-          id: "modalProducto",
+          id: "modalComida",
           tabindex: "-1",
           role: "dialog",
           "aria-labelledby": "myModalLabel",
@@ -39461,18 +39277,18 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.buscarP,
-                          expression: "buscarP"
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
                         }
                       ],
-                      attrs: { type: "text", placeholder: "Descripcion" },
-                      domProps: { value: _vm.buscarP },
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.buscarP = $event.target.value
+                          _vm.buscarComid = $event.target.value
                         }
                       }
                     }),
@@ -39483,7 +39299,7 @@ var render = function() {
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
-                            return _vm.buscarProducto(_vm.buscarP)
+                            return _vm.buscarComida(_vm.buscarComid)
                           }
                         }
                       },
@@ -39503,28 +39319,14 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "tbody",
-                  _vm._l(_vm.arrayProducto, function(producto) {
-                    return _c("tr", { key: producto.id }, [
+                  _vm._l(_vm.arrayComida, function(comida) {
+                    return _c("tr", { key: comida.id }, [
                       _c("td", {
-                        domProps: { textContent: _vm._s(producto.id) }
+                        domProps: { textContent: _vm._s(comida.descripcion) }
                       }),
                       _vm._v(" "),
                       _c("td", {
-                        domProps: { textContent: _vm._s(producto.descripcion) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(producto.precio) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(producto.stock) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: {
-                          textContent: _vm._s(producto.nom_categoria)
-                        }
+                        domProps: { textContent: _vm._s(comida.nom_comida) }
                       }),
                       _vm._v(" "),
                       _c("td", [
@@ -39534,7 +39336,7 @@ var render = function() {
                             attrs: { href: "#" },
                             on: {
                               click: function($event) {
-                                return _vm.seleccionarProducto(producto)
+                                return _vm.seleccionarComida(comida)
                               }
                             }
                           },
@@ -39582,11 +39384,9 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Apellidos")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Empresa")]),
+        _c("th", [_vm._v("Correo")]),
         _vm._v(" "),
         _c("th", [_vm._v("Telefono")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Direccion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Opcion")])
       ])
@@ -39608,7 +39408,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header" }, [
       _c("h4", { staticClass: "modal-title" }, [
-        _vm._v("Seleccion uno o varios productos")
+        _vm._v("Seleccione una o varias comidas")
       ]),
       _vm._v(" "),
       _c("button", { attrs: { type: "button", "data-dismiss": "modal" } }, [
@@ -39622,15 +39422,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Id")]),
-        _vm._v(" "),
         _c("th", [_vm._v("Descripcion")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Precio")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Stock")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Categoria")]),
+        _c("th", [_vm._v("Distribucion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Opcion")])
       ])

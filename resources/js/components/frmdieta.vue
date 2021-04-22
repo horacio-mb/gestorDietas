@@ -13,7 +13,7 @@
                     <table border="1">
                         <thead>
                             <th>IdDieta</th>
-                            <table>Nombre Dieta</table>
+                            <th>Nombre Dieta</th>
                             <th>Cliente</th>
                             <th>Fecha Inicio</th>
                             <th>Fecha Final</th>
@@ -75,40 +75,30 @@
                             </tr>
                         </thead>
                         <tbody v-if="arrayDietaComida.length">
-                            <tr v-for="(detalle,index) in arrayDietaComida" :key="detalle.id">
-                                <td><a href="#" @click="eliminarDetalle(index)">Quitar</a></td>
-                                <td v-text="detalle.producto"></td>
-                                <td v-text="detalle.precio"></td>
-                                <td>
-                                    <span style="color:red;" v-show="detalle.cantidad>detalle.stock">Stock: {{detalle.stock}}</span>
-                                    <input type="number" v-model="detalle.cantidad">
-                                </td>
-                                <td>{{detalle.preciov = detalle.precio*detalle.cantidad}}</td>
-                            </tr>
-                            <tr style="background-color: #CEECF5;">
-                                <td colspan="4" align="right"><strong>Total Neto: bs</strong></td>
-                                <td>{{total = calcularTotal}}</td>
+                            <tr v-for="(comida,tipo_comida,index) in arrayDietaComida" :key="comida.id">
+                                <td><a href="#" @click="eliminarComida(index)">Quitar</a></td>
+                                <td v-text="comida.comida"></td>
+                                <td v-text="comida.distribucion"></td>
                             </tr>
                         </tbody>
                     </table>
                     <br>
                     <br>
                     <button type="button" @click="nuevo()">Nuevo</button>
-                    <button type="button" @click="guardarVenta()">Guardar</button>
-                    <button type="button" @click="modificarVenta()">Modificar</button>
-                    <button type="button" @click="anularVenta()">Eliminar</button>
-                    <button type="button" @click="buscarVenta()">Buscar</button>
+                    <button type="button" @click="guardarDieta()">Guardar</button>
+                    <button type="button" @click="anularDieta()">Eliminar</button>
+                    <button type="button" @click="buscarDieta()">Buscar</button>
                 </center>
             </template>
 
-            <!-- Detalle de registro de venta -->
+            <!-- Detalle de registro de Dieta -->
             <template v-else-if="listado==2">
                 <center>
-                    <h3>Busqueda de Ventas</h3>
+                    <h3>Busqueda de Dietas</h3>
                     <table>
                         <tr>
-                            <td><b>IDVenta:</b></td>
-                            <td>{{id_venta}}</td>
+                            <td><b>IdDieta:</b></td>
+                            <td>{{id_dieta}}</td>
                         </tr>
                         <tr>
                             <td><b>IDCliente:</b></td>
@@ -119,30 +109,26 @@
                             <td>{{cliente}}</td>
                         </tr>
                         <tr>
-                            <td><b>FechaVenta:</b></td>
-                            <td>{{fecha_venta}}</td>
+                            <td><b>Fecha Inicio:</b></td>
+                            <td>{{fecha_inicio_dieta}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Fecha Final:</b></td>
+                            <td>{{fecha_final_dieta}}</td>
                         </tr>
                     </table>
                     <br>
                     <table border="1">
                         <thead>
                             <tr>
-                                <th>Producto</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th>Subtotal</th>
+                                <th>Comida</th>
+                                <th>Distribucion</th>
                             </tr>
                         </thead>
-                        <tbody v-if="arrayDetalle.length">
-                            <tr v-for="detalle in arrayDetalle" :key="detalle.id">
-                                <td v-text="detalle.producto.descripcion"></td>
-                                <td v-text="detalle.producto.precio"></td>
-                                <td v-text="detalle.cantidad"></td>
-                                <td v-text="detalle.preciov"></td>
-                            </tr>
-                            <tr style="background-color: #CEECF5;">
-                                <td colspan="3" align="right"><strong>Total Neto: bs</strong></td>
-                                <td>{{total}}</td>
+                        <tbody v-if="arrayDietaComida.length">
+                            <tr v-for="detalle in arrayDietaComida" :key="detalle.id">
+                                <td v-text="detalle.comida"></td>
+                                <td v-text="detalle.nomC"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -163,7 +149,7 @@
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarC" placeholder="Nombre ó Empresa">
+                                    <input type="text" v-model="buscarC" placeholder="Nombre o coreo">
                                     <button type="button" @click="buscarCliente(buscarC)">Buscar</button>
                                 </div>
                             </div>
@@ -174,9 +160,8 @@
                                     <th>Id</th>
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
-                                    <th>Empresa</th>
+                                    <th>Correo</th>
                                     <th>Telefono</th>
-                                    <th>Direccion</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
@@ -185,9 +170,8 @@
                                     <td v-text="cliente.id"></td>
                                     <td v-text="cliente.nombre"></td>
                                     <td v-text="cliente.apellidos"></td>
-                                    <td v-text="cliente.empresa"></td>
+                                    <td v-text="cliente.correo"></td>
                                     <td v-text="cliente.telefono"></td>
-                                    <td v-text="cliente.direccion"></td>
                                     <td><a href="#" data-dismiss="modal" @click="seleccionarCliente(cliente)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
@@ -201,20 +185,20 @@
         </div>
         <!-- Fin Modal frmBuscarCliente -->
 
-        <!-- Inicio Modal frmBuscarProducto -->
-        <div class="modal fade" id="modalProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
+        <!-- Inicio Modal frmBuscarComida -->
+        <div class="modal fade" id="modalComida" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Seleccion uno o varios productos</h4>
+                        <h4 class="modal-title">Seleccione una o varias comidas</h4>
                         <button type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarP" placeholder="Descripcion">
-                                    <button type="button" @click="buscarProducto(buscarP)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
+                                    <button type="button" @click="buscarComida(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -222,22 +206,17 @@
                         <table border="1">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
+                                    
                                     <th>Descripcion</th>
-                                    <th>Precio</th>
-                                    <th>Stock</th>
-                                    <th>Categoria</th>
+                                    <th>Distribucion</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="producto in arrayProducto" :key="producto.id">
-                                    <td v-text="producto.id"></td>
-                                    <td v-text="producto.descripcion"></td>
-                                    <td v-text="producto.precio"></td>
-                                    <td v-text="producto.stock"></td>
-                                    <td v-text="producto.nom_categoria"></td>
-                                    <td><a href="#" @click="seleccionarProducto(producto)">Seleccionar</a></td>
+                                <tr v-for="comida in arrayComida" :key="comida.id">
+                                    <td v-text="comida.descripcion"></td>
+                                    <td v-text="comida.nom_comida"></td>
+                                    <td><a href="#" @click="seleccionarComida(comida)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -248,7 +227,7 @@
                 </div>
             </div>
         </div>
-        <!-- Fin Modal frmBuscarProducto -->
+        <!-- Fin Modal frmBuscarComida -->
     </main>
 </template>
 
@@ -257,44 +236,39 @@ export default {
     data(){
         return{
             listado : 0,
-            fecha_venta : '',
+            nombreDieta:'',
+            fecha_inicio_dieta : '',
+            fecha_final_dieta:'',
             arrayCliente: [],
             buscarC : '',
             cliente : '',
             id_cliente : 0,
-            arrayProducto : [],
-            buscarP : '',
+            arrayComida : [],
+            buscarComid : '',
             errorMsj : '',
-            producto: '',
-            id_producto : 0,
-            preciov : 0.0,
-            cantidad : 0,
-            stock : 0,
+            id_comida:'',
+            distribucion:'',
             respt : '',
-            arrayDetalle : [],
+            arrayDietaComida:[],
             total : 0.0,
             buscar : '',
             arrayDieta : [],
-            id_venta : 0
+            id_comida:'',
+            comida:'',
+            id_dieta : 0
         }
     },
+    // volar esta mierda
     computed:{
-        calcularTotal: function(){
-            var resultado = 0.0;
-            for(var i=0;i<this.arrayDetalle.length;i++){
-                resultado = resultado + (this.arrayDetalle[i].precio*this.arrayDetalle[i].cantidad);
-            }
-            return resultado;
-        }
     },
     methods:{
         frmBuscarCliente(){
             this.arrayCliente = [];
             this.buscarC ='';
         },
-        frmBuscarProducto(){
-            this.arrayProducto = [];
-            this.buscarP ='';
+        frmBuscarComida(){
+            this.arrayComida = [];
+            this.buscarComid ='';
             this.errorMsj = '';
         },
         buscarCliente(buscarC){
@@ -311,83 +285,67 @@ export default {
             this.id_cliente = data['id'];
             this.cliente=data['nombre']+' '+ data['apellidos'];
         },
-        buscarProducto(buscarP){
+        buscarComida(buscarComid){
             let me = this;
-            var url='/producto/selectProducto?buscar=' + buscarP;
+            var url='/comida/selectComida?buscar=' + buscarComid;
             axios.get(url).then(function(response){
-                me.arrayProducto= response.data;
+                me.arrayComida= response.data;
             })
             .catch(function(error){
                 console.log(error);
             });
         },
-        encuentra(id){
-            var sw=0;
-            for(var i=0;i<this.arrayDetalle.length;i++){
-                if(this.arrayDetalle[i].id_producto==id){
-                    sw=true;
-                }
-            }
-            return sw;
-        },
-        seleccionarProducto(data=[]){
+
+        seleccionarComida(data=[]){
             let me = this;
-            if(me.encuentra(data['id'])){
-                this.errorMsj='Ya se encuentra agregado...'
-            }
-            else{
-                me.arrayDetalle.push({
-                    id_producto: data['id'],
-                    producto : data['descripcion'],
-                    cantidad : 1,
-                    precio : data['precio'],
-                    preciov : 0.0,
-                    stock : data['stock']
+                me.arrayDietaComida.push({
+                    id_comida: data['id'],
+                    comida : data['descripcion'],
+                    distribucion : data['nom_comida']
                 });
-            }
+            this.errorMsj='Agregado...'
         },
-        eliminarDetalle(index){
+        eliminarComida(index){
             let me = this;
-            me.arrayDetalle.splice(index,1);
+            me.arrayDietaComida.splice(index,1);
         },
         nuevo(){
+            this.nombreDieta='',
+            this.fecha_inicio_dieta = '',
+            this.fecha_final_dieta='',
             this.id_cliente = 0;
             this.cliente = '';
-            this.fecha_venta = '';
-            this.total = 0.0;
-            this.id_producto = 0;
-            this.producto = '';
-            this.cantidad = 0;
-            this.preciov = 0.0;
-            this.stock = 0;
-            this.arrayDetalle = [];
+            this.id_comida='',
+            this.descripcion='',
+            this.arrayDietaComida = [];
             this.errorMsj = '';
             this.respt='';
         },
-        guardarVenta(){
+        guardarDieta(){
             let me = this;
-            axios.post('/venta/registrar',{
-                fecha : this.fecha_venta,
-                monto : this.total,
+            axios.post('/dieta/registrar',{
+                nombre : this.nombreDieta,
+                fechaInicio : this.fecha_inicio_dieta,
+                fechaFinal: this.fecha_final_dieta,
                 id_cliente: this.id_cliente,
-                data : this.arrayDetalle
+                data : this.arrayDietaComida
             }).then(function (response) {
-                me.respt = 'Venta Registrada...!';
+                me.respt = 'Dieta Registrada...!';
             }).catch(function (error) {
                 console.log(error);
             });   
         },
         listar(buscar){
             let me = this;
-            var url='/venta?buscar=' + buscar;
+            var url='/dieta?buscar=' + buscar;
             axios.get(url).then(function(response){
-                me.arrayVenta= response.data;
+                me.arrayDieta= response.data;
             })
             .catch(function(error){
                 console.log(error);
             });
         },
-        buscarVenta(){
+        buscarDieta(){
             this.listado=1;
             this.listar('');
         },
@@ -395,50 +353,39 @@ export default {
             let me = this;
             me.listado=0;
             me.respt = '';
-            me.total = 0.0;
-            me.id_producto = 0;
-            me.producto = '';
-            me.cantidad = 0;
-            me.preciov = 0.0;
+
+            me.id_comida = 0;
+            me.comida = '';
+            me.fecha_inicio_dieta = '',
+            me.fecha_final_dieta='',
             me.cliente = '';
             me.fecha_venta='';
             me.id_cliente = 0;
-            me.arrayDetalle = [];
+            me.arrayDietaComida = [];
         },
-        verVenta(id){
+        verDieta(id){
             let me = this;
             me.listado=2;
-            let arrayVentaT=[];
-            var url='/venta/obtenerCabecera?id=' + id;
+            let arrayDietaT=[];
+            var url='/dieta/obtenerCabecera?id=' + id;
             axios.get(url).then(function(response){
-                arrayVentaT =response.data.venta;
-                console.log(arrayVentaT);
-                me.cliente=arrayVentaT.nombre +' '+arrayVentaT.apellidos;
-                me.id_venta=arrayVentaT.id;
-                me.id_cliente=arrayVentaT.id_cliente;
-                me.fecha_venta=arrayVentaT.fecha
-                me.total=arrayVentaT.monto;
+                arrayDietaT =response.data.dieta;
+                console.log(arrayDietaT);
+                me.cliente=arrayDietaT.nombrec +' '+arrayDietaT.apellidos;
+                me.id_dieta=arrayDietaT.id;
+                me.id_cliente=arrayDietaT.id_cliente;
+                me.fecha_inicio_dieta=arrayDietaT.fechaInicio;
+                me.fecha_final_dieta=arrayDietaT.fechaFinal;
             })
             .catch(function(error){
                 console.log(error);
             });
 
-            var url1 = '/venta/obtenerDetalles?id='+id;
+            var url1 = '/dieta/obtenerDetalles?id='+id;
             axios.get(url1).then(function (response) {
-                me.arrayDetalle = response.data.detalle;
+                me.arrayDietaComida = response.data.detalle;
             })
             .catch(function (error) {
-                console.log(error);
-            });
-        },
-        anularVenta(){
-            let me = this;
-            axios.put('/venta/anular',{
-                'id': this.id_venta
-            }).then(function (response) {
-                // me.listar('');
-                me.respt = 'Venta Eliminada...!';
-            }).catch(function (error) {
                 console.log(error);
             });
         },
@@ -450,47 +397,50 @@ export default {
             let me = this;
             me.listado=0;
             this.respt='';
-            let arrayVentaT=[];
-            var url='/venta/obtenerCabecera?id=' + id;
+            let arrayDietaT=[];
+            var url='/dieta/obtenerCabecera?id=' + id;
             axios.get(url).then(function(response){
-                arrayVentaT =response.data.venta;
-                console.log(arrayVentaT);
-                me.cliente=arrayVentaT.nombre +' '+arrayVentaT.apellidos;
-                me.id_venta=arrayVentaT.id;
-                me.id_cliente=arrayVentaT.id_cliente;
-                me.fecha_venta=arrayVentaT.fecha
-                me.total=arrayVentaT.monto;
+                arrayDietaT =response.data.dieta;
+                console.log(arrayDietaT);
+                me.id_dieta=arrayDietaT.id;
+                me.nombreDieta=arrayDietaT.nombre;
+                me.cliente=arrayDietaT.nombrec +' '+arrayDietaT.apellidos;
+                me.id_dieta=arrayDietaT.id;
+                me.id_cliente=arrayDietaT.id_cliente;
+                me.fecha_inicio_dieta=arrayDietaT.fechaInicio;
+                me.fecha_final_dieta=arrayDietaT.fechaFinal;
             })
             .catch(function(error){
                 console.log(error);
             });
 
-            var url1 = '/venta/obtenerDetalles2?id='+id;
+            var url1 = '/dieta/obtenerDetalles2?id='+id;
             axios.get(url1).then(function (response) {
-                me.arrayDetalle = response.data.detalle;
+                me.arrayDietaComida = response.data.detalle;
             })
             .catch(function (error) {
                 console.log(error);
             });
         },
-        modificarVenta(){
+        modificarDieta(){
             let me = this;
             axios.put('detalle/eliminar',{
-                id: this.id_venta
+                id: this.id_dieta
             }).then(function(error){
                 //
             }).catch(function(error){
                 console.log(error);
             }); 
 
-            axios.put('/venta/modificar',{
-                fecha : this.fecha_venta,
-                monto : this.total,
+            axios.put('/dieta/modificar',{
+                nombre: this.nombreDieta,
+                fechaInicio : this.fecha_inicio_dieta,
+                fechaFinal : this.fecha_final_dieta,
                 id_cliente: this.id_cliente,
-                id : this.id_venta,
-                data : this.arrayDetalle
+                id : this.id_dieta,
+                data : this.arrayDietaComida
             }).then(function (response) {
-                me.respt = 'Venta Modificada...!';
+                me.respt = 'Dieta Modificada...!';
             }).catch(function (error) {
                 console.log(error);
             });
