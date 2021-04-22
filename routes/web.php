@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ComidaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Rutas para Comida
+Route::get('/comida',[ComidaController::class,'index']);
+Route::post('/comida/registrar',[ComidaController::class,'store']);
+Route::put('/comida/modificar',[ComidaController::class,'update']);
+Route::put('/comida/eliminar',[ComidaController::class,'delete']);
+Route::get('/comida/selectComida',[ComidaController::class,'selectComida']);
+
+
 //Rutas para Cliente
 Route::get('/cliente',[ClienteController::class,'index']);
 Route::post('/cliente/registrar',[ClienteController::class,'store']);
