@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ComidaController;
+use App\Http\Controllers\DietaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Rutas para tipo Comida
+
 //Rutas para Comida
 Route::get('/comida',[ComidaController::class,'index']);
 Route::post('/comida/registrar',[ComidaController::class,'store']);
@@ -36,3 +39,13 @@ Route::post('/cliente/registrar',[ClienteController::class,'store']);
 Route::put('/cliente/modificar',[ClienteController::class,'update']);
 Route::put('/cliente/eliminar',[ClienteController::class,'delete']);
 Route::get('/cliente/selectCliente',[ClienteController::class,'selectCliente']);
+
+//Rutas para Dieta
+Route::get('/dieta',[DietaController::class,'index']);
+Route::post('/dieta/registrar',[DietaController::class,'store']);
+Route::get('/dieta/obtenerDetalles',[DietaController::class,'obtenerDetalles']);
+Route::get('/dieta/obtenerCabecera',[DietaController::class,'obtenerCabecera']);
+Route::put('/dieta/anular',[DietaController::class,'delete']);
+Route::put('/dieta/modificar',[DietaController::class,'update']);
+Route::get('/dieta/obtenerDetalles2',[DietaController::class,'obtenerDetalles2']);
+Route::put('/detalle/eliminar',[DietaController::class,'eliminarDetalle']);
