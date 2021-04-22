@@ -38748,6 +38748,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -38761,6 +38762,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-success",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -38774,6 +38776,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -38787,6 +38790,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-danger",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -38824,6 +38828,7 @@ var render = function() {
       _c(
         "button",
         {
+          staticClass: "btn btn-primary",
           attrs: { type: "button" },
           on: {
             click: function($event) {
@@ -39013,6 +39018,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -39026,6 +39032,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-success",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -39039,6 +39046,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -39052,6 +39060,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-danger",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -39089,6 +39098,7 @@ var render = function() {
       _c(
         "button",
         {
+          staticClass: "btn btn-primary",
           attrs: { type: "button" },
           on: {
             click: function($event) {
@@ -39220,6 +39230,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-primary",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39544,6 +39555,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-primary",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39557,6 +39569,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-success",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39570,6 +39583,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-danger",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39583,6 +39597,7 @@ var render = function() {
                 _c(
                   "button",
                   {
+                    staticClass: "btn btn-primary",
                     attrs: { type: "button" },
                     on: {
                       click: function($event) {
@@ -39726,6 +39741,7 @@ var render = function() {
                     _c(
                       "button",
                       {
+                        staticClass: "btn btn-primary",
                         attrs: { type: "button" },
                         on: {
                           click: function($event) {
@@ -39739,52 +39755,59 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("table", { attrs: { border: "1" } }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "tbody",
-                  _vm._l(_vm.arrayCliente, function(cliente) {
-                    return _c("tr", { key: cliente.id }, [
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.id) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.nombre) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.apellidos) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.correo) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", {
-                        domProps: { textContent: _vm._s(cliente.telefono) }
-                      }),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          {
-                            attrs: { href: "#", "data-dismiss": "modal" },
-                            on: {
-                              click: function($event) {
-                                return _vm.seleccionarCliente(cliente)
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayCliente, function(cliente) {
+                      return _c("tr", { key: cliente.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(cliente.id) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(cliente.nombre) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(cliente.apellidos) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(cliente.correo) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(cliente.telefono) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", "data-dismiss": "modal" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarCliente(cliente)
+                                }
                               }
-                            }
-                          },
-                          [_vm._v("Seleccionar")]
-                        )
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
                       ])
-                    ])
-                  }),
-                  0
-                )
-              ])
+                    }),
+                    0
+                  )
+                ]
+              )
             ]),
             _vm._v(" "),
             _vm._m(2)
@@ -39910,9 +39933,14 @@ var staticRenderFns = [
         _vm._v("Busqueda de clientes")
       ]),
       _vm._v(" "),
-      _c("button", { attrs: { type: "button", "data-dismiss": "modal" } }, [
-        _vm._v("X")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
     ])
   },
   function() {
@@ -39940,9 +39968,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-footer" }, [
-      _c("button", { attrs: { type: "button", "data-dismiss": "modal" } }, [
-        _vm._v("Cerrar")
-      ])
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
     ])
   },
   function() {

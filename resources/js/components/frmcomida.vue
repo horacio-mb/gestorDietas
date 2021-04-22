@@ -20,15 +20,15 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <button type="button" @click="nuevo()">Nuevo</button>
-                        <button type="button" @click="guardar()">Guardar</button>
-                        <button type="button" @click="modificar()">Modificar</button>
-                        <button type="button" @click="eliminar()">Eliminar</button>
+                        <button class="btn btn-primary" type="button" @click="nuevo()">Nuevo</button>
+                        <button class="btn btn-success" type="button" @click="guardar()">Guardar</button>
+                        <button class="btn btn-primary" type="button" @click="modificar()">Modificar</button>
+                        <button  class="btn btn-danger" type="button" @click="eliminar()">Eliminar</button>
                     </td>
                 </tr>
             </table>
             <input type="text" v-model="buscar" placeholder="Descripcion comida">
-            <button type="button" @click="listar(buscar)">Buscar por Descripcion</button>
+            <button class="btn btn-primary" type="button" @click="listar(buscar)">Buscar por Descripcion</button>
         </form>
         <br>
         <br>

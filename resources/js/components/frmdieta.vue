@@ -6,7 +6,7 @@
                 <center>
                     <h3>Busqueda de Dietas</h3>
                     <input type="text" v-model="buscar" placeholder="Nombre Cliente">
-                    <button type="button" @click="listar(buscar)">Buscar por Nombre</button><br>
+                    <button class="btn btn-primary" type="button" @click="listar(buscar)">Buscar por Nombre</button><br>
                     <a href="#" @click="mostrarDetalle()">Volver</a>
                     <br>
                     <br>
@@ -84,10 +84,10 @@
                     </table>
                     <br>
                     <br>
-                    <button type="button" @click="nuevo()">Nuevo</button>
-                    <button type="button" @click="guardarDieta()">Guardar</button>
-                    <button type="button" @click="anularDieta()">Eliminar</button>
-                    <button type="button" @click="buscarDieta()">Buscar</button>
+                    <button class="btn btn-primary" type="button" @click="nuevo()">Nuevo</button>
+                    <button class="btn btn-success" type="button" @click="guardarDieta()">Guardar</button>
+                    <button class="btn btn-danger" type="button" @click="anularDieta()">Eliminar</button>
+                    <button class="btn btn-primary" type="button" @click="buscarDieta()">Buscar</button>
                 </center>
             </template>
 
@@ -143,18 +143,18 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Busqueda de clientes</h4>
-                        <button type="button" data-dismiss="modal">X</button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
                                     <input type="text" v-model="buscarC" placeholder="Nombre o coreo">
-                                    <button type="button" @click="buscarCliente(buscarC)">Buscar</button>
+                                    <button class="btn btn-primary" type="button" @click="buscarCliente(buscarC)">Buscar</button>
                                 </div>
                             </div>
                         </div>
-                        <table border="1">
+                        <table class="table table-dark table-hover" border="1">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -178,7 +178,7 @@
                         </table>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" data-dismiss="modal">Cerrar</button>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>
