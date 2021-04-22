@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Rutas para tipo Comida
 Route::get('/tipo_comida',[TipoComidaController::class,'index']);
 Route::post('/tipo_comida/registrar',[TipoComidaController::class,'store']);
+Route::put('/tipo_comida/modificar',[TipoComidaController::class,'update']);
+Route::put('/tipo_comida/eliminar',[TipoComidaController::class,'delete']);
 Route::get('/tipo_comida/selectTipoComida',[TipoComidaController::class,'selectTipoComida']);
 //Rutas para Comida
 Route::get('/comida',[ComidaController::class,'index']);

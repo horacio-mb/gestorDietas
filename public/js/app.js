@@ -1916,10 +1916,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       nombre: '',
+      id_tipo_comida: 0,
       buscar: '',
       arrayTipoComida: []
     };
@@ -1943,6 +1949,32 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    modificar: function modificar() {
+      var me = this;
+      axios.put('/tipo_comida/modificar', {
+        'nombre': this.nombre,
+        'id': this.id_tipo_comida
+      }).then(function (error) {
+        me.listar('');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    eliminar: function eliminar() {
+      var me = this;
+      axios.put('/tipo_comida/eliminar', {
+        'id': this.id_tipo_comida
+      }).then(function (error) {
+        me.listar('');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    llenar: function llenar() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      this.id_tipo_comida = data['id'];
+      this.nombre = data['nombre'];
     },
     nuevo: function nuevo() {
       this.nombre = '';
@@ -37689,6 +37721,32 @@ var render = function() {
                 }
               },
               [_vm._v("Guardar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.modificar()
+                  }
+                }
+              },
+              [_vm._v("Modificar")]
+            ),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.eliminar()
+                  }
+                }
+              },
+              [_vm._v("Eliminar")]
             )
           ])
         ])
@@ -37738,7 +37796,22 @@ var render = function() {
           return _c("tr", { key: tipo_comida.id }, [
             _c("td", { domProps: { textContent: _vm._s(tipo_comida.id) } }),
             _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(tipo_comida.nombre) } })
+            _c("td", { domProps: { textContent: _vm._s(tipo_comida.nombre) } }),
+            _vm._v(" "),
+            _c("td", [
+              _c(
+                "a",
+                {
+                  attrs: { href: "#" },
+                  on: {
+                    click: function($event) {
+                      return _vm.llenar(tipo_comida)
+                    }
+                  }
+                },
+                [_vm._v("Seleccionar")]
+              )
+            ])
           ])
         }),
         0
@@ -37755,7 +37828,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Id")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Nombre")])
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opciones")])
       ])
     ])
   }

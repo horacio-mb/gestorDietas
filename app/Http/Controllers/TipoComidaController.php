@@ -30,4 +30,22 @@ class TipoComidaController extends Controller
         $tipo_comida= TipoComida::select('id','nombre')->get();
         return $tipo_comida;
     }
+    public function update(Request $request)
+    {
+        $tipocomida= TipoComida::findOrFail($request->id);
+        $tipocomida->nombre=$request->nombre;
+        $tipocomida->save();
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function delete(Request $request)
+    {
+        $tipocomida = TipoComida::findOrFail($request->id);
+        $tipocomida->delete();
+    }
 }
