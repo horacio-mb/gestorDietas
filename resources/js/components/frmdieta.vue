@@ -10,7 +10,7 @@
                     <a href="#" @click="mostrarDetalle()">Volver</a>
                     <br>
                     <br>
-                    <table border="1">
+                    <table class="table table-dark table-hover" border="1">
                         <thead>
                             <th>IdDieta</th>
                             <th>Nombre Dieta</th>
@@ -66,7 +66,7 @@
                         </table>
                     </form>
                     <label v-text="respt"></label>
-                    <table border="1">
+                    <table  class="table table-dark table-hover" border="1">
                         <thead>
                             <tr>
                                 <th>Opcion</th>

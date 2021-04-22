@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         <div class="app-body">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a @click="menu=0" class="navbar-brand" href="#">Inicio</a>
                 <div>
                     <ul class="navbar-nav mr-auto">
@@ -33,11 +33,15 @@
             </nav>
             <!-- Menu Principal -->
             <template v-if="menu==0">
-                <b>Sistema de Gestión de Dietas</b>
+                <b><div class="bg-2"> <center>
+                    <h1 class="t-stroke-shadow"><HR> <br> <br> SISTEMA <br> DE GESTIÓN <BR> DE DIETAS <br>
+                    <br>
+                <br>
+            <img src="https://www.upsa.edu.bo/images/logo-upsa.jpg"> </center>
             </template>
 
             <template v-if="menu==1">
-                
+                <br><br>
                 <frmtipocomida></frmtipocomida>
                 
             </template>
@@ -50,6 +54,7 @@
                 <frmcliente></frmcliente>
             </template>
             <template v-if="menu==4">
+                <br><br>
                 <frmdieta></frmdieta>
             </template>
             <!-- Fin Menu Principal --> 

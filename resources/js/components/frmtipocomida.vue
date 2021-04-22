@@ -9,17 +9,19 @@
                 </tr>
                 <tr>
                 <td colspan="3">
-                    <button type="button" @click="nuevo()">Nuevo</button>
-                    <button type="button" @click="guardar()">Guardar</button>
-                    <button type="button" @click="modificar()">Modificar</button>
-                    <button type="button" @click="eliminar()">Eliminar</button>
+                    <button  class="btn btn-primary" type="button" @click="nuevo()">Nuevo</button>
+                    <button class="btn btn-success" type="button" @click="guardar()">Guardar</button>
+                    <button class="btn btn-primary" type="button" @click="modificar()">Modificar</button>
+                    <button class="btn btn-danger" type="button" @click="eliminar()">Eliminar</button>
                 </td>
                 </tr>  
             </table>
             <input type="text" v-model="buscar" placeholder="Tipo de Comida">
-            <button type="button" @click="listar(buscar)"> Buscar por nombre </button>
+            <button class="btn btn-secondary" type="button" @click="listar(buscar)"> Buscar por nombre </button>
+            <br>
+            <br>
         </form>
-          <table border="2">
+          <table class="table table-dark table-hover" border="2">
             <thead>
                 <tr>
                     <th>Id</th>

@@ -33,7 +33,7 @@
         </form>
         <br>
         <br>
-        <table border="2">
+        <table class="table table-dark table-hover" border="2">
         <thead>
         <th>Id</th>
         <th>Nombre</th>

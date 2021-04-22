@@ -2667,6 +2667,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -38837,42 +38839,48 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("table", { attrs: { border: "2" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.arrayCliente, function(cliente) {
-          return _c("tr", { key: cliente.id }, [
-            _c("td", { domProps: { textContent: _vm._s(cliente.id) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(cliente.nombre) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(cliente.apellidos) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(cliente.correo) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(cliente.telefono) } }),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "a",
-                {
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      return _vm.llenar(cliente)
+    _c(
+      "table",
+      { staticClass: "table table-dark table-hover", attrs: { border: "2" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.arrayCliente, function(cliente) {
+            return _c("tr", { key: cliente.id }, [
+              _c("td", { domProps: { textContent: _vm._s(cliente.id) } }),
+              _vm._v(" "),
+              _c("td", { domProps: { textContent: _vm._s(cliente.nombre) } }),
+              _vm._v(" "),
+              _c("td", {
+                domProps: { textContent: _vm._s(cliente.apellidos) }
+              }),
+              _vm._v(" "),
+              _c("td", { domProps: { textContent: _vm._s(cliente.correo) } }),
+              _vm._v(" "),
+              _c("td", { domProps: { textContent: _vm._s(cliente.telefono) } }),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        return _vm.llenar(cliente)
+                      }
                     }
-                  }
-                },
-                [_vm._v("Seleccionar")]
-              )
+                  },
+                  [_vm._v("Seleccionar")]
+                )
+              ])
             ])
-          ])
-        }),
-        0
-      )
-    ])
+          }),
+          0
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -39096,38 +39104,46 @@ var render = function() {
     _vm._v(" "),
     _c("br"),
     _vm._v(" "),
-    _c("table", { attrs: { border: "1" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.arrayComida, function(comida) {
-          return _c("tr", { key: comida.id }, [
-            _c("td", { domProps: { textContent: _vm._s(comida.id) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(comida.descripcion) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(comida.nom_comida) } }),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "a",
-                {
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      return _vm.llenar(comida)
+    _c(
+      "table",
+      { staticClass: "table table-dark table-hover", attrs: { border: "1" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.arrayComida, function(comida) {
+            return _c("tr", { key: comida.id }, [
+              _c("td", { domProps: { textContent: _vm._s(comida.id) } }),
+              _vm._v(" "),
+              _c("td", {
+                domProps: { textContent: _vm._s(comida.descripcion) }
+              }),
+              _vm._v(" "),
+              _c("td", {
+                domProps: { textContent: _vm._s(comida.nom_comida) }
+              }),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        return _vm.llenar(comida)
+                      }
                     }
-                  }
-                },
-                [_vm._v("Seleccionar")]
-              )
+                  },
+                  [_vm._v("Seleccionar")]
+                )
+              ])
             ])
-          ])
-        }),
-        0
-      )
-    ])
+          }),
+          0
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -39232,68 +39248,75 @@ var render = function() {
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
-                _c("table", { attrs: { border: "1" } }, [
-                  _c("thead", [
-                    _c("th", [_vm._v("IdDieta")]),
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-dark table-hover",
+                    attrs: { border: "1" }
+                  },
+                  [
+                    _c("thead", [
+                      _c("th", [_vm._v("IdDieta")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Nombre Dieta")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Cliente")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Fecha Inicio")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Fecha Final")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Opcion")])
+                    ]),
                     _vm._v(" "),
-                    _c("th", [_vm._v("Nombre Dieta")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("Cliente")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("Fecha Inicio")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("Fecha Final")]),
-                    _vm._v(" "),
-                    _c("th", [_vm._v("Opcion")])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "tbody",
-                    _vm._l(_vm.arrayDieta, function(dieta) {
-                      return _c("tr", { key: dieta.id }, [
-                        _c("td", {
-                          domProps: { textContent: _vm._s(dieta.id) }
-                        }),
-                        _vm._v(" "),
-                        _c("td", {
-                          domProps: { textContent: _vm._s(dieta.nombre) }
-                        }),
-                        _vm._v(" "),
-                        _c("td", {
-                          domProps: {
-                            textContent: _vm._s(
-                              dieta.nombreC + " " + dieta.apellidos
-                            )
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("td", {
-                          domProps: { textContent: _vm._s(dieta.fechaInicio) }
-                        }),
-                        _vm._v(" "),
-                        _c("td", {
-                          domProps: { textContent: _vm._s(dieta.fechaFinal) }
-                        }),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  return _vm.modificarDetalle(dieta.id)
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.arrayDieta, function(dieta) {
+                        return _c("tr", { key: dieta.id }, [
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.id) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.nombre) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: {
+                              textContent: _vm._s(
+                                dieta.nombreC + " " + dieta.apellidos
+                              )
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.fechaInicio) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.fechaFinal) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.modificarDetalle(dieta.id)
+                                  }
                                 }
-                              }
-                            },
-                            [_vm._v("Seleccionar")]
-                          )
+                              },
+                              [_vm._v("Seleccionar")]
+                            )
+                          ])
                         ])
-                      ])
-                    }),
-                    0
-                  )
-                ])
+                      }),
+                      0
+                    )
+                  ]
+                )
               ])
             ]
           : _vm.listado == 0
@@ -39456,56 +39479,63 @@ var render = function() {
                 _vm._v(" "),
                 _c("label", { domProps: { textContent: _vm._s(_vm.respt) } }),
                 _vm._v(" "),
-                _c("table", { attrs: { border: "1" } }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", [_vm._v("Opcion")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Comida")]),
-                      _vm._v(" "),
-                      _c("th", [_vm._v("Distribucion")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _vm.arrayDietaComida.length
-                    ? _c(
-                        "tbody",
-                        _vm._l(_vm.arrayDietaComida, function(
-                          comida,
-                          tipo_comida,
-                          index
-                        ) {
-                          return _c("tr", { key: comida.id }, [
-                            _c("td", [
-                              _c(
-                                "a",
-                                {
-                                  attrs: { href: "#" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.eliminarComida(index)
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-dark table-hover",
+                    attrs: { border: "1" }
+                  },
+                  [
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", [_vm._v("Opcion")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Comida")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Distribucion")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _vm.arrayDietaComida.length
+                      ? _c(
+                          "tbody",
+                          _vm._l(_vm.arrayDietaComida, function(
+                            comida,
+                            tipo_comida,
+                            index
+                          ) {
+                            return _c("tr", { key: comida.id }, [
+                              _c("td", [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: { href: "#" },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.eliminarComida(index)
+                                      }
                                     }
-                                  }
-                                },
-                                [_vm._v("Quitar")]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("td", {
-                              domProps: { textContent: _vm._s(comida.comida) }
-                            }),
-                            _vm._v(" "),
-                            _c("td", {
-                              domProps: {
-                                textContent: _vm._s(comida.distribucion)
-                              }
-                            })
-                          ])
-                        }),
-                        0
-                      )
-                    : _vm._e()
-                ]),
+                                  },
+                                  [_vm._v("Quitar")]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", {
+                                domProps: { textContent: _vm._s(comida.comida) }
+                              }),
+                              _vm._v(" "),
+                              _c("td", {
+                                domProps: {
+                                  textContent: _vm._s(comida.distribucion)
+                                }
+                              })
+                            ])
+                          }),
+                          0
+                        )
+                      : _vm._e()
+                  ]
+                ),
                 _vm._v(" "),
                 _c("br"),
                 _vm._v(" "),
@@ -40013,6 +40043,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -40026,6 +40057,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-success",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -40039,6 +40071,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-primary",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -40052,6 +40085,7 @@ var render = function() {
             _c(
               "button",
               {
+                staticClass: "btn btn-danger",
                 attrs: { type: "button" },
                 on: {
                   click: function($event) {
@@ -40089,6 +40123,7 @@ var render = function() {
       _c(
         "button",
         {
+          staticClass: "btn btn-secondary",
           attrs: { type: "button" },
           on: {
             click: function($event) {
@@ -40097,39 +40132,49 @@ var render = function() {
           }
         },
         [_vm._v(" Buscar por nombre ")]
-      )
+      ),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br")
     ]),
     _vm._v(" "),
-    _c("table", { attrs: { border: "2" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.arrayTipoComida, function(tipo_comida) {
-          return _c("tr", { key: tipo_comida.id }, [
-            _c("td", { domProps: { textContent: _vm._s(tipo_comida.id) } }),
-            _vm._v(" "),
-            _c("td", { domProps: { textContent: _vm._s(tipo_comida.nombre) } }),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "a",
-                {
-                  attrs: { href: "#" },
-                  on: {
-                    click: function($event) {
-                      return _vm.llenar(tipo_comida)
+    _c(
+      "table",
+      { staticClass: "table table-dark table-hover", attrs: { border: "2" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.arrayTipoComida, function(tipo_comida) {
+            return _c("tr", { key: tipo_comida.id }, [
+              _c("td", { domProps: { textContent: _vm._s(tipo_comida.id) } }),
+              _vm._v(" "),
+              _c("td", {
+                domProps: { textContent: _vm._s(tipo_comida.nombre) }
+              }),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        return _vm.llenar(tipo_comida)
+                      }
                     }
-                  }
-                },
-                [_vm._v("Seleccionar")]
-              )
+                  },
+                  [_vm._v("Seleccionar")]
+                )
+              ])
             ])
-          ])
-        }),
-        0
-      )
-    ])
+          }),
+          0
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
