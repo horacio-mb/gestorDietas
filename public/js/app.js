@@ -40174,7 +40174,7 @@ var render = function() {
       _c(
         "button",
         {
-          staticClass: "btn btn-secondary",
+          staticClass: "btn btn-primary",
           attrs: { type: "button" },
           on: {
             click: function($event) {

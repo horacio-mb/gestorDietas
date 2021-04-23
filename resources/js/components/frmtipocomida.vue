@@ -17,7 +17,7 @@
                 </tr>  
             </table>
             <input type="text" v-model="buscar" placeholder="Tipo de Comida">
-            <button class="btn btn-secondary" type="button" @click="listar(buscar)"> Buscar por nombre </button>
+            <button class="btn btn-primary" type="button" @click="listar(buscar)"> Buscar por nombre </button>
             <br>
             <br>
         </form>
