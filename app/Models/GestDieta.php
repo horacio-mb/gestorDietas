@@ -15,4 +15,10 @@ class GestDieta extends Model
         'tipo',
     ];
     public $timestamps=false;
+    public function ficha_medica(){
+        return $this->belongsTo(FichaMedica::class,'idFichaMedica');
+    }
+    public function dias_dieta(){
+        return $this->hasMany(DiaDieta::class);
+    }
 }

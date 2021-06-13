@@ -16,12 +16,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table='users';
     protected $fillable = [
         'nombre',
         'cargo',
         'email',
         'password',
     ];
+    public function consultas(){
+        return $this->hasMany(Consulta::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

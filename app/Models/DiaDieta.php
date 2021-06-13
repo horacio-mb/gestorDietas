@@ -13,4 +13,7 @@ class DiaDieta extends Model
         'idGestDieta',
     ];
     public $timestamps=false;
+    public function gest_dietas(){
+        return $this->belongsTo(GestDieta::class,'idGestDieta');
+    }
 }

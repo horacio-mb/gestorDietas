@@ -15,4 +15,13 @@ class Consulta extends Model
         'id_usuario',
     ];
     public $timestamps=false;
+    public function clientes(){
+        return $this->belongsTo(Cliente::class,'id_cliente');
+    }
+    public function usuarios(){
+        return $this->belongsTo(User::class,'id_usuario');
+    }
+    public function ficha_medicas(){
+        return $this->hasMany(FichaMedica::class);
+    }
 }

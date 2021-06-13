@@ -15,4 +15,7 @@ class RutinaEjercicio extends Model
         'ronda',
     ];
     public $timestamps=false;
+    public function dia_rutinas(){
+        return $this->belongsTo(DiaRutina::class,'idDiaRutina');
+    }
 }

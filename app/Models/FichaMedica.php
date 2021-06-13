@@ -17,4 +17,16 @@ class FichaMedica extends Model
         'id_consulta',
     ];
     public $timestamps=false;
+    public function consultas(){
+        return $this->belongsTo(Consulta::class,'id_consulta');
+    }
+    public function cuestionario(){
+        return $this->hasOne(Cuestionario::class);
+    }
+    public function ges_dietas(){
+        return $this->hasMany(GestDieta::class);
+    }
+    public function gest_rutinas(){
+        return $this->hasMany(GestRutina::class);
+    }
 }

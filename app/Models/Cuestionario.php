@@ -20,4 +20,7 @@ class Cuestionario extends Model
         'id_fichaMedica',
     ];
     public $timestamps=false;
+    public function ficha_medica(){
+        return $this->belongsTo(FichaMedica::class,'id_fichaMedica');
+    }
 }

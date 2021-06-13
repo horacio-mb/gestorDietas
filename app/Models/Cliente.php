@@ -19,7 +19,7 @@ class Cliente extends Model
         'sexo',
     ];
     public $timestamps=false;
-    public function dietas(){
-        return $this->hasMany('App\Models\Dieta');
+    public function consultas(){
+        return $this->hasMany(Consulta::class);
     }
 }

@@ -15,7 +15,7 @@ class Comida extends Model
     ];
     public $timestamps=false;
     public function tipocomida(){
-        return $this->belongsTo('App\Models\TipoComida');
+        return $this->belongsTo(TipoComida::class,'id_tipo_comida');
     }
 
 }

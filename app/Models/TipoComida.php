@@ -13,6 +13,6 @@ class TipoComida extends Model
     ];
     public $timestamps=false;
     public function comidas(){
-        return $this->hasMany('App\Models\Comida');
+        return $this->hasMany(Comida::class);
     }
 }

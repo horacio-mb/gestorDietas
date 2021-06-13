@@ -13,4 +13,7 @@ class DiaRutina extends Model
         'idGestRutina',
     ];
     public $timestamps=false;
+    public function gest_rutinas(){
+        return $this->belongsTo(GestRutina::class,'idGestRutina');
+    }
 }

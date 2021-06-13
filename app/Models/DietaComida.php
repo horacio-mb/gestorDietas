@@ -15,7 +15,7 @@ class DietaComida extends Model
         'cantidad',
     ];
     public $timestamps=false;
-    public function dieta(){
-        return $this->belongsTo('App\Models\Dieta','id_dieta');
+    public function dia_dietas(){
+        return $this->belongsTo(DiaDieta::class,'id_dia_dieta');
     }
 }
