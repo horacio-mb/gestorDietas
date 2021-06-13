@@ -11,9 +11,12 @@ class Cliente extends Model
     protected $table='cliente';
     protected $fillable=[
         'nombre',
-        'apellidos',
+        'apellido_paterno',
+        'apellido_materno',
+        'fecha_nacimiento',
         'correo',
-        'telefono'
+        'telefono',
+        'sexo',
     ];
     public $timestamps=false;
     public function dietas(){

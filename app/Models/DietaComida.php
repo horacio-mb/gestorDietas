@@ -9,9 +9,10 @@ class DietaComida extends Model
 {
     protected $table="dieta_comida";
     protected $fillable=[
-        'id_dieta',
+        'id_dia_dieta',
         'id_comida',
-        'distribucion'
+        'porcion',
+        'cantidad',
     ];
     public $timestamps=false;
     public function dieta(){

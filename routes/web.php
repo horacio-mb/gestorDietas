@@ -54,3 +54,6 @@ Route::put('/dieta/anular',[DietaController::class,'delete']);
 Route::put('/dieta/modificar',[DietaController::class,'update']);
 Route::get('/dieta/obtenerDetalles2',[DietaController::class,'obtenerDetalles2']);
 Route::put('/detalle/eliminar',[DietaController::class,'eliminarDetalle']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
