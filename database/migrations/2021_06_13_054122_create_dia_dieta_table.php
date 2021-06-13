@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComidaTable extends Migration
+class CreateDiaDietaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateComidaTable extends Migration
      */
     public function up()
     {
-        Schema::create('comida', function (Blueprint $table) {
+        Schema::create('dia_dieta', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion',150);
-            $table->float('kcal');
-            $table->foreignId('id_tipo_comida');
-            $table->foreign('id_tipo_comida')->references('id')->on('tipo_comida');
+            $table->string('diaSemana',30);
+            $table->foreignId('idGestDieta');
+            $table->foreign('idGestDieta')->references('id')->on('gest_dieta');  
         });
     }
 
@@ -29,6 +28,6 @@ class CreateComidaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comida');
+        Schema::dropIfExists('dia_dieta');
     }
 }

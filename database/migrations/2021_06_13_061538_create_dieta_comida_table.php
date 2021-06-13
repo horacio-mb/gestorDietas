@@ -14,11 +14,12 @@ class CreateDietaComidaTable extends Migration
     public function up()
     {
         Schema::create('dieta_comida', function (Blueprint $table) {
-            $table->foreignId('id_dieta');
+            $table->foreignId('id_dia_dieta');
             $table->foreignId('id_comida');
-            $table->string('distribucion',30);
-            $table->primary(['id_dieta', 'id_comida']);
-            $table->foreign('id_dieta')->references('id')->on('dieta');
+            $table->integer('porcion');
+            $table->integer('cantidad');
+            $table->primary(['id_dia_dieta', 'id_comida']);
+            $table->foreign('id_dia_dieta')->references('id')->on('dia_dieta');
             $table->foreign('id_comida')->references('id')->on('comida');
         });
     }
