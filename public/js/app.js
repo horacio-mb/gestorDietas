@@ -3878,6 +3878,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     var _ref;
@@ -3904,7 +3936,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       total: 0.0,
       buscar: '',
       arrayDieta: []
-    }, _defineProperty(_ref, "id_comida", ''), _defineProperty(_ref, "comida", ''), _defineProperty(_ref, "id_dieta", 0), _defineProperty(_ref, "arrayFicha", []), _defineProperty(_ref, "id_ficha", 0), _ref;
+    }, _defineProperty(_ref, "id_comida", ''), _defineProperty(_ref, "comida", ''), _defineProperty(_ref, "id_gest_dieta", 0), _defineProperty(_ref, "arrayFicha", []), _defineProperty(_ref, "id_ficha", 0), _ref;
   },
   // volar esta mierda
   computed: {},
@@ -4107,9 +4139,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       me.arrayViernes.splice(index, 1);
     },
     nuevo: function nuevo() {
-      this.nombreDieta = '', this.fecha_inicio_dieta = '', this.fecha_final_dieta = '', this.id_cliente = 0;
+      this.id_ficha = '';
+      this.id_gest_dieta = '';
+      this.fecha_inicio_dieta = '';
+      this.fecha_final_dieta = '';
+      this.TipoDieta = '';
       this.cliente = '';
-      this.id_comida = '', this.descripcion = '', this.arrayDietaComida = [];
+      this.id_comida = '';
+      this.descripcion = '';
+      this.arrayLunes = [];
+      this.arrayMartes = [];
+      this.arrayMiercoles = [];
+      this.arrayJueves = [];
+      this.arrayViernes = [];
+      this.arrayDietaComida = [];
       this.errorMsj = '';
       this.respt = '';
     },
@@ -4134,6 +4177,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     listar: function listar(buscar) {
       var me = this;
       var url = '/dieta?buscar=' + buscar;
+      axios.get(url).then(function (response) {
+        me.arrayDieta = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    buscarNombre: function buscarNombre(buscar) {
+      var me = this;
+      var url = '/gestdieta/buscarnombre?buscar=' + buscar;
       axios.get(url).then(function (response) {
         me.arrayDieta = response.data;
       })["catch"](function (error) {
@@ -4182,12 +4234,56 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.listado = 1;
       this.listar('');
     },
+    seleccionarDieta: function seleccionarDieta() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+      console.log(data);
+      me.listado = 0;
+      this.respt = '';
+      this.id_ficha = data['idFichaMedica'];
+      this.id_gest_dieta = data['id'];
+      this.fecha_inicio_dieta = data['fechaInicio'];
+      this.fecha_final_dieta = data['fechaFinal'];
+      this.TipoDieta = data['tipo'];
+      this.cliente = data['nom_cliente'] + ' ' + data['apellido'];
+      var arrayDietaT = [];
+      var url = '/gestdieta/obtnerdia?id=' + this.id_gest_dieta + '&dia=lunes';
+      axios.get(url).then(function (response) {
+        me.arrayLunes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      url = '/gestdieta/obtnerdia?id=' + this.id_gest_dieta + '&dia=martes';
+      axios.get(url).then(function (response) {
+        me.arrayMartes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      url = '/gestdieta/obtnerdia?id=' + this.id_gest_dieta + '&dia=miercoles';
+      axios.get(url).then(function (response) {
+        me.arrayMiercoles = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      url = '/gestdieta/obtnerdia?id=' + this.id_gest_dieta + '&dia=jueves';
+      axios.get(url).then(function (response) {
+        me.arrayJueves = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      url = '/gestdieta/obtnerdia?id=' + this.id_gest_dieta + '&dia=viernes';
+      axios.get(url).then(function (response) {
+        me.arrayViernes = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
     modificarDetalle: function modificarDetalle(id) {
       var me = this;
       me.listado = 0;
       this.respt = '';
       var arrayDietaT = [];
-      var url = '/dieta/obtenerCabecera?id=' + id;
+      var url = '/gestdieta/obtnercabecera?id=' + id;
       axios.get(url).then(function (response) {
         arrayDietaT = response.data.dieta;
         console.log(arrayDietaT);
@@ -4210,19 +4306,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     modificarDieta: function modificarDieta() {
       var me = this;
-      axios.put('detalle/eliminar', {
-        id: this.id_dieta
+      axios.put('/detalle/eliminar', {
+        id: this.id_gest_dieta
       }).then(function (error) {//
       })["catch"](function (error) {
         console.log(error);
       });
       axios.put('/dieta/modificar', {
-        nombre: this.nombreDieta,
+        id: this.id_gest_dieta,
+        idFichaMedica: this.id_ficha,
         fechaInicio: this.fecha_inicio_dieta,
         fechaFinal: this.fecha_final_dieta,
-        id_cliente: this.id_cliente,
-        id: this.id_dieta,
-        data: this.arrayDietaComida
+        tipo: this.TipoDieta,
+        dataLunes: this.arrayLunes,
+        dataMartes: this.arrayMartes,
+        dataMiercoles: this.arrayMiercoles,
+        dataJueves: this.arrayJueves,
+        dataViernes: this.arrayViernes
       }).then(function (response) {
         me.respt = 'Dieta Modificada...!';
       })["catch"](function (error) {
@@ -43914,7 +44014,134 @@ var render = function() {
       { staticClass: "container" },
       [
         _vm.listado == 1
-          ? void 0
+          ? [
+              _c("center", [
+                _c("h3", [_vm._v("Busqueda de Dietas")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.buscar,
+                      expression: "buscar"
+                    }
+                  ],
+                  attrs: { type: "text", placeholder: "Nombre Cliente" },
+                  domProps: { value: _vm.buscar },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.buscar = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        return _vm.buscarNombre(_vm.buscar)
+                      }
+                    }
+                  },
+                  [_vm._v("Buscar por Nombre")]
+                ),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        return _vm.mostrarDetalle()
+                      }
+                    }
+                  },
+                  [_vm._v("Volver")]
+                ),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c("br"),
+                _vm._v(" "),
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-dark table-hover",
+                    attrs: { border: "1" }
+                  },
+                  [
+                    _c("thead", [
+                      _c("th", [_vm._v("IdGestDieta")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Cliente")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Fecha Inicio")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Fecha Final")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Tipo")]),
+                      _vm._v(" "),
+                      _c("th", [_vm._v("Opcion")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.arrayDieta, function(dieta) {
+                        return _c("tr", { key: dieta.id }, [
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.id) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: {
+                              textContent: _vm._s(
+                                dieta.nom_cliente + " " + dieta.apellido
+                              )
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.fechaInicio) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.fechaFinal) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", {
+                            domProps: { textContent: _vm._s(dieta.tipo) }
+                          }),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.seleccionarDieta(dieta)
+                                  }
+                                }
+                              },
+                              [_vm._v("Seleccionar")]
+                            )
+                          ])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                )
+              ])
+            ]
           : _vm.listado == 0
           ? [
               _c("h3", [_vm._v("Gestionar Dieta")]),
@@ -44673,6 +44900,8 @@ var render = function() {
               ),
               _vm._v(" "),
               _c("center", [
+                _c("h3", { domProps: { textContent: _vm._s(_vm.respt) } }),
+                _vm._v(" "),
                 _c("table", [
                   _c("td", { attrs: { colspan: "3" } }, [
                     _c(

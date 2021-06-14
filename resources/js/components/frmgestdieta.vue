@@ -3,6 +3,36 @@
         <div class="container">
             <!-- Busqueda de dietas -->
             <template v-if="listado==1">
+                <center>
+                    <h3>Busqueda de Dietas</h3>
+                    <input type="text" v-model="buscar" placeholder="Nombre Cliente">
+                    <button class="btn btn-primary" type="button" @click="buscarNombre(buscar)">Buscar por Nombre</button><br>
+                    <a href="#" @click="mostrarDetalle()">Volver</a>
+                    <br>
+                    <br>
+                    <table class="table table-dark table-hover" border="1">
+                        <thead>
+                            <th>IdGestDieta</th>
+                            <th>Cliente</th>                           
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Final</th>
+                            <th>Tipo</th>
+                            <th>Opcion</th>
+                        </thead>
+                        <tbody>
+                            <tr v-for="dieta in arrayDieta" :key="dieta.id">
+                                <td v-text="dieta.id"></td>
+                                <td v-text="dieta.nom_cliente +' '+dieta.apellido"></td>
+                                <td v-text="dieta.fechaInicio"></td>
+                                <td v-text="dieta.fechaFinal"></td>
+                                <td v-text="dieta.tipo"></td>
+                                <td>
+                                    <a href="#" @click="seleccionarDieta(dieta)">Seleccionar</a>                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </center>
             </template>
 
             <!-- Registro de DietaComida -->
@@ -29,6 +59,7 @@
                         </tr>
                     </table>
                 </form>
+                
                 <br>
                 <h4>Lunes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modelLunes">Agregar comida</a>
                 <table class="table table-dark table-hover" border="1">
@@ -170,6 +201,7 @@
                     </tbody>                    
                 </table>
                 <center>
+                    <h3 v-text="respt"></h3>
                     <table>
                         <td colspan="3">
                             <button class="btn btn-primary" type="button" @click="nuevo()">Nuevo</button>
@@ -471,7 +503,7 @@ export default {
             arrayDieta : [],
             id_comida:'',
             comida:'',
-            id_dieta : 0,
+            id_gest_dieta : 0,
             arrayFicha:[],
             id_ficha:0,
             
@@ -662,13 +694,19 @@ export default {
             me.arrayViernes.splice(index,1);
         },
         nuevo(){
-            this.nombreDieta='',
-            this.fecha_inicio_dieta = '',
-            this.fecha_final_dieta='',
-            this.id_cliente = 0;
+            this.id_ficha='';
+            this.id_gest_dieta='';
+            this.fecha_inicio_dieta = '';
+            this.fecha_final_dieta='';
+            this.TipoDieta = '';
             this.cliente = '';
-            this.id_comida='',
-            this.descripcion='',
+            this.id_comida='';
+            this.descripcion='';
+            this.arrayLunes=[];
+            this.arrayMartes=[];
+            this.arrayMiercoles=[];
+            this.arrayJueves=[];
+            this.arrayViernes=[];
             this.arrayDietaComida = [];
             this.errorMsj = '';
             this.respt='';
@@ -695,6 +733,16 @@ export default {
         listar(buscar){
             let me = this;
             var url='/dieta?buscar=' + buscar;
+            axios.get(url).then(function(response){
+                me.arrayDieta= response.data;
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+        },
+        buscarNombre(buscar){
+            let me = this;
+            var url='/gestdieta/buscarnombre?buscar=' + buscar;
             axios.get(url).then(function(response){
                 me.arrayDieta= response.data;
             })
@@ -750,12 +798,66 @@ export default {
             this.listado=1;
             this.listar('');
         },
+        seleccionarDieta(data=[]){
+            let me = this;
+            console.log(data);
+            me.listado=0;
+            this.respt='';
+            this.id_ficha=data['idFichaMedica'];
+            this.id_gest_dieta=data['id'];
+            this.fecha_inicio_dieta = data['fechaInicio'];
+            this.fecha_final_dieta=data['fechaFinal'];
+            this.TipoDieta = data['tipo'];
+            this.cliente = data['nom_cliente']+' '+data['apellido'];
+            let arrayDietaT=[];
+            var url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=lunes';
+            axios.get(url).then(function(response){
+                me.arrayLunes=response.data;
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=martes';
+            axios.get(url).then(function(response){
+                me.arrayMartes=response.data;
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=miercoles';
+            axios.get(url).then(function(response){
+                me.arrayMiercoles=response.data;
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=jueves';
+            axios.get(url).then(function(response){
+                me.arrayJueves=response.data;
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=viernes';
+            axios.get(url).then(function(response){
+                me.arrayViernes=response.data;
+                
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+
+        },
         modificarDetalle(id){
             let me = this;
             me.listado=0;
             this.respt='';
             let arrayDietaT=[];
-            var url='/dieta/obtenerCabecera?id=' + id;
+            var url='/gestdieta/obtnercabecera?id=' + id;
             axios.get(url).then(function(response){
                 arrayDietaT =response.data.dieta;
                 console.log(arrayDietaT);
@@ -781,8 +883,8 @@ export default {
         },
         modificarDieta(){
             let me = this;
-            axios.put('detalle/eliminar',{
-                id: this.id_dieta
+            axios.put('/detalle/eliminar',{
+                id: this.id_gest_dieta
             }).then(function(error){
                 //
             }).catch(function(error){
@@ -790,12 +892,16 @@ export default {
             }); 
 
             axios.put('/dieta/modificar',{
-                nombre: this.nombreDieta,
+                id: this.id_gest_dieta,
+                idFichaMedica: this.id_ficha,
                 fechaInicio : this.fecha_inicio_dieta,
-                fechaFinal : this.fecha_final_dieta,
-                id_cliente: this.id_cliente,
-                id : this.id_dieta,
-                data : this.arrayDietaComida
+                fechaFinal: this.fecha_final_dieta,
+                tipo:this.TipoDieta,
+                dataLunes: this.arrayLunes,
+                dataMartes: this.arrayMartes,
+                dataMiercoles: this.arrayMiercoles,
+                dataJueves: this.arrayJueves,
+                dataViernes: this.arrayViernes,
             }).then(function (response) {
                 me.respt = 'Dieta Modificada...!';
             }).catch(function (error) {
