@@ -13,13 +13,13 @@ class ConsultaController extends Controller
         $buscar= $request->buscar;
         if($buscar==''){
             $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
-            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->orderBy('consulta.id','desc')
             ->get();
         }
         else{
             $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
-            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->where('cliente.nombre','like','%'.$buscar.'%')
             ->orderBy('consulta.id','desc')
             ->get();
@@ -28,9 +28,24 @@ class ConsultaController extends Controller
     }
 
     
-    public function create()
+    public function buscafecha(Request $request)
     {
-        //
+        $fecha_inicio= $request->fecha_inicio;
+        $fecha_fin=$request->fecha_fin;
+        if($fecha_inicio==''|| $fecha_fin==''){
+            $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
+            ->orderBy('consulta.id','desc')
+            ->get();
+        }
+        else{
+            $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
+            ->where('consulta.fecha','like','%'.$buscar.'%')
+            ->orderBy('consulta.id','desc')
+            ->get();
+        }
+        return $resultado;
     }
 
    
@@ -47,7 +62,7 @@ class ConsultaController extends Controller
 
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $consulta= Consulta::findOrFail($request->id);
         $consulta->fecha=$request->fecha;
@@ -67,12 +82,12 @@ class ConsultaController extends Controller
         $buscar=$request->buscar;
         if($buscar==''){
             $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
-            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->get();
         }
         else{
             $resultado=Consulta::join()
-            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno')
+            ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->where('cliente.nombre','like','%'.$buscar.'%')
             ->get();
         }

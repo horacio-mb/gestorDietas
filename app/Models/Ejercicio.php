@@ -14,4 +14,7 @@ class Ejercicio extends Model
         'idTipoEjercicio',
     ];
     public $timestamps=false;
+    public function tipoejercicio(){
+        return $this->belongsTo(TipoEjercicio::class,'idTipoEjercicio');
+    }
 }

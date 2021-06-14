@@ -23,9 +23,19 @@
                             <a class="nav-link" href="#">Comida</a>
                         </li>
                         <li @click="menu=3">
+                            <a class="nav-link" href="#">Tipo de Ejercicio</a>
+                            </li>
+                            
+                            <li @click="menu=4">
+                            <a class="nav-link" href="#">Ejercicio</a>
+                            </li>
+                        <li @click="menu=5">
                             <a class="nav-link" href="#">Clientes</a>
                         </li>
-                        <li @click="menu=4">
+                        <li @click="menu=6">
+                            <a class="nav-link" href="#">Consulta</a>
+                        </li>
+                        <li @click="menu=7">
                             <a class="nav-link" href="#">Dietas</a>
                         </li>
                     </ul>
@@ -48,12 +58,24 @@
             <template v-if="menu==2">
                 <br><br>
                 <frmcomida></frmcomida>
-            </template>
+            </template>           
             <template v-if="menu==3">
+                <br><br>
+                <frmtipoejercicio></frmtipoejercicio>
+            </template>
+            <template v-if="menu==4">
+                <br><br>
+                <frmejercicio></frmejercicio>
+            </template>
+            <template v-if="menu==5">
                 <br><br>
                 <frmcliente></frmcliente>
             </template>
-            <template v-if="menu==4">
+            <template v-if="menu==6">
+                <br><br>
+                <frmconsulta></frmconsulta>
+            </template>
+            <template v-if="menu==7">
                 <br><br>
                 <frmdieta></frmdieta>
             </template>

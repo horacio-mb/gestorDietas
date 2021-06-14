@@ -12,4 +12,7 @@ class TipoEjercicio extends Model
         'nombre'
     ];
     public $timestamps=false;
+    public function ejercicios(){
+        return $this->hasMany(Ejercicio::class);
+    }
 }

@@ -8,6 +8,12 @@
                     <td><input type="text" v-model="descripcion" placeholder="Descripcion"></td>
 
                 </tr>
+
+                <tr>
+                    <td>Calorias</td>
+                    <td><input type="text" v-model="kcal" placeholder="kcal"></td>
+
+                </tr>
                 <tr>
                     <td>Id Tipo Comida</td>
                     <td>
@@ -37,6 +43,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Descripcion</th>
+                    <th>Calorias</th>
                     <th>Tipo de Comida</th>
                     <th>Opciones</th>
                 </tr>
@@ -45,6 +52,7 @@
                 <tr v-for="comida in arrayComida" :key="comida.id">
                     <td v-text="comida.id"></td>
                     <td v-text="comida.descripcion"></td>
+                    <td v-text="comida.kcal"></td>
                     <td v-text="comida.nom_comida"></td>
                     <td><a href="#" @click="llenar(comida)">Seleccionar</a></td>
                 </tr>
@@ -58,6 +66,7 @@
         data(){
             return{
                 descripcion :'',
+                kcal : 0,
                 id_tipo_comida : 0,
                 id_comida : 0,
                 nomb_tipo_comida :'',
@@ -91,6 +100,7 @@
                 let me = this;
                 axios.post('/comida/registrar',{
                     'descripcion': this.descripcion,
+                    'kcal':this.kcal,
                     'id_tipo_comida' : this.id_tipo_comida
                 }).then(function(error){
                     me.listar('');
@@ -102,6 +112,7 @@
                 let me = this;
                 axios.put('/comida/modificar',{
                     'descripcion': this.descripcion,
+                    'kcal':this.kcal,
                     'id_tipo_comida' : this.id_tipo_comida,
                     'id': this.id_comida
                 }).then(function(error){
@@ -123,10 +134,12 @@
             llenar(data=[]){
                 this.id_comida=data['id'];
                 this.descripcion=data['descripcion'];
+                this.kcal=data['kcal'];
                 this.id_tipo_comida=data['id_tipo_comida'];
             },
             nuevo(){
                 this.descripcion = '';
+                this.kcal = 0;
                 this.id_tipo_comida=0;
             },
 

@@ -22,7 +22,10 @@ window.Vue = require('vue').default;
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
  Vue.component('frmtipocomida', require('./components/frmtipocomida.vue').default);
  Vue.component('frmcomida', require('./components/frmcomida.vue').default);
+ Vue.component('frmtipoejercicio', require('./components/frmtipoejercicio.vue').default);
+ Vue.component('frmejercicio', require('./components/frmejercicio.vue').default);
  Vue.component('frmcliente', require('./components/frmcliente.vue').default);
+ Vue.component('frmconsulta', require('./components/frmconsulta.vue').default);
  Vue.component('frmdieta', require('./components/frmdieta.vue').default);
 
 /**

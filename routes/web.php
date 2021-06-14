@@ -2,14 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\ComidaController;
-//use App\Http\Controllers\DietaController;
-use App\Http\Controllers\TipoComidaController;
 
 use App\Http\Controllers\ConsultaController;
 use App\Http\Controllers\FichaMedicaController;
 use App\Http\Controllers\CuestionarioController;
+
+use App\Http\Controllers\ComidaController;
+use App\Http\Controllers\TipoComidaController;
+//use App\Http\Controllers\DietaController;
+use App\Http\Controllers\TipoEjercicioController;
+use App\Http\Controllers\EjercicioController;
+
 use App\Http\Controllers\GestDietaController;
 use App\Http\Controllers\GestRutinaController;
 use App\Http\Controllers\DiaDietaController;
@@ -46,6 +51,15 @@ Route::post('/comida/registrar',[ComidaController::class,'store']);
 Route::put('/comida/modificar',[ComidaController::class,'update']);
 Route::put('/comida/eliminar',[ComidaController::class,'delete']);
 Route::get('/comida/selectComida',[ComidaController::class,'selectComida']);
+
+
+// Rutas para tipo Ejercicio
+Route::get('/tipo_ejercicio',[TipoEjercicioController::class,'index']);
+Route::post('/tipo_ejercicio/registrar',[TipoEjercicioController::class,'store']);
+Route::put('/tipo_ejercicio/modificar',[TipoEjercicioController::class,'update']);
+Route::put('/tipo_ejercicio/eliminar',[TipoEjercicioController::class,'delete']);
+Route::get('/tipo_ejercicio/selectTipoEjercicio',[TipoEjercicioController::class,'selectTipoEjercicio']);
+
 
 
 //Rutas para Cliente
