@@ -77,12 +77,14 @@ Route::put('/consulta/eliminar',[ConsultaController::class,'delete']);
 Route::get('/consulta/selectConsulta',[ConsultaController::class,'selectConsulta']);
 Route::get('/consulta/fechas',[ConsultaController::class,'buscafecha']);
 
+
 //Rutas para Ficha Medica
 Route::get('/fichamedica',[FichaMedicaController::class,'index']);
-Route::post('/fichamedia/registrar',[FichaMedicaController::class,'store']);
+Route::post('/fichamedica/registrar',[FichaMedicaController::class,'store']);
 Route::put('/fichamedica/modificar',[FichaMedicaController::class,'update']);
 Route::put('/fichamedica/eliminar',[FichaMedicaController::class,'delete']);
-Route::get('/fichamedia/selectFicha',[FichaMedicaController::class,'selectFicha']);
+Route::get('/fichamedica/selectFicha',[FichaMedicaController::class,'selectFicha']);
+Route::get('/fichamedica/fechas',[FichaMedicaController::class,'buscafecha']);
 
 //Rutas para Cuestionario
 Route::get('/cuestionario',[CuestionarioController::class,'index']);

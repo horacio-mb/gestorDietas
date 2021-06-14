@@ -27,11 +27,21 @@
                 </tr>
             </table>
             <br>
+            <table>
+                <tr>
+                    <td>Buscar por Cliente</td>
+                </tr>
+                <tr>
+                    <td><input type="text" v-model="buscarcli" placeholder="Nombre Cliente"></td>
+                    <button class="btn btn-success" type="button" @click="listar(buscarcli)">Buscar</button>
+                
+                </tr>
+            </table>
             <br>
 
             <table>
                 <tr>
-                    <td>Buscar consultas por fecha</td>
+                    <td>Buscar consultas por rango de fecha</td>
                 </tr>
                 <tr>
                     <td>Fecha Inicio</td>
@@ -55,6 +65,7 @@
         <th>Apellido</th>
         <th>Fecha</th>
         <th>Fecha Reconsulta</th>
+        <th>Opciones</th>
         </thead>
         <tbody>
             <tr v-for="consulta in arrayConsulta" :key="consulta.id">
@@ -128,7 +139,7 @@ export default{
     return {
         id_consulta : 0,
         id_cliente:0,
-        id_usuario:0,
+        id_usuario:1,
         nom_cliente:'',
         fecha : '',
         fecha_reconsulta : '',
@@ -139,6 +150,7 @@ export default{
         buscar:'',
         buscarC : '',
         cliente : '',
+        buscarcli:'',
     }
   },
   methods: {
@@ -156,6 +168,8 @@ export default{
                 console.log(error);
             });
         },
+        //buscarcli
+        
         seleccionarCliente(data=[]){
             this.id_cliente = data['id'];
             this.cliente=data['nombre']+' '+ data['apellido_paterno'];
@@ -189,13 +203,23 @@ export default{
                 console.log(error);
             })
        },
+       buscarCliente2(buscarcli){
+           let me = this;
+           var url= '/consulta/selectConsulta?buscar=' +buscarcli;
+           axios.get(url).then(function(response){
+                me.arrayConsulta = response.data;  
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+       },
        guardar(){
             let me= this;
             axios.post('/consulta/registrar',{
                 'fecha': this.fecha,
                 'fecha_reconsulta': this.fecha_reconsulta,
                 'id_cliente':this.id_cliente,
-                'id_usuario':1,
+                'id_usuario':1
             }).then(function(error){
                 me.listar('');
             }).catch(function(error){
@@ -225,12 +249,6 @@ export default{
             }).catch(function(error){
                 console.log(error);
             });  
-       },
-       llenar(data=[]){
-            this.id_consulta=data['id'];
-            this.fecha=data['fecha'];
-            this.fecha_reconsulta=data['fecha_reconsulta'];
-            this.id_cliente=data['id_cliente'];
        },
         nuevo(){
                 this.fecha = '';

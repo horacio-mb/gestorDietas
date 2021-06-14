@@ -47,11 +47,12 @@ class ConsultaController extends Controller
         }
         return $resultado;
     }
+    //buscacliente
 
    
     public function store(Request $request)
     {
-        $consulta = new Consulta();
+        $consulta = new Consulta;
         $consulta->fecha=$request->fecha;
         $consulta->fecha_reconsulta=$request->fecha_reconsulta;
         $consulta->id_cliente=$request->id_cliente;

@@ -36,6 +36,9 @@
                             <a class="nav-link" href="#">Consulta</a>
                         </li>
                         <li @click="menu=7">
+                            <a class="nav-link" href="#">Ficha Médica</a>
+                        </li>
+                        <li @click="menu=8">
                             <a class="nav-link" href="#">Dietas</a>
                         </li>
                     </ul>
@@ -76,6 +79,10 @@
                 <frmconsulta></frmconsulta>
             </template>
             <template v-if="menu==7">
+                <br><br>
+                <frmfichamedica></frmfichamedica>
+            </template>
+            <template v-if="menu==8">
                 <br><br>
                 <frmdieta></frmdieta>
             </template>

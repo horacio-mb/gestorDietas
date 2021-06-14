@@ -26,6 +26,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  Vue.component('frmejercicio', require('./components/frmejercicio.vue').default);
  Vue.component('frmcliente', require('./components/frmcliente.vue').default);
  Vue.component('frmconsulta', require('./components/frmconsulta.vue').default);
+ Vue.component('frmfichamedica', require('./components/frmfichamedica.vue').default);
  Vue.component('frmdieta', require('./components/frmdieta.vue').default);
 
 /**
