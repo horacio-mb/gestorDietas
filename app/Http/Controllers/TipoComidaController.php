@@ -51,12 +51,12 @@ class TipoComidaController extends Controller
     public function selectComida(Request $request){
         $buscar=$request->buscar;
         if($buscar==''){
-            $comida =TipoComida::join('comida','tipo_comida.id_tipo_comida','=','comida.id_tipo_comida')
+            $comida =TipoComida::join('comida','tipo_comida.id','=','comida.id_tipo_comida')
             ->select('tipo_comida.id','tipo_comida.nombre',)
             ->get();
         }
         else{
-            $comida =TipoComida::join('comida','tipo_comida.id_tipo_comida','=','comida.id_tipo_comida')
+            $comida =TipoComida::join('comida','tipo_comida.id','=','comida.id_tipo_comida')
             ->select('tipo_comida.id','tipo_comida.nombre')
             ->where('nombre','like','%'.$buscar.'%')
             ->get();

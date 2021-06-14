@@ -2130,11 +2130,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       descripcion: '',
-      kcal: 0,
+      kcal: '',
       id_tipo_comida: 0,
       id_comida: 0,
       nomb_tipo_comida: '',
@@ -3013,6 +3023,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3049,7 +3070,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/ejercicio/registrar', {
         'nombre': this.nombre,
         'descripcion': this.descripcion,
-        'id_tipo_ejercicio': this.id_tipo_ejercicio
+        'idTipoEjercicio': this.id_tipo_ejercicio
       }).then(function (error) {
         me.listar('');
       })["catch"](function (error) {
@@ -3061,7 +3082,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.put('/ejercicio/modificar', {
         'nombre': this.nombre,
         'descripcion': this.descripcion,
-        'id_tipo_ejercicio': this.id_tipo_ejercicio,
+        'idTipoEjercicio': this.id_tipo_ejercicio,
         'id': this.id_ejercicio
       }).then(function (error) {
         me.listar('');
@@ -3084,7 +3105,7 @@ __webpack_require__.r(__webpack_exports__);
       this.id_ejercicio = data['id'];
       this.nombre = data['nombre'];
       this.descripcion = data['descripcion'];
-      this.id_tipo_ejercicio = data['id_tipo_ejercicio'];
+      this.id_tipo_ejercicio = data['idTipoEjercicio'];
     },
     nuevo: function nuevo() {
       this.nombre = '';
@@ -3441,6 +3462,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3518,6 +3548,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -40247,6 +40285,7 @@ var render = function() {
                   expression: "descripcion"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Descripcion" },
               domProps: { value: _vm.descripcion },
               on: {
@@ -40274,7 +40313,8 @@ var render = function() {
                   expression: "kcal"
                 }
               ],
-              attrs: { type: "text", placeholder: "kcal" },
+              staticClass: "form-control",
+              attrs: { type: "number", placeholder: "kcal" },
               domProps: { value: _vm.kcal },
               on: {
                 input: function($event) {
@@ -40289,7 +40329,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("tr", [
-          _c("td", [_vm._v("Id Tipo Comida")]),
+          _c("td", [_vm._v("Tipo Comida")]),
           _vm._v(" "),
           _c("td", [
             _c(
@@ -40303,6 +40343,7 @@ var render = function() {
                     expression: "id_tipo_comida"
                   }
                 ],
+                staticClass: "form-control",
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -40400,40 +40441,53 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.buscar,
-            expression: "buscar"
-          }
-        ],
-        attrs: { type: "text", placeholder: "Descripcion comida" },
-        domProps: { value: _vm.buscar },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.buscar = $event.target.value
-          }
-        }
-      }),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.listar(_vm.buscar)
-            }
-          }
-        },
-        [_vm._v("Buscar por Descripcion")]
-      )
+      _c("br"),
+      _vm._v(" "),
+      _c("table", [
+        _c("tr", [
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.buscar,
+                  expression: "buscar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Descripcion comida" },
+              domProps: { value: _vm.buscar },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.buscar = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.listar(_vm.buscar)
+                  }
+                }
+              },
+              [_vm._v("Buscar por Descripcion")]
+            )
+          ])
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("br"),
@@ -41984,6 +42038,7 @@ var render = function() {
                   expression: "nombre"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Nombre" },
               domProps: { value: _vm.nombre },
               on: {
@@ -42002,7 +42057,7 @@ var render = function() {
           _c("td", [_vm._v("Descripcion")]),
           _vm._v(" "),
           _c("td", [
-            _c("input", {
+            _c("textarea", {
               directives: [
                 {
                   name: "model",
@@ -42011,7 +42066,8 @@ var render = function() {
                   expression: "descripcion"
                 }
               ],
-              attrs: { type: "text", placeholder: "Descripcion" },
+              staticClass: "form-control",
+              attrs: { placeholder: "Descripcion", rows: "3" },
               domProps: { value: _vm.descripcion },
               on: {
                 input: function($event) {
@@ -42026,7 +42082,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("tr", [
-          _c("td", [_vm._v("Id Tipo Ejercicio")]),
+          _c("td", [_vm._v("Tipo Ejercicio")]),
           _vm._v(" "),
           _c("td", [
             _c(
@@ -42040,6 +42096,7 @@ var render = function() {
                     expression: "id_tipo_ejercicio"
                   }
                 ],
+                staticClass: "form-control",
                 on: {
                   change: function($event) {
                     var $$selectedVal = Array.prototype.filter
@@ -42137,40 +42194,52 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.buscar,
-            expression: "buscar"
-          }
-        ],
-        attrs: { type: "text", placeholder: "Nombre Ejercicio" },
-        domProps: { value: _vm.buscar },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.buscar = $event.target.value
-          }
-        }
-      }),
+      _c("br"),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.listar(_vm.buscar)
-            }
-          }
-        },
-        [_vm._v("Buscar por Nombre")]
-      )
+      _c("table", [
+        _c("tr", [
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.buscar,
+                  expression: "buscar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Nombre Ejercicio" },
+              domProps: { value: _vm.buscar },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.buscar = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.listar(_vm.buscar)
+                  }
+                }
+              },
+              [_vm._v("Buscar por Nombre")]
+            )
+          ])
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("br"),
@@ -42922,6 +42991,7 @@ var render = function() {
                   expression: "nombre"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Nombre Tipo Comida" },
               domProps: { value: _vm.nombre },
               on: {
@@ -42997,40 +43067,52 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.buscar,
-            expression: "buscar"
-          }
-        ],
-        attrs: { type: "text", placeholder: "Tipo de Comida" },
-        domProps: { value: _vm.buscar },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.buscar = $event.target.value
-          }
-        }
-      }),
+      _c("br"),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.listar(_vm.buscar)
-            }
-          }
-        },
-        [_vm._v(" Buscar por nombre ")]
-      ),
+      _c("table", [
+        _c("tr", [
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.buscar,
+                  expression: "buscar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Tipo de Comida" },
+              domProps: { value: _vm.buscar },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.buscar = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.listar(_vm.buscar)
+                  }
+                }
+              },
+              [_vm._v(" Buscar por nombre ")]
+            )
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("br"),
       _vm._v(" "),
@@ -43131,6 +43213,7 @@ var render = function() {
                   expression: "nombre"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Nombre Tipo Ejercicio" },
               domProps: { value: _vm.nombre },
               on: {
@@ -43206,43 +43289,54 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.buscar,
-            expression: "buscar"
-          }
-        ],
-        attrs: { type: "text", placeholder: "Tipo de Ejercicio" },
-        domProps: { value: _vm.buscar },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.buscar = $event.target.value
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.listar(_vm.buscar)
-            }
-          }
-        },
-        [_vm._v(" Buscar por nombre ")]
-      ),
-      _vm._v(" "),
+      _c("br"),
       _c("br"),
       _vm._v(" "),
+      _c("table", [
+        _c("tr", [
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.buscar,
+                  expression: "buscar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Tipo de Ejercicio" },
+              domProps: { value: _vm.buscar },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.buscar = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.listar(_vm.buscar)
+                  }
+                }
+              },
+              [_vm._v(" Buscar por nombre ")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("br"),
       _c("br")
     ]),
     _vm._v(" "),

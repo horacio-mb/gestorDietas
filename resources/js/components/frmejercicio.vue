@@ -6,19 +6,20 @@
 
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" v-model="nombre" placeholder="Nombre"></td>
+                    <td><input class="form-control" type="text" v-model="nombre" placeholder="Nombre"></td>
 
                 </tr>
                 <tr>
+                    
                     <td>Descripcion</td>
-                    <td><input type="text" v-model="descripcion" placeholder="Descripcion"></td>
+                    <td><textarea class="form-control" v-model="descripcion" placeholder="Descripcion" rows="3"></textarea></td>
 
                 </tr>
 
                 <tr>
-                    <td>Id Tipo Ejercicio</td>
+                    <td>Tipo Ejercicio</td>
                     <td>
-                        <select v-model="id_tipo_ejercicio">
+                        <select class="form-control" v-model="id_tipo_ejercicio">
                             <option value="0" disabled>Seleccione</option>
                             <option v-for="tipo_ejercicio in arrayTipoEjercicio" :key="tipo_ejercicio.id" :value="tipo_ejercicio.id"
                             v-text="tipo_ejercicio.nombre"></option>
@@ -34,8 +35,18 @@
                     </td>
                 </tr>
             </table>
-            <input type="text" v-model="buscar" placeholder="Nombre Ejercicio">
-            <button class="btn btn-primary" type="button" @click="listar(buscar)">Buscar por Nombre</button>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" v-model="buscar" placeholder="Nombre Ejercicio">
+                    </td>
+                    <td>
+                        <button class="btn btn-success" type="button" @click="listar(buscar)">Buscar por Nombre</button>
+                    </td>                    
+                </tr>
+            </table>
+            
         </form>
         <br>
         <br>
@@ -102,7 +113,7 @@
                 axios.post('/ejercicio/registrar',{
                     'nombre': this.nombre,
                     'descripcion': this.descripcion,
-                    'id_tipo_ejercicio' : this.id_tipo_ejercicio
+                    'idTipoEjercicio' : this.id_tipo_ejercicio
                 }).then(function(error){
                     me.listar('');
                 }).catch(function(error){
@@ -114,7 +125,7 @@
                 axios.put('/ejercicio/modificar',{
                     'nombre': this.nombre,
                     'descripcion': this.descripcion,
-                    'id_tipo_ejercicio' : this.id_tipo_ejercicio,
+                    'idTipoEjercicio' : this.id_tipo_ejercicio,
                     'id': this.id_ejercicio
                 }).then(function(error){
                     me.listar('');
@@ -136,7 +147,7 @@
                 this.id_ejercicio=data['id'];
                 this.nombre=data['nombre'];
                 this.descripcion=data['descripcion'];
-                this.id_tipo_ejercicio=data['id_tipo_ejercicio'];
+                this.id_tipo_ejercicio=data['idTipoEjercicio'];
             },
             nuevo(){
                 this.nombre = '';

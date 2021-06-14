@@ -5,19 +5,19 @@
             <table>
                 <tr>
                     <td>Descripcion</td>
-                    <td><input type="text" v-model="descripcion" placeholder="Descripcion"></td>
+                    <td><input class="form-control" type="text" v-model="descripcion" placeholder="Descripcion"></td>
 
                 </tr>
 
                 <tr>
                     <td>Calorias</td>
-                    <td><input type="text" v-model="kcal" placeholder="kcal"></td>
+                    <td><input class="form-control" type="number" v-model="kcal" placeholder="kcal"></td>
 
                 </tr>
                 <tr>
-                    <td>Id Tipo Comida</td>
+                    <td>Tipo Comida</td>
                     <td>
-                        <select v-model="id_tipo_comida">
+                        <select class="form-control" v-model="id_tipo_comida">
                             <option value="0" disabled>Seleccione</option>
                             <option v-for="tipo_comida in arrayTipoComida" :key="tipo_comida.id" :value="tipo_comida.id"
                             v-text="tipo_comida.nombre"></option>
@@ -33,8 +33,18 @@
                     </td>
                 </tr>
             </table>
-            <input type="text" v-model="buscar" placeholder="Descripcion comida">
-            <button class="btn btn-primary" type="button" @click="listar(buscar)">Buscar por Descripcion</button>
+            <br>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" v-model="buscar" placeholder="Descripcion comida">
+                    </td>
+                    <td>
+                        <button class="btn btn-success" type="button" @click="listar(buscar)">Buscar por Descripcion</button>
+                    </td>
+                </tr>
+            </table>           
         </form>
         <br>
         <br>
@@ -66,7 +76,7 @@
         data(){
             return{
                 descripcion :'',
-                kcal : 0,
+                kcal : '',
                 id_tipo_comida : 0,
                 id_comida : 0,
                 nomb_tipo_comida :'',
@@ -101,7 +111,7 @@
                 axios.post('/comida/registrar',{
                     'descripcion': this.descripcion,
                     'kcal':this.kcal,
-                    'id_tipo_comida' : this.id_tipo_comida
+                    'id_tipo_comida' : this.id_tipo_comida,
                 }).then(function(error){
                     me.listar('');
                 }).catch(function(error){

@@ -5,7 +5,7 @@
             <table>
                 <tr>
                    <td>Nombre</td>
-                   <td><input type="text" v-model="nombre" placeholder="Nombre Tipo Comida"></td>
+                   <td><input class="form-control" type="text" v-model="nombre" placeholder="Nombre Tipo Comida"></td>
                 </tr>
                 <tr>
                 <td colspan="3">
@@ -16,8 +16,17 @@
                 </td>
                 </tr>  
             </table>
-            <input type="text" v-model="buscar" placeholder="Tipo de Comida">
-            <button class="btn btn-primary" type="button" @click="listar(buscar)"> Buscar por nombre </button>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" v-model="buscar" placeholder="Tipo de Comida">
+                    </td>
+                    <td>
+                        <button class="btn btn-success" type="button" @click="listar(buscar)"> Buscar por nombre </button>
+                    </td>
+                </tr>
+            </table>
             <br>
             <br>
         </form>

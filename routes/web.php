@@ -59,7 +59,12 @@ Route::post('/tipo_ejercicio/registrar',[TipoEjercicioController::class,'store']
 Route::put('/tipo_ejercicio/modificar',[TipoEjercicioController::class,'update']);
 Route::put('/tipo_ejercicio/eliminar',[TipoEjercicioController::class,'delete']);
 Route::get('/tipo_ejercicio/selectTipoEjercicio',[TipoEjercicioController::class,'selectTipoEjercicio']);
-
+//Rutas para Ejercicio
+Route::get('/ejercicio',[EjercicioController::class,'index']);
+Route::post('/ejercicio/registrar',[EjercicioController::class,'store']);
+Route::put('/ejercicio/modificar',[EjercicioController::class,'update']);
+Route::put('/ejercicio/eliminar',[EjercicioController::class,'delete']);
+Route::get('/ejercicio/selectEjercicio',[EjercicioController::class,'selectEjercicio']);
 
 
 //Rutas para Cliente
