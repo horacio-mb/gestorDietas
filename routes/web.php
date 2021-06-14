@@ -100,7 +100,7 @@ Route::get('/cuestionario/selectCuestionario',[CuestionarioController::class,'se
 
 //Rutas para Gestionar Dieta
 Route::get('/gestdieta',[GestDietaController::class,'index']);
-Route::post('/gestdieta/registrar',[GestDietaController::class,'store']);
+Route::post('/gestdieta/registrar',[GestDietaController::class,'store']);//cambiar
 Route::put('/gestdieta/modificar',[GestDietaController::class,'update']);
 Route::put('/gestdieta/eliminar',[GestDietaController::class,'delete']);
 Route::get('/gestdieta/selectGestDieta',[GestDietaController::class,'selectGestDieta']);

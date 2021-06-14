@@ -5,33 +5,33 @@
             <table>
                 <tr>
                     <td>Nombre</td>
-                    <td><input type="text" v-model="nombre" placeholder="Nombre Cliente"></td>
+                    <td><input class="form-control" type="text" v-model="nombre" placeholder="Nombre Cliente"></td>
                 </tr>
                  <tr>
                     <td>Apellido Paterno</td>
-                    <td><input type="text" v-model="apellido_paterno" placeholder="Apellidos Paterno"></td>
+                    <td><input class="form-control" type="text" v-model="apellido_paterno" placeholder="Apellidos Paterno"></td>
                 </tr>
                  <tr>
                     <td>Apellido Materno</td>
-                    <td><input type="text" v-model="apellido_materno" placeholder="Apellidos Materno"></td>
+                    <td><input class="form-control" type="text" v-model="apellido_materno" placeholder="Apellidos Materno"></td>
                 </tr>
                 <tr>
                     <td>Fecha de Nacimiento</td>
-                    <td><input type="date" v-model="fecha_nacimiento" placeholder="Fecha Nacimiento"></td>
+                    <td><input class="form-control" type="date" v-model="fecha_nacimiento" placeholder="Fecha Nacimiento"></td>
                 </tr>
                  <tr>
                     <td>Correo</td>
-                    <td><input type="email" v-model="correo" placeholder="Correo Cliente"></td>
+                    <td><input class="form-control" type="email" v-model="correo" placeholder="Correo Cliente"></td>
                 </tr>
                  <tr>
                     <td>Telefono</td>
-                    <td><input type="text" v-model="telefono" placeholder="Telefono Cliente"></td>
+                    <td><input class="form-control" type="text" v-model="telefono" placeholder="Telefono Cliente"></td>
                 </tr>
                  <tr>
                     <td>Sexo</td>
                     
                     <td><input type="radio"  v-model="sexo" value="m"><label>Masculino</label><br>
-                    <input type="radio"  v-model="sexo" value="f"><label>Femenino</label></td>
+                    <input  type="radio"  v-model="sexo" value="f"><label>Femenino</label></td>
                 </tr>
                 <tr>
                     <td colspan="3">
@@ -42,8 +42,19 @@
                     </td>
                 </tr>
             </table>
-            <input type="text" v-model="buscar" placeholder="Nombre Cliente">
-            <button class="btn btn-primary" type="button" @click="listar(buscar)">Buscar por Nombre</button>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <input class="form-control" type="text" v-model="buscar" placeholder="Nombre Cliente">
+                    </td>
+                    <td>
+                        <button class="btn btn-success" type="button" @click="listar(buscar)">Buscar por Nombre</button>
+                    </td>
+                </tr>
+            </table>
+            
+            
         </form>
         <br>
         <br>

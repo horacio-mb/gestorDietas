@@ -6,16 +6,16 @@
             <table>
                 <tr>
                     <td>Nombre Cliente</td>
-                    <td><input type="text" v-model="cliente" placeholder="Agregar Cliente"></td>
+                    <td><input class="form-control" type="text" v-model="cliente" placeholder="Agregar Cliente"></td>
                     <a href="#" @click="frmBuscarCliente()" data-toggle="modal" data-target="#modalCliente">Buscar cliente</a>
                 </tr>
                 <tr>
                     <td>Fecha Consulta</td>
-                    <td><input type="date" v-model="fecha" placeholder="Fecha Consulta"></td>
+                    <td><input class="form-control" type="date" v-model="fecha" placeholder="Fecha Consulta"></td>
                 </tr>
                 <tr>
                     <td>Fecha Reconsulta</td>
-                    <td><input type="date" v-model="fecha_reconsulta" placeholder="Fecha Reconsulta"></td>
+                    <td><input class="form-control" type="date" v-model="fecha_reconsulta" placeholder="Fecha Reconsulta"></td>
                 </tr>
                 <tr>
                 <td colspan="3">
@@ -32,7 +32,7 @@
                     <td>Buscar por Cliente</td>
                 </tr>
                 <tr>
-                    <td><input type="text" v-model="buscarcli" placeholder="Nombre Cliente"></td>
+                    <td><input  class="form-control" type="text" v-model="buscarcli" placeholder="Nombre Cliente"></td>
                     <button class="btn btn-success" type="button" @click="listar(buscarcli)">Buscar</button>
                 
                 </tr>
@@ -45,11 +45,11 @@
                 </tr>
                 <tr>
                     <td>Fecha Inicio</td>
-                    <td><input type="date" v-model="fecha_inicio" ></td>
+                    <td><input class="form-control" type="date" v-model="fecha_inicio" ></td>
                 </tr>
                 <tr>
                     <td>Fecha Fin</td>
-                    <td><input type="date" v-model="fecha_fin" ></td>
+                    <td><input  class="form-control" type="date" v-model="fecha_fin" ></td>
                 </tr>
                 <tr>
                     <button class="btn btn-success" type="button" @click="buscarfechas(fecha_inicio,fecha_fin)">Buscar</button>

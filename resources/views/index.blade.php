@@ -12,10 +12,12 @@
 <body>
     <div id="app">
         <div class="app-body">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a @click="menu=0" class="navbar-brand" href="#">Inicio</a>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">               
                 <div>
                     <ul class="navbar-nav mr-auto">
+                        <li @click="menu=0">
+                            <a class="navbar-brand" href="#">Inicio</a>
+                        </li>
                         <li @click="menu=1">
                             <a class="nav-link" href="#">Tipo de Comida</a>
                         </li>
@@ -39,6 +41,9 @@
                             <a class="nav-link" href="#">Ficha Médica</a>
                         </li>
                         <li @click="menu=8">
+                            <a class="nav-link" href="#">Gestionar Dieta</a>
+                        </li>
+                        <li @click="menu=9">
                             <a class="nav-link" href="#">Dietas</a>
                         </li>
                     </ul>
@@ -46,11 +51,11 @@
             </nav>
             <!-- Menu Principal -->
             <template v-if="menu==0">
-                <b><div class="bg-2"> <center>
+                <center>
                     <h1 class="t-stroke-shadow"><HR> <br> <br> SISTEMA <br> DE GESTIÓN <BR> DE DIETAS <br>
                     <br>
                 <br>
-            <img src="https://www.upsa.edu.bo/images/logo-upsa.jpg"> </center>
+            <img src="https://www.upsa.edu.bo/images/logo-upsa.jpg"> </center> 
             </template>
 
             <template v-if="menu==1">
@@ -83,6 +88,10 @@
                 <frmfichamedica></frmfichamedica>
             </template>
             <template v-if="menu==8">
+                <br><br>
+                <frmgestdieta></frmgestdieta>
+            </template>
+            <template v-if="menu==9">
                 <br><br>
                 <frmdieta></frmdieta>
             </template>

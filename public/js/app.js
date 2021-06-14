@@ -1958,6 +1958,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3408,6 +3419,824 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    var _ref;
+
+    return _ref = {
+      listado: 0,
+      TipoDieta: '',
+      fecha_inicio_dieta: '',
+      fecha_final_dieta: '',
+      arrayCliente: [],
+      buscarC: '',
+      cliente: '',
+      arrayComida: [],
+      buscarComid: '',
+      errorMsj: '',
+      id_comida: '',
+      distribucion: '',
+      respt: '',
+      arrayLunes: [],
+      arrayMartes: [],
+      arrayMiercoles: [],
+      arrayJueves: [],
+      arrayViernes: [],
+      total: 0.0,
+      buscar: '',
+      arrayDieta: []
+    }, _defineProperty(_ref, "id_comida", ''), _defineProperty(_ref, "comida", ''), _defineProperty(_ref, "id_dieta", 0), _defineProperty(_ref, "arrayFicha", []), _defineProperty(_ref, "id_ficha", 0), _ref;
+  },
+  // volar esta mierda
+  computed: {},
+  methods: {
+    frmBuscarFicha: function frmBuscarFicha() {
+      this.arrayFicha = [];
+      this.buscarC = '';
+    },
+    frmBuscarComida: function frmBuscarComida() {
+      this.arrayComida = [];
+      this.buscarComid = '';
+      this.errorMsj = '';
+    },
+    buscarFicha: function buscarFicha(buscarC) {
+      var me = this;
+      var url = '/fichamedica?buscar=' + buscarC;
+      axios.get(url).then(function (response) {
+        me.arrayFicha = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    seleccionarFicha: function seleccionarFicha() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      this.id_ficha = data['id'];
+      this.cliente = data['nom_cliente'] + ' ' + data['apellido'];
+    },
+    buscarComida: function buscarComida(buscarComid) {
+      var me = this;
+      var url = '/comida/selectComida?buscar=' + buscarComid;
+      axios.get(url).then(function (response) {
+        me.arrayComida = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    encuentraLunes: function encuentraLunes(id) {
+      var sw = 0;
+
+      for (var i = 0; i < this.arrayLunes.length; i++) {
+        if (this.arrayLunes[i].id_comida == id) {
+          sw = true;
+        }
+      }
+
+      return sw;
+    },
+    encuentraMartes: function encuentraMartes(id) {
+      var sw = 0;
+
+      for (var i = 0; i < this.arrayMartes.length; i++) {
+        if (this.arrayMartes[i].id_comida == id) {
+          sw = true;
+        }
+      }
+
+      return sw;
+    },
+    encuentraMiercoles: function encuentraMiercoles(id) {
+      var sw = 0;
+
+      for (var i = 0; i < this.arrayMiercoles.length; i++) {
+        if (this.arrayMiercoles[i].id_comida == id) {
+          sw = true;
+        }
+      }
+
+      return sw;
+    },
+    encuentraJueves: function encuentraJueves(id) {
+      var sw = 0;
+
+      for (var i = 0; i < this.arrayJueves.length; i++) {
+        if (this.arrayJueves[i].id_comida == id) {
+          sw = true;
+        }
+      }
+
+      return sw;
+    },
+    encuentraViernes: function encuentraViernes(id) {
+      var sw = 0;
+
+      for (var i = 0; i < this.arrayViernes.length; i++) {
+        if (this.arrayViernes[i].id_comida == id) {
+          sw = true;
+        }
+      }
+
+      return sw;
+    },
+    seleccionarLunes: function seleccionarLunes() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+
+      if (me.encuentraLunes(data['id'])) {
+        this.errorMsj = 'Ya se encuentra agregado...';
+      } else {
+        me.arrayLunes.push({
+          id_comida: data['id'],
+          comida: data['descripcion'],
+          kcal: data['kcal'],
+          porcion: 1,
+          cantidad: 1,
+          distribucion: data['nom_comida']
+        });
+        this.errorMsj = 'Agregado...';
+      }
+    },
+    seleccionarMartes: function seleccionarMartes() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+
+      if (me.encuentraMartes(data['id'])) {
+        this.errorMsj = 'Ya se encuentra agregado...';
+      } else {
+        me.arrayMartes.push({
+          id_comida: data['id'],
+          comida: data['descripcion'],
+          kcal: data['kcal'],
+          porcion: 1,
+          cantidad: 1,
+          distribucion: data['nom_comida']
+        });
+        this.errorMsj = 'Agregado...';
+      }
+    },
+    seleccionarMiercoles: function seleccionarMiercoles() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+
+      if (me.encuentraMiercoles(data['id'])) {
+        this.errorMsj = 'Ya se encuentra agregado...';
+      } else {
+        me.arrayMiercoles.push({
+          id_comida: data['id'],
+          comida: data['descripcion'],
+          kcal: data['kcal'],
+          porcion: 1,
+          cantidad: 1,
+          distribucion: data['nom_comida']
+        });
+        this.errorMsj = 'Agregado...';
+      }
+    },
+    seleccionarJueves: function seleccionarJueves() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+
+      if (me.encuentraJueves(data['id'])) {
+        this.errorMsj = 'Ya se encuentra agregado...';
+      } else {
+        me.arrayJueves.push({
+          id_comida: data['id'],
+          comida: data['descripcion'],
+          kcal: data['kcal'],
+          porcion: 1,
+          cantidad: 1,
+          distribucion: data['nom_comida']
+        });
+        this.errorMsj = 'Agregado...';
+      }
+    },
+    seleccionarViernes: function seleccionarViernes() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var me = this;
+
+      if (me.encuentraViernes(data['id'])) {
+        this.errorMsj = 'Ya se encuentra agregado...';
+      } else {
+        me.arrayViernes.push({
+          id_comida: data['id'],
+          comida: data['descripcion'],
+          kcal: data['kcal'],
+          porcion: 1,
+          cantidad: 1,
+          distribucion: data['nom_comida']
+        });
+        this.errorMsj = 'Agregado...';
+      }
+    },
+    eliminarLunes: function eliminarLunes(index) {
+      var me = this;
+      me.arrayLunes.splice(index, 1);
+    },
+    eliminarMartes: function eliminarMartes(index) {
+      var me = this;
+      me.arrayMartes.splice(index, 1);
+    },
+    eliminarMiercoles: function eliminarMiercoles(index) {
+      var me = this;
+      me.arrayMiercoles.splice(index, 1);
+    },
+    eliminarJueves: function eliminarJueves(index) {
+      var me = this;
+      me.arrayJueves.splice(index, 1);
+    },
+    eliminarViernes: function eliminarViernes(index) {
+      var me = this;
+      me.arrayViernes.splice(index, 1);
+    },
+    nuevo: function nuevo() {
+      this.nombreDieta = '', this.fecha_inicio_dieta = '', this.fecha_final_dieta = '', this.id_cliente = 0;
+      this.cliente = '';
+      this.id_comida = '', this.descripcion = '', this.arrayDietaComida = [];
+      this.errorMsj = '';
+      this.respt = '';
+    },
+    guardar: function guardar() {
+      var me = this;
+      axios.post('/gestdieta/registrar', {
+        idFichaMedica: this.id_ficha,
+        fechaInicio: this.fecha_inicio_dieta,
+        fechaFinal: this.fecha_final_dieta,
+        tipo: this.TipoDieta,
+        dataLunes: this.arrayLunes,
+        dataMartes: this.arrayMartes,
+        dataMiercoles: this.arrayMiercoles,
+        dataJueves: this.arrayJueves,
+        dataViernes: this.arrayViernes
+      }).then(function (response) {
+        me.respt = 'Dieta Registrada...!';
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    listar: function listar(buscar) {
+      var me = this;
+      var url = '/dieta?buscar=' + buscar;
+      axios.get(url).then(function (response) {
+        me.arrayDieta = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    buscarDieta: function buscarDieta() {
+      this.listado = 1;
+      this.listar('');
+    },
+    mostrarDetalle: function mostrarDetalle() {
+      var me = this;
+      me.listado = 0;
+      me.respt = '';
+      me.id_comida = 0;
+      me.comida = '';
+      me.fecha_inicio_dieta = '', me.fecha_final_dieta = '', me.cliente = '';
+      me.fecha_venta = '';
+      me.id_cliente = 0;
+      me.arrayDietaComida = [];
+    },
+    verDieta: function verDieta(id) {
+      var me = this;
+      me.listado = 2;
+      var arrayDietaT = [];
+      var url = '/dieta/obtenerCabecera?id=' + id;
+      axios.get(url).then(function (response) {
+        arrayDietaT = response.data.dieta;
+        console.log(arrayDietaT);
+        me.cliente = arrayDietaT.nombrec + ' ' + arrayDietaT.apellidos;
+        me.id_dieta = arrayDietaT.id;
+        me.id_cliente = arrayDietaT.id_cliente;
+        me.fecha_inicio_dieta = arrayDietaT.fechaInicio;
+        me.fecha_final_dieta = arrayDietaT.fechaFinal;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      var url1 = '/dieta/obtenerDetalles?id=' + id;
+      axios.get(url1).then(function (response) {
+        me.arrayDietaComida = response.data.detalle;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    ocultarDetalle: function ocultarDetalle() {
+      this.listado = 1;
+      this.listar('');
+    },
+    modificarDetalle: function modificarDetalle(id) {
+      var me = this;
+      me.listado = 0;
+      this.respt = '';
+      var arrayDietaT = [];
+      var url = '/dieta/obtenerCabecera?id=' + id;
+      axios.get(url).then(function (response) {
+        arrayDietaT = response.data.dieta;
+        console.log(arrayDietaT);
+        me.id_dieta = arrayDietaT.id;
+        me.nombreDieta = arrayDietaT.nombre;
+        me.cliente = arrayDietaT.nombrec + ' ' + arrayDietaT.apellidos;
+        me.id_dieta = arrayDietaT.id;
+        me.id_cliente = arrayDietaT.id_cliente;
+        me.fecha_inicio_dieta = arrayDietaT.fechaInicio;
+        me.fecha_final_dieta = arrayDietaT.fechaFinal;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      var url1 = '/dieta/obtenerDetalles2?id=' + id;
+      axios.get(url1).then(function (response) {
+        me.arrayDietaComida = response.data.detalle;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    modificarDieta: function modificarDieta() {
+      var me = this;
+      axios.put('detalle/eliminar', {
+        id: this.id_dieta
+      }).then(function (error) {//
+      })["catch"](function (error) {
+        console.log(error);
+      });
+      axios.put('/dieta/modificar', {
+        nombre: this.nombreDieta,
+        fechaInicio: this.fecha_inicio_dieta,
+        fechaFinal: this.fecha_final_dieta,
+        id_cliente: this.id_cliente,
+        id: this.id_dieta,
+        data: this.arrayDietaComida
+      }).then(function (response) {
+        me.respt = 'Dieta Modificada...!';
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.listar(this.buscar);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmtipocomida.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmtipocomida.vue?vue&type=script&lang=js& ***!
@@ -3688,6 +4517,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+//frmgestdieta
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('frmtipocomida', __webpack_require__(/*! ./components/frmtipocomida.vue */ "./resources/js/components/frmtipocomida.vue").default);
@@ -3697,6 +4527,7 @@ Vue.component('frmejercicio', __webpack_require__(/*! ./components/frmejercicio.
 Vue.component('frmcliente', __webpack_require__(/*! ./components/frmcliente.vue */ "./resources/js/components/frmcliente.vue").default);
 Vue.component('frmconsulta', __webpack_require__(/*! ./components/frmconsulta.vue */ "./resources/js/components/frmconsulta.vue").default);
 Vue.component('frmfichamedica', __webpack_require__(/*! ./components/frmfichamedica.vue */ "./resources/js/components/frmfichamedica.vue").default);
+Vue.component('frmgestdieta', __webpack_require__(/*! ./components/frmgestdieta.vue */ "./resources/js/components/frmgestdieta.vue").default);
 Vue.component('frmdieta', __webpack_require__(/*! ./components/frmdieta.vue */ "./resources/js/components/frmdieta.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39413,6 +40244,45 @@ component.options.__file = "resources/js/components/frmfichamedica.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/frmgestdieta.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/frmgestdieta.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./frmgestdieta.vue?vue&type=template&id=70785fd8& */ "./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8&");
+/* harmony import */ var _frmgestdieta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frmgestdieta.vue?vue&type=script&lang=js& */ "./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _frmgestdieta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__.render,
+  _frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/frmgestdieta.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/frmtipocomida.vue":
 /*!***************************************************!*\
   !*** ./resources/js/components/frmtipocomida.vue ***!
@@ -39603,6 +40473,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_frmgestdieta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./frmgestdieta.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_frmgestdieta_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/frmtipocomida.vue?vue&type=script&lang=js&":
 /*!****************************************************************************!*\
   !*** ./resources/js/components/frmtipocomida.vue?vue&type=script&lang=js& ***!
@@ -39754,6 +40640,23 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8& ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmgestdieta_vue_vue_type_template_id_70785fd8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./frmgestdieta.vue?vue&type=template&id=70785fd8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/frmtipocomida.vue?vue&type=template&id=57990c5f&":
 /*!**********************************************************************************!*\
   !*** ./resources/js/components/frmtipocomida.vue?vue&type=template&id=57990c5f& ***!
@@ -39870,6 +40773,7 @@ var render = function() {
                   expression: "nombre"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Nombre Cliente" },
               domProps: { value: _vm.nombre },
               on: {
@@ -39897,6 +40801,7 @@ var render = function() {
                   expression: "apellido_paterno"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Apellidos Paterno" },
               domProps: { value: _vm.apellido_paterno },
               on: {
@@ -39924,6 +40829,7 @@ var render = function() {
                   expression: "apellido_materno"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Apellidos Materno" },
               domProps: { value: _vm.apellido_materno },
               on: {
@@ -39951,6 +40857,7 @@ var render = function() {
                   expression: "fecha_nacimiento"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "date", placeholder: "Fecha Nacimiento" },
               domProps: { value: _vm.fecha_nacimiento },
               on: {
@@ -39978,6 +40885,7 @@ var render = function() {
                   expression: "correo"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "email", placeholder: "Correo Cliente" },
               domProps: { value: _vm.correo },
               on: {
@@ -40005,6 +40913,7 @@ var render = function() {
                   expression: "telefono"
                 }
               ],
+              staticClass: "form-control",
               attrs: { type: "text", placeholder: "Telefono Cliente" },
               domProps: { value: _vm.telefono },
               on: {
@@ -40125,40 +41034,52 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.buscar,
-            expression: "buscar"
-          }
-        ],
-        attrs: { type: "text", placeholder: "Nombre Cliente" },
-        domProps: { value: _vm.buscar },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.buscar = $event.target.value
-          }
-        }
-      }),
+      _c("br"),
+      _c("br"),
       _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "button" },
-          on: {
-            click: function($event) {
-              return _vm.listar(_vm.buscar)
-            }
-          }
-        },
-        [_vm._v("Buscar por Nombre")]
-      )
+      _c("table", [
+        _c("tr", [
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.buscar,
+                  expression: "buscar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Nombre Cliente" },
+              domProps: { value: _vm.buscar },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.buscar = $event.target.value
+                }
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("td", [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-success",
+                attrs: { type: "button" },
+                on: {
+                  click: function($event) {
+                    return _vm.listar(_vm.buscar)
+                  }
+                }
+              },
+              [_vm._v("Buscar por Nombre")]
+            )
+          ])
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("br"),
@@ -40599,6 +41520,7 @@ var render = function() {
                     expression: "cliente"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Agregar Cliente" },
                 domProps: { value: _vm.cliente },
                 on: {
@@ -40643,6 +41565,7 @@ var render = function() {
                     expression: "fecha"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date", placeholder: "Fecha Consulta" },
                 domProps: { value: _vm.fecha },
                 on: {
@@ -40670,6 +41593,7 @@ var render = function() {
                     expression: "fecha_reconsulta"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date", placeholder: "Fecha Reconsulta" },
                 domProps: { value: _vm.fecha_reconsulta },
                 on: {
@@ -40761,6 +41685,7 @@ var render = function() {
                     expression: "buscarcli"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Nombre Cliente" },
                 domProps: { value: _vm.buscarcli },
                 on: {
@@ -40808,6 +41733,7 @@ var render = function() {
                     expression: "fecha_inicio"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date" },
                 domProps: { value: _vm.fecha_inicio },
                 on: {
@@ -40835,6 +41761,7 @@ var render = function() {
                     expression: "fecha_fin"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date" },
                 domProps: { value: _vm.fecha_fin },
                 on: {
@@ -42351,6 +43278,7 @@ var render = function() {
                     expression: "cliente"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Consulta" },
                 domProps: { value: _vm.cliente },
                 on: {
@@ -42395,6 +43323,7 @@ var render = function() {
                     expression: "peso_incial"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Kg" },
                 domProps: { value: _vm.peso_incial },
                 on: {
@@ -42422,6 +43351,7 @@ var render = function() {
                     expression: "peso_actual"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Kg" },
                 domProps: { value: _vm.peso_actual },
                 on: {
@@ -42449,6 +43379,7 @@ var render = function() {
                     expression: "altura_inicial"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "cm" },
                 domProps: { value: _vm.altura_inicial },
                 on: {
@@ -42476,6 +43407,7 @@ var render = function() {
                     expression: "altura_actual"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "cm" },
                 domProps: { value: _vm.altura_actual },
                 on: {
@@ -42567,6 +43499,7 @@ var render = function() {
                     expression: "buscarC"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "text", placeholder: "Cliente" },
                 domProps: { value: _vm.buscarC },
                 on: {
@@ -42612,6 +43545,7 @@ var render = function() {
                     expression: "fecha_inicio"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date" },
                 domProps: { value: _vm.fecha_inicio },
                 on: {
@@ -42639,6 +43573,7 @@ var render = function() {
                     expression: "fecha_fin"
                   }
                 ],
+                staticClass: "form-control",
                 attrs: { type: "date" },
                 domProps: { value: _vm.fecha_fin },
                 on: {
@@ -42930,6 +43865,1969 @@ var staticRenderFns = [
         _c("th", [_vm._v("Fecha")]),
         _vm._v(" "),
         _c("th", [_vm._v("Fecha Reconsulta")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmgestdieta.vue?vue&type=template&id=70785fd8& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", [
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _vm.listado == 1
+          ? void 0
+          : _vm.listado == 0
+          ? [
+              _c("h3", [_vm._v("Gestionar Dieta")]),
+              _vm._v(" "),
+              _c("form", { attrs: { action: "", method: "post" } }, [
+                _c("table", [
+                  _c("tr", [
+                    _c("td", [_vm._v("Ficha Medica de Cliente")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.cliente,
+                            expression: "cliente"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", placeholder: "Cliente" },
+                        domProps: { value: _vm.cliente },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.cliente = $event.target.value
+                          }
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          href: "#",
+                          "data-toggle": "modal",
+                          "data-target": "#modalFicha"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.frmBuscarFicha()
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar ficha")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Fecha Inicio")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.fecha_inicio_dieta,
+                            expression: "fecha_inicio_dieta"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "date" },
+                        domProps: { value: _vm.fecha_inicio_dieta },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.fecha_inicio_dieta = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Fecha Final")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.fecha_final_dieta,
+                            expression: "fecha_final_dieta"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "date" },
+                        domProps: { value: _vm.fecha_final_dieta },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.fecha_final_dieta = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("td", [_vm._v("Tipo dieta")]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.TipoDieta,
+                            expression: "TipoDieta"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: { value: _vm.TipoDieta },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.TipoDieta = $event.target.value
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Lunes:")]),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#modelLunes"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.frmBuscarComida()
+                    }
+                  }
+                },
+                [_vm._v("Agregar comida")]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm.arrayLunes.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.arrayLunes, function(detalle, index) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eliminarLunes(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(detalle.distribucion)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.kcal) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.porcion,
+                                    expression: "detalle.porcion"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.porcion },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "porcion",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.cantidad,
+                                    expression: "detalle.cantidad"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.cantidad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "cantidad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Martes:")]),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#modalMartes"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.frmBuscarComida()
+                    }
+                  }
+                },
+                [_vm._v("Agregar comida")]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm.arrayMartes.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.arrayMartes, function(detalle, index) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eliminarMartes(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(detalle.distribucion)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.kcal) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.porcion,
+                                    expression: "detalle.porcion"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.porcion },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "porcion",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.cantidad,
+                                    expression: "detalle.cantidad"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.cantidad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "cantidad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Miercoles:")]),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#modalMiercoles"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.frmBuscarComida()
+                    }
+                  }
+                },
+                [_vm._v("Agregar comida")]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _vm.arrayMiercoles.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.arrayMiercoles, function(detalle, index) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eliminarMiercoles(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(detalle.distribucion)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.kcal) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.porcion,
+                                    expression: "detalle.porcion"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.porcion },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "porcion",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.cantidad,
+                                    expression: "detalle.cantidad"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.cantidad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "cantidad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Jueves:")]),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#modalJueves"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.frmBuscarComida()
+                    }
+                  }
+                },
+                [_vm._v("Agregar comida")]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm.arrayJueves.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.arrayJueves, function(detalle, index) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eliminarJueves(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(detalle.distribucion)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.kcal) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.porcion,
+                                    expression: "detalle.porcion"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.porcion },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "porcion",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.cantidad,
+                                    expression: "detalle.cantidad"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.cantidad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "cantidad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]
+              ),
+              _vm._v(" "),
+              _c("br"),
+              _vm._v(" "),
+              _c("h4", [_vm._v("Viernes:")]),
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#modalViernes"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.frmBuscarComida()
+                    }
+                  }
+                },
+                [_vm._v("Agregar comida")]
+              ),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm.arrayViernes.length
+                    ? _c(
+                        "tbody",
+                        _vm._l(_vm.arrayViernes, function(detalle, index) {
+                          return _c("tr", { key: detalle.id }, [
+                            _c("td", [
+                              _c(
+                                "a",
+                                {
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eliminarViernes(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v("Quitar")]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.comida) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: {
+                                textContent: _vm._s(detalle.distribucion)
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("td", {
+                              domProps: { textContent: _vm._s(detalle.kcal) }
+                            }),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.porcion,
+                                    expression: "detalle.porcion"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.porcion },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "porcion",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: detalle.cantidad,
+                                    expression: "detalle.cantidad"
+                                  }
+                                ],
+                                attrs: { type: "number" },
+                                domProps: { value: detalle.cantidad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      detalle,
+                                      "cantidad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        }),
+                        0
+                      )
+                    : _vm._e()
+                ]
+              ),
+              _vm._v(" "),
+              _c("center", [
+                _c("table", [
+                  _c("td", { attrs: { colspan: "3" } }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.nuevo()
+                          }
+                        }
+                      },
+                      [_vm._v("Nuevo")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.guardar()
+                          }
+                        }
+                      },
+                      [_vm._v("Guardar")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.modificar()
+                          }
+                        }
+                      },
+                      [_vm._v("Modificar")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.eliminar()
+                          }
+                        }
+                      },
+                      [_vm._v("Eliminar")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarDieta()
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ])
+            ]
+          : _vm._e()
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalFicha",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-primary modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(5),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarC,
+                          expression: "buscarC"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Nombre" },
+                      domProps: { value: _vm.buscarC },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarC = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarFicha(_vm.buscarC)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(6),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayFicha, function(ficha) {
+                      return _c("tr", { key: ficha.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha.id) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha.nom_cliente) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha.fecha_consulta)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha.pesoActual) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha.alturaActual) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha.imc) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", "data-dismiss": "modal" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarFicha(ficha)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(7)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modelLunes",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(8),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarComid = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarComida(_vm.buscarComid)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", {
+                attrs: { for: "" },
+                domProps: { textContent: _vm._s(_vm.errorMsj) }
+              }),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(9),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarLunes(comida)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(10)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalMartes",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(11),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarComid = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarComida(_vm.buscarComid)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", {
+                attrs: { for: "" },
+                domProps: { textContent: _vm._s(_vm.errorMsj) }
+              }),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(12),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarMartes(comida)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(13)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalMiercoles",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(14),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarComid = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarComida(_vm.buscarComid)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", {
+                attrs: { for: "" },
+                domProps: { textContent: _vm._s(_vm.errorMsj) }
+              }),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(15),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarMiercoles(comida)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(16)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalJueves",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(17),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarComid = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarComida(_vm.buscarComid)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", {
+                attrs: { for: "" },
+                domProps: { textContent: _vm._s(_vm.errorMsj) }
+              }),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(18),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarJueves(comida)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(19)
+          ])
+        ])
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalViernes",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(20),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarComid,
+                          expression: "buscarComid"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Distribucion" },
+                      domProps: { value: _vm.buscarComid },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarComid = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarComida(_vm.buscarComid)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("label", {
+                attrs: { for: "" },
+                domProps: { textContent: _vm._s(_vm.errorMsj) }
+              }),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(21),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayComida, function(comida) {
+                      return _c("tr", { key: comida.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.descripcion) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(comida.nom_comida) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarViernes(comida)
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(22)
+          ])
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Opcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Comida")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kcal")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Porción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Opcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Comida")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kcal")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Porción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Opcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Comida")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kcal")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Porción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Opcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Comida")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kcal")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Porción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Opcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Comida")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Kcal")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Porción")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cantidad")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Busqueda de Ficha Medica por cliente")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Id")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Cliente")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Fecha Consulta")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Peso Actual")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Altura Actual")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("IMC")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Lunes: Seleccione una o varias comidas")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Martes: Seleccione una o varias comidas")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Miercoles: Seleccione una o varias comidas")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Jueves: Seleccione una o varias comidas")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Viernes: Seleccione una o varias comidas")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Descripcion")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Distribucion")]),
         _vm._v(" "),
         _c("th", [_vm._v("Opcion")])
       ])

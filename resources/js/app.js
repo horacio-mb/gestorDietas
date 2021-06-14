@@ -18,7 +18,7 @@ window.Vue = require('vue').default;
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
+//frmgestdieta
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
  Vue.component('frmtipocomida', require('./components/frmtipocomida.vue').default);
  Vue.component('frmcomida', require('./components/frmcomida.vue').default);
@@ -27,6 +27,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  Vue.component('frmcliente', require('./components/frmcliente.vue').default);
  Vue.component('frmconsulta', require('./components/frmconsulta.vue').default);
  Vue.component('frmfichamedica', require('./components/frmfichamedica.vue').default);
+ Vue.component('frmgestdieta', require('./components/frmgestdieta.vue').default);
  Vue.component('frmdieta', require('./components/frmdieta.vue').default);
 
 /**

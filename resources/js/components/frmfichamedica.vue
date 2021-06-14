@@ -6,24 +6,24 @@
             <table>
                 <tr>
                     <td>Consulta del cliente</td>
-                    <td><input type="text" v-model="cliente" placeholder="Consulta"></td>
+                    <td><input class="form-control" type="text" v-model="cliente" placeholder="Consulta"></td>
                     <a href="#" @click="frmBuscarConsulta()" data-toggle="modal" data-target="#modalConsulta">Buscar consulta</a>
                 </tr>
                 <tr>
                     <td>Peso Inicial</td>
-                    <td><input type="text" v-model="peso_incial" placeholder="Kg"></td>
+                    <td><input class="form-control" type="text" v-model="peso_incial" placeholder="Kg"></td>
                 </tr>
                 <tr>
                     <td>Peso Actual</td>
-                    <td><input type="text" v-model="peso_actual" placeholder="Kg"></td>
+                    <td><input class="form-control" type="text" v-model="peso_actual" placeholder="Kg"></td>
                 </tr>
                 <tr>
                     <td>Altura Inicial</td>
-                    <td><input type="text" v-model="altura_inicial" placeholder="cm"></td>
+                    <td><input class="form-control" type="text" v-model="altura_inicial" placeholder="cm"></td>
                 </tr>
                 <tr>
                     <td>Altura Actual</td>
-                    <td><input type="text" v-model="altura_actual" placeholder="cm"></td>
+                    <td><input class="form-control" type="text" v-model="altura_actual" placeholder="cm"></td>
                 </tr>
                 <tr>
                 <td colspan="3">
@@ -39,7 +39,7 @@
             <table>
                 <tr>
                     <td>Buscar consultas por cliente</td>
-                    <td><input type="text" v-model="buscarC" placeholder="Cliente"></td>
+                    <td><input class="form-control" type="text" v-model="buscarC" placeholder="Cliente"></td>
                 
                     <button class="btn btn-success" type="button" @click="listar(buscarC)">Buscar</button>
                 </tr>
@@ -51,11 +51,11 @@
                 </tr>
                 <tr>
                     <td>Fecha Inicio</td>
-                    <td><input type="date" v-model="fecha_inicio" ></td>
+                    <td><input class="form-control" type="date" v-model="fecha_inicio" ></td>
                 </tr>
                 <tr>
                     <td>Fecha Fin</td>
-                    <td><input type="date" v-model="fecha_fin" ></td>
+                    <td><input class="form-control" type="date" v-model="fecha_fin" ></td>
                 </tr>
                 <tr>
                     <button class="btn btn-success" type="button" @click="buscarfechas(fecha_inicio,fecha_fin)">Buscar</button>

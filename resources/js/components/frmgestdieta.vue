@@ -675,12 +675,17 @@ export default {
         },
         guardar(){
             let me = this;
-            axios.post('/dieta/registrar',{
-                nombre : this.nombreDieta,
+            axios.post('/gestdieta/registrar',{
+                idFichaMedica: this.id_ficha,
                 fechaInicio : this.fecha_inicio_dieta,
                 fechaFinal: this.fecha_final_dieta,
-                id_cliente: this.id_cliente,
-                data : this.arrayDietaComida
+                tipo:this.TipoDieta,
+                dataLunes: this.arrayLunes,
+                dataMartes: this.arrayMartes,
+                dataMiercoles: this.arrayMiercoles,
+                dataJueves: this.arrayJueves,
+                dataViernes: this.arrayViernes,
+                
             }).then(function (response) {
                 me.respt = 'Dieta Registrada...!';
             }).catch(function (error) {
