@@ -181,7 +181,7 @@ export default{
        },
        buscarfechas(fecha_inicio,fecha_fin){
            let me = this;
-           var url= '/consulta?buscar=' +buscar;
+           var url= '/consulta/fechas?fecha_inicio=' +fecha_inicio+'&fecha_fin='+fecha_fin;
            axios.get(url).then(function(response){
                 me.arrayConsulta = response.data;  
             })

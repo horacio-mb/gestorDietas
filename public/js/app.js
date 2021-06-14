@@ -2413,7 +2413,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     buscarfechas: function buscarfechas(fecha_inicio, fecha_fin) {
       var me = this;
-      var url = '/consulta?buscar=' + buscar;
+      var url = '/consulta/fechas?fecha_inicio=' + fecha_inicio + '&fecha_fin=' + fecha_fin;
       axios.get(url).then(function (response) {
         me.arrayConsulta = response.data;
       })["catch"](function (error) {

@@ -75,6 +75,7 @@ Route::post('/consulta/registrar',[ConsultaController::class,'store']);
 Route::put('/consulta/modificar',[ConsultaController::class,'update']);
 Route::put('/consulta/eliminar',[ConsultaController::class,'delete']);
 Route::get('/consulta/selectConsulta',[ConsultaController::class,'selectConsulta']);
+Route::get('/consulta/fechas',[ConsultaController::class,'buscafecha']);
 
 //Rutas para Ficha Medica
 Route::get('/fichamedica',[FichaMedicaController::class,'index']);

@@ -41,7 +41,7 @@ class ConsultaController extends Controller
         else{
             $resultado=Consulta::join('cliente','consulta.id_cliente','=','cliente.id')
             ->select('consulta.id','consulta.fecha','consulta.fecha_reconsulta','consulta.id_cliente','consulta.id_usuario','cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
-            ->where('consulta.fecha','like','%'.$buscar.'%')
+            ->whereBetween('consulta.fecha',[$fecha_inicio,$fecha_fin])
             ->orderBy('consulta.id','desc')
             ->get();
         }
