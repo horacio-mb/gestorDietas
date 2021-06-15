@@ -242,7 +242,8 @@ class GestDietaController extends Controller
     }
     public function eliminarDetalle(Request $request){
         $id=$request->id;
-        $detalle= DiaDieta::join('dieta_comida','dia_dieta.id','=','dieta_comida.id_dia_dieta')
+        $detalle= DietaComida::join('dieta_comida','dia_dieta.id','=','dieta_comida.id_dia_dieta')
+        ->with('dieta_comida')
         ->where('dia_dieta.idGestDieta','=',$id);
         $detalle->delete();
     }

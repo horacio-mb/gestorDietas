@@ -114,6 +114,8 @@ Route::post('/gestrutina/registrar',[GestRutinaController::class,'store']);
 Route::put('/gestrutina/modificar',[GestRutinaController::class,'update']);
 Route::put('/gestrutina/eliminar',[GestRutinaController::class,'delete']);
 Route::get('/gestrutina/selectGestRutina',[GestRutinaController::class,'selectGestRutina']);
+Route::get('/gestrutina/buscarnombre',[GestRutinaController::class,'buscarNombre']);
+Route::get('/gestrutina/obtnerdia',[GestRutinaController::class,'obtnerdia']);
 
 //Rutas para día dieta
 Route::get('/diadieta',[DiaDietaController::class,'index']);

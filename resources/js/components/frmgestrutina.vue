@@ -4,7 +4,7 @@
             <!-- Busqueda de dietas -->
             <template v-if="listado==1">
                 <center>
-                    <h3>Busqueda de Dietas</h3>
+                    <h3>Busqueda de Rutina</h3>
                     <input type="text" v-model="buscar" placeholder="Nombre Cliente">
                     <button class="btn btn-primary" type="button" @click="buscarNombre(buscar)">Buscar por Nombre</button><br>
                     <a href="#" @click="mostrarDetalle()">Volver</a>
@@ -12,7 +12,7 @@
                     <br>
                     <table class="table table-dark table-hover" border="1">
                         <thead>
-                            <th>IdGestDieta</th>
+                            <th>IdGestRutina</th>
                             <th>Cliente</th>                           
                             <th>Fecha Inicio</th>
                             <th>Fecha Final</th>
@@ -20,14 +20,14 @@
                             <th>Opcion</th>
                         </thead>
                         <tbody>
-                            <tr v-for="dieta in arrayDieta" :key="dieta.id">
-                                <td v-text="dieta.id"></td>
-                                <td v-text="dieta.nom_cliente +' '+dieta.apellido"></td>
-                                <td v-text="dieta.fechaInicio"></td>
-                                <td v-text="dieta.fechaFinal"></td>
-                                <td v-text="dieta.tipo"></td>
+                            <tr v-for="rutina in arrayRutina" :key="rutina.id">
+                                <td v-text="rutina.id"></td>
+                                <td v-text="rutina.nom_cliente +' '+rutina.apellido"></td>
+                                <td v-text="rutina.fechaInicio"></td>
+                                <td v-text="rutina.fechaFinal"></td>
+                                <td v-text="rutina.tipo"></td>
                                 <td>
-                                    <a href="#" @click="seleccionarDieta(dieta)">Seleccionar</a>                                   
+                                    <a href="#" @click="seleccionarRutina(rutina)">Seleccionar</a>                                   
                                 </td>
                             </tr>
                         </tbody>
@@ -37,7 +37,7 @@
 
             <!-- Registro de DietaComida -->
             <template v-else-if="listado==0">
-                <h3>Gestionar Dieta</h3>
+                <h3>Gestionar Rutina</h3>
                 <form action="" method="post">
                     <table>
                         <tr>
@@ -47,155 +47,156 @@
                         </tr>
                         <tr>
                             <td>Fecha Inicio</td>
-                            <td><input class="form-control" type="date" v-model="fecha_inicio_dieta"></td>
+                            <td><input class="form-control" type="date" v-model="fecha_inicio_rutina"></td>
                         </tr>
                         <tr>
                                 <td>Fecha Final</td>
-                                <td><input class="form-control" type="date" v-model="fecha_final_dieta"></td>
+                                <td><input class="form-control" type="date" v-model="fecha_final_rutina"></td>
                         </tr>
                         <tr>
-                                <td>Tipo dieta</td>
-                                <td><input class="form-control" type="text" v-model="TipoDieta"></td>
+                                <td>Tipo Rutina</td>
+                                <td><input class="form-control" type="text" v-model="TipoRutina"></td>
                         </tr>
                     </table>
                 </form>
                 
                 <br>
-                <h4>Lunes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modelLunes">Agregar comida</a>
+                <h4>Lunes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modelLunes">Agregar Ejercicio</a>
                 <table class="table table-dark table-hover" border="1">
                     <thead>
                             <tr>
                                 <th>Opcion</th>
-                                <th>Comida</th>
-                                <th>Distribucion</th>
-                                <th>Kcal</th>
-                                <th>Porción</th>
-                                <th>Cantidad</th>
+                                <th>Ejercicio</th>
+                                <th>Descripcion</th>
+                                <th>Tipo</th>
+                                <th>Repeticiones</th>
+                                <th>Rondas</th>
+                                
                             </tr>
                     </thead>
                     <tbody v-if="arrayLunes.length">
                         <tr v-for="(detalle,index) in arrayLunes" :key="detalle.id">
                             <td><a href="#" @click="eliminarLunes(index)">Quitar</a></td>
-                            <td v-text="detalle.comida"></td>
-                            <td v-text="detalle.distribucion"></td>
-                            <td v-text="detalle.kcal"></td>
+                            <td v-text="detalle.ejercicio"></td>
+                            <td v-text="detalle.descripcion"></td>
+                            <td v-text="detalle.tipo"></td>
                             <td>
-                                <input type="number" v-model="detalle.porcion">
+                                <input type="number" v-model="detalle.ronda">
                             </td>
                             <td>
-                                <input type="number" v-model="detalle.cantidad">
+                                <input type="number" v-model="detalle.repeticiones">
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <br>
-                <h4>Martes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalMartes">Agregar comida</a>
+                <h4>Martes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalMartes">Agregar Ejercicio</a>
                 <table class="table table-dark table-hover" border="1">
                     <thead>
                             <tr>
                                 <th>Opcion</th>
-                                <th>Comida</th>
-                                <th>Distribucion</th>
-                                <th>Kcal</th>
-                                <th>Porción</th>
-                                <th>Cantidad</th>
+                                <th>Ejercicio</th>
+                                <th>Descripcion</th>
+                                <th>Tipo</th>
+                                <th>Repeticiones</th>
+                                <th>Rondas</th>
                             </tr>
                     </thead>
                     <tbody v-if="arrayMartes.length">
                         <tr v-for="(detalle,index) in arrayMartes" :key="detalle.id">
                             <td><a href="#" @click="eliminarMartes(index)">Quitar</a></td>
-                            <td v-text="detalle.comida"></td>
-                            <td v-text="detalle.distribucion"></td>
-                            <td v-text="detalle.kcal"></td>
+                            <td v-text="detalle.ejercicio"></td>
+                            <td v-text="detalle.descripcion"></td>
+                            <td v-text="detalle.tipo"></td>
                             <td>
-                                <input type="number" v-model="detalle.porcion">
+                                <input type="number" v-model="detalle.ronda">
                             </td>
                             <td>
-                                <input type="number" v-model="detalle.cantidad">
+                                <input type="number" v-model="detalle.repeticiones">
                             </td>
                         </tr>
                     </tbody>                    
                 </table>
                 <br>
-                <h4>Miercoles:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalMiercoles">Agregar comida</a>
+                <h4>Miercoles:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalMiercoles">Agregar Ejercicio</a>
                 <table class="table table-dark table-hover" border="1">
                     <thead>
                             <tr>
                                 <th>Opcion</th>
-                                <th>Comida</th>
-                                <th>Distribucion</th>
-                                <th>Kcal</th>
-                                <th>Porción</th>
-                                <th>Cantidad</th>
+                                <th>Ejercicio</th>
+                                <th>Descripcion</th>
+                                <th>Tipo</th>
+                                <th>Repeticiones</th>
+                                <th>Rondas</th>
                             </tr>
                     </thead>
                     <tbody v-if="arrayMiercoles.length">
                         <tr v-for="(detalle,index) in arrayMiercoles" :key="detalle.id">
                             <td><a href="#" @click="eliminarMiercoles(index)">Quitar</a></td>
-                            <td v-text="detalle.comida"></td>
-                            <td v-text="detalle.distribucion"></td>
-                            <td v-text="detalle.kcal"></td>
+                            <td v-text="detalle.ejercicio"></td>
+                            <td v-text="detalle.descripcion"></td>
+                            <td v-text="detalle.tipo"></td>
                             <td>
-                                <input type="number" v-model="detalle.porcion">
+                                <input type="number" v-model="detalle.ronda">
                             </td>
                             <td>
-                                <input type="number" v-model="detalle.cantidad">
+                                <input type="number" v-model="detalle.repeticiones">
                             </td>
                         </tr>
                     </tbody>                    
                 </table>
                 <br>
-                <h4>Jueves:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalJueves">Agregar comida</a>
+                <h4>Jueves:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalJueves">Agregar Ejercicio</a>
                 <table class="table table-dark table-hover" border="1">
                     <thead>
                             <tr>
                                 <th>Opcion</th>
-                                <th>Comida</th>
-                                <th>Distribucion</th>
-                                <th>Kcal</th>
-                                <th>Porción</th>
-                                <th>Cantidad</th>
+                                <th>Ejercicio</th>
+                                <th>Descripcion</th>
+                                <th>Tipo</th>
+                                <th>Repeticiones</th>
+                                <th>Rondas</th>
                             </tr>
                     </thead>
                     <tbody v-if="arrayJueves.length">
                         <tr v-for="(detalle,index) in arrayJueves" :key="detalle.id">
                             <td><a href="#" @click="eliminarJueves(index)">Quitar</a></td>
-                            <td v-text="detalle.comida"></td>
-                            <td v-text="detalle.distribucion"></td>
-                            <td v-text="detalle.kcal"></td>
+                            <td v-text="detalle.ejercicio"></td>
+                            <td v-text="detalle.descripcion"></td>
+                            <td v-text="detalle.tipo"></td>
                             <td>
-                                <input type="number" v-model="detalle.porcion">
+                                <input type="number" v-model="detalle.ronda">
                             </td>
                             <td>
-                                <input type="number" v-model="detalle.cantidad">
+                                <input type="number" v-model="detalle.repeticiones">
                             </td>
                         </tr>
                     </tbody>                    
                 </table>
                 <br>
-                <h4>Viernes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalViernes">Agregar comida</a>
+                <h4>Viernes:</h4><a href="#" @click="frmBuscarComida()" data-toggle="modal" data-target="#modalViernes">Agregar Ejercicio</a>
                 <table class="table table-dark table-hover" border="1">
                     <thead>
                             <tr>
                                 <th>Opcion</th>
-                                <th>Comida</th>
-                                <th>Distribucion</th>
-                                <th>Kcal</th>
-                                <th>Porción</th>
-                                <th>Cantidad</th>
+                                <th>Ejercicio</th>
+                                <th>Descripcion</th>
+                                <th>Tipo</th>
+                                <th>Repeticiones</th>
+                                <th>Rondas</th>
                             </tr>
                     </thead>
                     <tbody v-if="arrayViernes.length">
                         <tr v-for="(detalle,index) in arrayViernes" :key="detalle.id">
                             <td><a href="#" @click="eliminarViernes(index)">Quitar</a></td>
-                            <td v-text="detalle.comida"></td>
-                            <td v-text="detalle.distribucion"></td>
-                            <td v-text="detalle.kcal"></td>
+                            <td v-text="detalle.ejercicio"></td>
+                            <td v-text="detalle.descripcion"></td>
+                            <td v-text="detalle.tipo"></td>
                             <td>
-                                <input type="number" v-model="detalle.porcion">
+                                <input type="number" v-model="detalle.ronda">
                             </td>
                             <td>
-                                <input type="number" v-model="detalle.cantidad">
+                                <input type="number" v-model="detalle.repeticiones">
                             </td>
                         </tr>
                     </tbody>                    
@@ -271,15 +272,15 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Lunes: Seleccione una o varias comidas</h4>
+                        <h4 class="modal-title">Lunes: Seleccione uno o vario Ejercicios</h4>
                         <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Ejercicio">
+                                    <button class="btn btn-primary" type="button" @click="buscarEjercicio(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -287,16 +288,16 @@
                         <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>                                    
-                                    <th>Descripcion</th>
-                                    <th>Distribucion</th>
+                                    <th>Ejercicio</th>
+                                    <th>Tipo</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="comida in arrayComida" :key="comida.id">
-                                    <td v-text="comida.descripcion"></td>
-                                    <td v-text="comida.nom_comida"></td>
-                                    <td><a href="#" @click="seleccionarLunes(comida)">Seleccionar</a></td>
+                                <tr v-for="ejercicio in arrayEjercicio" :key="ejercicio.id">
+                                    <td v-text="ejercicio.nombre"></td>
+                                    <td v-text="ejercicio.nom_tipo_ejercicio"></td>
+                                    <td><a href="#" @click="seleccionarLunes(ejercicio)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -313,15 +314,15 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Martes: Seleccione una o varias comidas</h4>
+                        <h4 class="modal-title">Martes: Seleccione uno o varios Ejercicios</h4>
                         <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Ejercicio">
+                                    <button class="btn btn-primary" type="button" @click="buscarEjercicio(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -329,16 +330,16 @@
                         <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>                                    
-                                    <th>Descripcion</th>
-                                    <th>Distribucion</th>
+                                    <th>Ejercicio</th>
+                                    <th>Tipo</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="comida in arrayComida" :key="comida.id">
-                                    <td v-text="comida.descripcion"></td>
-                                    <td v-text="comida.nom_comida"></td>
-                                    <td><a href="#" @click="seleccionarMartes(comida)">Seleccionar</a></td>
+                                <tr v-for="ejercicio in arrayEjercicio" :key="ejercicio.id">
+                                    <td v-text="ejercicio.nombre"></td>
+                                    <td v-text="ejercicio.nom_tipo_ejercicio"></td>
+                                    <td><a href="#" @click="seleccionarMartes(ejercicio)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -355,15 +356,15 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Miercoles: Seleccione una o varias comidas</h4>
+                        <h4 class="modal-title">Miercoles: Seleccione uno o varios Ejercicios</h4>
                         <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Ejercicio">
+                                    <button class="btn btn-primary" type="button" @click="buscarEjercicio(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -371,16 +372,16 @@
                         <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>                                    
-                                    <th>Descripcion</th>
-                                    <th>Distribucion</th>
+                                    <th>Ejercicio</th>
+                                    <th>Tipo</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="comida in arrayComida" :key="comida.id">
-                                    <td v-text="comida.descripcion"></td>
-                                    <td v-text="comida.nom_comida"></td>
-                                    <td><a href="#" @click="seleccionarMiercoles(comida)">Seleccionar</a></td>
+                                <tr v-for="ejercicio in arrayEjercicio" :key="ejercicio.id">
+                                    <td v-text="ejercicio.nombre"></td>
+                                    <td v-text="ejercicio.nom_tipo_ejercicio"></td>
+                                    <td><a href="#" @click="seleccionarMiercoles(ejercicio)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -397,15 +398,15 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Jueves: Seleccione una o varias comidas</h4>
+                        <h4 class="modal-title">Jueves: Seleccione uno o varios Ejercicios</h4>
                         <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Ejercicio">
+                                    <button class="btn btn-primary" type="button" @click="buscarEjercicio(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -413,16 +414,16 @@
                         <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>                                    
-                                    <th>Descripcion</th>
-                                    <th>Distribucion</th>
+                                    <th>Ejercicio</th>
+                                    <th>Tipo</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="comida in arrayComida" :key="comida.id">
-                                    <td v-text="comida.descripcion"></td>
-                                    <td v-text="comida.nom_comida"></td>
-                                    <td><a href="#" @click="seleccionarJueves(comida)">Seleccionar</a></td>
+                                <tr v-for="ejercicio in arrayEjercicio" :key="ejercicio.id">
+                                    <td v-text="ejercicio.nombre"></td>
+                                    <td v-text="ejercicio.nom_tipo_ejercicio"></td>
+                                    <td><a href="#" @click="seleccionarJueves(ejercicio)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -439,15 +440,15 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Viernes: Seleccione una o varias comidas</h4>
+                        <h4 class="modal-title">Viernes: Seleccione uno o varios Ejercicios</h4>
                         <button class="btn btn-danger"  type="button" data-dismiss="modal">X</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <div class="col-md-8">
                                 <div class="input-group">
-                                    <input type="text" v-model="buscarComid" placeholder="Distribucion">
-                                    <button class="btn btn-primary" type="button" @click="buscarComida(buscarComid)">Buscar</button>
+                                    <input type="text" v-model="buscarComid" placeholder="Ejercicio">
+                                    <button class="btn btn-primary" type="button" @click="buscarEjercicio(buscarComid)">Buscar</button>
                                 </div>
                             </div>
                         </div>
@@ -455,16 +456,16 @@
                         <table class="table table-dark table-hover"  border="1">
                             <thead>
                                 <tr>                                    
-                                    <th>Descripcion</th>
-                                    <th>Distribucion</th>
+                                    <th>Ejercicio</th>
+                                    <th>Tipo</th>
                                     <th>Opcion</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="comida in arrayComida" :key="comida.id">
-                                    <td v-text="comida.descripcion"></td>
-                                    <td v-text="comida.nom_comida"></td>
-                                    <td><a href="#" @click="seleccionarViernes(comida)">Seleccionar</a></td>
+                                <tr v-for="ejercicio in arrayEjercicio" :key="ejercicio.id">
+                                    <td v-text="ejercicio.nombre"></td>
+                                    <td v-text="ejercicio.nom_tipo_ejercicio"></td>
+                                    <td><a href="#" @click="seleccionarViernes(ejercicio)">Seleccionar</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -483,13 +484,13 @@ export default {
     data(){
         return{
             listado : 0,
-            TipoDieta:'',
-            fecha_inicio_dieta : '',
-            fecha_final_dieta:'',
+            TipoRutina:'',
+            fecha_inicio_rutina : '',
+            fecha_final_rutina:'',
             arrayCliente: [],
             buscarC : '',
             cliente : '',
-            arrayComida : [],
+            arrayEjercicio : [],
             buscarComid : '',
             errorMsj : '',
             id_comida:'',
@@ -503,6 +504,7 @@ export default {
             total : 0.0,
             buscar : '',
             arrayDieta : [],
+            arrayRutina:[],
             id_comida:'',
             comida:'',
             id_gest_dieta : 0,
@@ -520,7 +522,7 @@ export default {
             this.buscarC ='';
         },
         frmBuscarComida(){
-            this.arrayComida = [];
+            this.arrayEjercicio = [];
             this.buscarComid ='';
             this.errorMsj = '';
         },
@@ -538,11 +540,11 @@ export default {
             this.id_ficha = data['id'];
             this.cliente=data['nom_cliente']+' '+ data['apellido'];
         },
-        buscarComida(buscarComid){
+        buscarEjercicio(buscarComid){
             let me = this;
-            var url='/comida/selectComida?buscar=' + buscarComid;
+            var url='/ejercicio/selectEjercicio?buscar=' + buscarComid;
             axios.get(url).then(function(response){
-                me.arrayComida= response.data;
+                me.arrayEjercicio= response.data;
             })
             .catch(function(error){
                 console.log(error);
@@ -551,7 +553,7 @@ export default {
         encuentraLunes(id){
             var sw=0;
             for(var i=0;i<this.arrayLunes.length;i++){
-                if(this.arrayLunes[i].id_comida==id){
+                if(this.arrayLunes[i].id_ejercicio==id){
                     sw=true;
                 }
             }
@@ -560,7 +562,7 @@ export default {
         encuentraMartes(id){
             var sw=0;
             for(var i=0;i<this.arrayMartes.length;i++){
-                if(this.arrayMartes[i].id_comida==id){
+                if(this.arrayMartes[i].id_ejercicio==id){
                     sw=true;
                 }
             }
@@ -569,7 +571,7 @@ export default {
         encuentraMiercoles(id){
             var sw=0;
             for(var i=0;i<this.arrayMiercoles.length;i++){
-                if(this.arrayMiercoles[i].id_comida==id){
+                if(this.arrayMiercoles[i].id_ejercicio==id){
                     sw=true;
                 }
             }
@@ -578,7 +580,7 @@ export default {
         encuentraJueves(id){
             var sw=0;
             for(var i=0;i<this.arrayJueves.length;i++){
-                if(this.arrayJueves[i].id_comida==id){
+                if(this.arrayJueves[i].id_ejercicio==id){
                     sw=true;
                 }
             }
@@ -587,7 +589,7 @@ export default {
         encuentraViernes(id){
             var sw=0;
             for(var i=0;i<this.arrayViernes.length;i++){
-                if(this.arrayViernes[i].id_comida==id){
+                if(this.arrayViernes[i].id_ejercicio==id){
                     sw=true;
                 }
             }
@@ -600,12 +602,12 @@ export default {
                 this.errorMsj='Ya se encuentra agregado...'
             }else{
                 me.arrayLunes.push({
-                    id_comida: data['id'],
-                    comida : data['descripcion'],
-                    kcal:data['kcal'],
-                    porcion:1,
-                    cantidad:1,
-                    distribucion : data['nom_comida']
+                    id_ejercicio: data['id'],
+                    ejercicio : data['nombre'],
+                    descripcion:data['descripcion'],
+                    ronda:1,
+                    repeticiones:1,
+                    tipo : data['nom_tipo_ejercicio']
                 });
             this.errorMsj='Agregado...'
             }        
@@ -616,12 +618,12 @@ export default {
                 this.errorMsj='Ya se encuentra agregado...'
             }else{
                 me.arrayMartes.push({
-                    id_comida: data['id'],
-                    comida : data['descripcion'],
-                    kcal:data['kcal'],
-                    porcion:1,
-                    cantidad:1,
-                    distribucion : data['nom_comida']
+                    id_ejercicio: data['id'],
+                    ejercicio : data['nombre'],
+                    descripcion:data['descripcion'],
+                    ronda:1,
+                    repeticiones:1,
+                    tipo : data['nom_tipo_ejercicio']
                 });
             this.errorMsj='Agregado...'
             }        
@@ -632,12 +634,12 @@ export default {
                 this.errorMsj='Ya se encuentra agregado...'
             }else{
                    me.arrayMiercoles.push({
-                    id_comida: data['id'],
-                    comida : data['descripcion'],
-                    kcal:data['kcal'],
-                    porcion:1,
-                    cantidad:1,
-                    distribucion : data['nom_comida']
+                    id_ejercicio: data['id'],
+                    ejercicio : data['nombre'],
+                    descripcion:data['descripcion'],
+                    ronda:1,
+                    repeticiones:1,
+                    tipo : data['nom_tipo_ejercicio']
                 });
             this.errorMsj='Agregado...'
             }
@@ -649,12 +651,12 @@ export default {
                 this.errorMsj='Ya se encuentra agregado...'
             }else{
                 me.arrayJueves.push({
-                    id_comida: data['id'],
-                    comida : data['descripcion'],
-                    kcal:data['kcal'],
-                    porcion:1,
-                    cantidad:1,
-                    distribucion : data['nom_comida']
+                    id_ejercicio: data['id'],
+                    ejercicio : data['nombre'],
+                    descripcion:data['descripcion'],
+                    ronda:1,
+                    repeticiones:1,
+                    tipo : data['nom_tipo_ejercicio']
                 });
             this.errorMsj='Agregado...'
             }               
@@ -665,12 +667,12 @@ export default {
                 this.errorMsj='Ya se encuentra agregado...'
             }else{
                 me.arrayViernes.push({
-                    id_comida: data['id'],
-                    comida : data['descripcion'],
-                    kcal:data['kcal'],
-                    porcion:1,
-                    cantidad:1,
-                    distribucion : data['nom_comida']
+                    id_ejercicio: data['id'],
+                    ejercicio : data['nombre'],
+                    descripcion:data['descripcion'],
+                    ronda:1,
+                    repeticiones:1,
+                    tipo : data['nom_tipo_ejercicio']
                 });
             this.errorMsj='Agregado...'
             }          
@@ -697,12 +699,12 @@ export default {
         },
         nuevo(){
             this.id_ficha='';
-            this.id_gest_dieta='';
-            this.fecha_inicio_dieta = '';
-            this.fecha_final_dieta='';
-            this.TipoDieta = '';
+            this.id_gest_rutina='';
+            this.fecha_inicio_rutina = '';
+            this.fecha_final_rutina='';
+            this.TipoRutina = '';
             this.cliente = '';
-            this.id_comida='';
+            this.id_ejercicio='';
             this.descripcion='';
             this.arrayLunes=[];
             this.arrayMartes=[];
@@ -715,11 +717,11 @@ export default {
         },
         guardar(){
             let me = this;
-            axios.post('/gestdieta/registrar',{
+            axios.post('/gestrutina/registrar',{
                 idFichaMedica: this.id_ficha,
-                fechaInicio : this.fecha_inicio_dieta,
-                fechaFinal: this.fecha_final_dieta,
-                tipo:this.TipoDieta,
+                fechaInicio : this.fecha_inicio_rutina,
+                fechaFinal: this.fecha_final_rutina,
+                tipo:this.TipoRutina,
                 dataLunes: this.arrayLunes,
                 dataMartes: this.arrayMartes,
                 dataMiercoles: this.arrayMiercoles,
@@ -727,7 +729,7 @@ export default {
                 dataViernes: this.arrayViernes,
                 
             }).then(function (response) {
-                me.respt = 'Dieta Registrada...!';
+                me.respt = 'Rutina Registrada...!';
             }).catch(function (error) {
                 console.log(error);
             });   
@@ -744,9 +746,9 @@ export default {
         },
         buscarNombre(buscar){
             let me = this;
-            var url='/gestdieta/buscarnombre?buscar=' + buscar;
+            var url='/gestrutina/buscarnombre?buscar=' + buscar;
             axios.get(url).then(function(response){
-                me.arrayDieta= response.data;
+                me.arrayRutina= response.data;
             })
             .catch(function(error){
                 console.log(error);
@@ -754,7 +756,7 @@ export default {
         },
         buscarDieta(){
             this.listado=1;
-            this.listar('');
+            //this.listar('');
         },
         mostrarDetalle(){
             let me = this;
@@ -800,19 +802,19 @@ export default {
             this.listado=1;
             this.listar('');
         },
-        seleccionarDieta(data=[]){
+        seleccionarRutina(data=[]){
             let me = this;
             console.log(data);
             me.listado=0;
             this.respt='';
             this.id_ficha=data['idFichaMedica'];
-            this.id_gest_dieta=data['id'];
-            this.fecha_inicio_dieta = data['fechaInicio'];
-            this.fecha_final_dieta=data['fechaFinal'];
-            this.TipoDieta = data['tipo'];
+            this.id_gest_rutina=data['id'];
+            this.fecha_inicio_rutina = data['fechaInicio'];
+            this.fecha_final_rutina=data['fechaFinal'];
+            this.TipoRutina = data['tipo'];
             this.cliente = data['nom_cliente']+' '+data['apellido'];
             let arrayDietaT=[];
-            var url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=lunes';
+            var url='/gestrutina/obtnerdia?id=' +this.id_gest_rutina+'&dia=lunes';
             axios.get(url).then(function(response){
                 me.arrayLunes=response.data;
                 
@@ -820,7 +822,7 @@ export default {
             .catch(function(error){
                 console.log(error);
             })
-            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=martes';
+            url='/gestrutina/obtnerdia?id=' +this.id_gest_rutina+'&dia=martes';
             axios.get(url).then(function(response){
                 me.arrayMartes=response.data;
                 
@@ -828,7 +830,7 @@ export default {
             .catch(function(error){
                 console.log(error);
             })
-            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=miercoles';
+            url='/gestrutina/obtnerdia?id=' +this.id_gest_rutina+'&dia=miercoles';
             axios.get(url).then(function(response){
                 me.arrayMiercoles=response.data;
                 
@@ -836,7 +838,7 @@ export default {
             .catch(function(error){
                 console.log(error);
             })
-            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=jueves';
+            url='/gestrutina/obtnerdia?id=' +this.id_gest_rutina+'&dia=jueves';
             axios.get(url).then(function(response){
                 me.arrayJueves=response.data;
                 
@@ -844,7 +846,7 @@ export default {
             .catch(function(error){
                 console.log(error);
             })
-            url='/gestdieta/obtnerdia?id=' +this.id_gest_dieta+'&dia=viernes';
+            url='/gestrutina/obtnerdia?id=' +this.id_gest_rutina+'&dia=viernes';
             axios.get(url).then(function(response){
                 me.arrayViernes=response.data;
                 

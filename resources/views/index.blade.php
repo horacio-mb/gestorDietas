@@ -44,6 +44,9 @@
                             <a class="nav-link" href="#">Gestionar Dieta</a>
                         </li>
                         <li @click="menu=9">
+                            <a class="nav-link" href="#">Gestionar Rutina</a>
+                        </li>
+                        <li @click="menu=10">
                             <a class="nav-link" href="#">Dietas</a>
                         </li>
                     </ul>
@@ -92,6 +95,10 @@
                 <frmgestdieta></frmgestdieta>
             </template>
             <template v-if="menu==9">
+                <br><br>
+                <frmgestrutina></frmgestrutina>
+            </template>
+            <template v-if="menu==10">
                 <br><br>
                 <frmdieta></frmdieta>
             </template>
