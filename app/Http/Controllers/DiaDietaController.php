@@ -90,8 +90,10 @@ class DiaDietaController extends Controller
 
 
     public function delete(Request $request){
-        $dia_dieta = DiaDieta::findOrFail($request->id);
-        $dia_dieta->save();
+        $id=$request->id;
+        $dia=$request->dia;
+        $dia_dieta= DiaDieta::join('dieta_comida','dia_dieta.id', '=', 'dieta_comida.id_dia_dieta');
+        $dia_dieta->delete();
     }
 
     public function obtenerDetalles(Request $request){
@@ -111,6 +113,7 @@ class DiaDietaController extends Controller
     }
     public function eliminarDetalle(Request $request){
         $id=$request->id;
+        $dia=$request->dia;
         $detalle = DietaComida::where('dieta_comida.id_dia_dieta','=',$id);
         $detalle->delete();
     }
