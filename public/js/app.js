@@ -2512,6 +2512,381 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      id_cuestionario: 0,
+      peso_inicial: '',
+      peso_actual: '',
+      altura_inicial: '',
+      altura_actual: '',
+      imc: 0,
+      id_fichaMedica: 0,
+      nom_cliente: '',
+      nombrecliente: '',
+      arrayConsulta: [],
+      arrayFichaMedica: [],
+      arrayCuestionario: [],
+      buscar: '',
+      buscarFM: '',
+      cliente: '',
+      fecha_inicio: '',
+      fecha_fin: '',
+      enfermedadBase: '',
+      anteFamiliares: '',
+      consumoAlcohol: '',
+      consumoTabaco: '',
+      consumoCafe: '',
+      consumoMedicamentos: '',
+      comidasDia: '',
+      actividadFisica: '',
+      Opciones: '',
+      arrayCliente: []
+    };
+  },
+  methods: {
+    frmBuscarCliente: function frmBuscarCliente() {
+      this.arrayCliente = [];
+      this.buscarFM = '';
+    },
+    frmBuscarFichaMedica: function frmBuscarFichaMedica() {
+      this.arrayConsulta = [];
+      this.buscarFM = '';
+    },
+    buscarFichaMedica: function buscarFichaMedica(buscarFM) {
+      var me = this;
+      var url = '/fichamedica?buscar=' + buscarFM;
+      axios.get(url).then(function (response) {
+        me.arrayFichaMedica = response.data;
+      })["catch"](function (error) {
+        console.loog(error);
+      });
+    },
+    seleccionarFichaMedica: function seleccionarFichaMedica() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      this.id_fichaMedica = data['id'];
+      this.nombrecliente = data['nom_cliente'] + ' ' + data['apellido'];
+    },
+    listar: function listar(buscar) {
+      var me = this;
+      var url = '/cuestionario?buscar=' + buscar;
+      axios.get(url).then(function (response) {
+        me.arrayCuestionario = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    guardar: function guardar() {
+      var me = this;
+      axios.post('/cuestionario/registrar', {
+        'enfermedadBase': this.enfermedadBase,
+        'anteFamiliares': this.anteFamiliares,
+        'consumoAlcohol': this.consumoAlcohol,
+        'consumoTabaco': this.consumoTabaco,
+        'consumoCafe': this.consumoCafe,
+        'consumoMedicamentos': this.consumoMedicamentos,
+        'comidasDia': this.comidasDia,
+        'actividadFisica': this.actividadFisica,
+        'id_fichaMedica': this.id_fichaMedica
+      }).then(function (error) {
+        me.listar('');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    modificar: function modificar() {
+      var me = this;
+      axios.put('/cuestionario/modificar', {
+        'enfermedadBase': this.enfermedadBase,
+        'anteFamiliares': this.anteFamiliares,
+        'consumoAlcohol': this.consumoAlcohol,
+        'consumoTabaco': this.consumoTabaco,
+        'consumoCafe': this.consumoCafe,
+        'consumoMedicamentos': this.consumoMedicamentos,
+        'comidasDia': this.comidasDia,
+        'actividadFisica': this.actividadFisica,
+        'id_fichaMedica': this.id_fichaMedica,
+        'id': this.id_cuestionario
+      }).then(function (error) {
+        me.listar('');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    eliminar: function eliminar() {
+      var me = this;
+      axios.put('/cuestionario/eliminar', {
+        'id': this.id_cuestionario
+      }).then(function (error) {
+        me.listar('');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    llenar: function llenar() {
+      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      this.id_cuestionario = data['id'];
+      this.nombrecliente = data['nom_cliente'] + ' ' + data['apellido'];
+      this.peso_incial = data['pesoInicial'];
+      this.peso_actual = data['pesoActual'];
+      this.altura_inicial = data['alturaInicial'];
+      this.altura_actual = data['alturaActual'];
+      this.imc = 0;
+      this.id_fichaMedica = data['id_fichaMedica'];
+      this.enfermedadBase = data['enfermedadBase'];
+      this.anteFamiliares = data['anteFamiliares'];
+      this.consumoAlcohol = data['consumoAlcohol'];
+      this.consumoTabaco = data['consumoTabaco'];
+      this.consumoCafe = data['consumoCafe'];
+      this.consumoMedicamentos = data['consumoMedicamentos'];
+      this.comidasDia = data['comidasDia'];
+      this.actividadFisica = data['actividadFisica'];
+    },
+    nuevo: function nuevo() {
+      this.nom_cliente = '', this.id_cuestionario = 0;
+      this.altura_inicial = '';
+      this.altura_actual = '';
+      this.peso_incial = '';
+      this.peso_actual = '';
+      this.imc = 0;
+      this.id_fichaMedica = 0;
+      this.buscar = '';
+      this.cliente = '';
+      this.enfermedadBase = '', this.anteFamiliares = '', this.consumoAlcohol = '', this.consumoTabaco = '', this.consumoCafe = '', this.consumoMedicamentos = '', this.comidasDia = '', this.actividadFisica = '', this.buscar = '';
+    }
+  },
+  mounted: function mounted() {
+    this.listar(this.buscar);
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmdieta.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmdieta.vue?vue&type=script&lang=js& ***!
@@ -5547,9 +5922,11 @@ Vue.component('frmejercicio', __webpack_require__(/*! ./components/frmejercicio.
 Vue.component('frmcliente', __webpack_require__(/*! ./components/frmcliente.vue */ "./resources/js/components/frmcliente.vue").default);
 Vue.component('frmconsulta', __webpack_require__(/*! ./components/frmconsulta.vue */ "./resources/js/components/frmconsulta.vue").default);
 Vue.component('frmfichamedica', __webpack_require__(/*! ./components/frmfichamedica.vue */ "./resources/js/components/frmfichamedica.vue").default);
+Vue.component('frmcuestionario', __webpack_require__(/*! ./components/frmcuestionario.vue */ "./resources/js/components/frmcuestionario.vue").default);
 Vue.component('frmgestdieta', __webpack_require__(/*! ./components/frmgestdieta.vue */ "./resources/js/components/frmgestdieta.vue").default);
 Vue.component('frmgestrutina', __webpack_require__(/*! ./components/frmgestrutina.vue */ "./resources/js/components/frmgestrutina.vue").default);
-Vue.component('frmdieta', __webpack_require__(/*! ./components/frmdieta.vue */ "./resources/js/components/frmdieta.vue").default);
+Vue.component('frmdieta', __webpack_require__(/*! ./components/frmdieta.vue */ "./resources/js/components/frmdieta.vue").default); //frmcuestionario
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -41148,6 +41525,45 @@ component.options.__file = "resources/js/components/frmconsulta.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/frmcuestionario.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/frmcuestionario.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./frmcuestionario.vue?vue&type=template&id=cc609e1e& */ "./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e&");
+/* harmony import */ var _frmcuestionario_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frmcuestionario.vue?vue&type=script&lang=js& */ "./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__.default)(
+  _frmcuestionario_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__.default,
+  _frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/frmcuestionario.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/frmdieta.vue":
 /*!**********************************************!*\
   !*** ./resources/js/components/frmdieta.vue ***!
@@ -41485,6 +41901,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_frmcuestionario_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./frmcuestionario.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_frmcuestionario_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__.default); 
+
+/***/ }),
+
 /***/ "./resources/js/components/frmdieta.vue?vue&type=script&lang=js&":
 /*!***********************************************************************!*\
   !*** ./resources/js/components/frmdieta.vue?vue&type=script&lang=js& ***!
@@ -41661,6 +42093,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmconsulta_vue_vue_type_template_id_70b2b3ca___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmconsulta_vue_vue_type_template_id_70b2b3ca___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./frmconsulta.vue?vue&type=template&id=70b2b3ca& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmconsulta.vue?vue&type=template&id=70b2b3ca&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e& ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_frmcuestionario_vue_vue_type_template_id_cc609e1e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./frmcuestionario.vue?vue&type=template&id=cc609e1e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e&");
 
 
 /***/ }),
@@ -43136,6 +43585,1167 @@ var staticRenderFns = [
         _c("th", [_vm._v("Correo")]),
         _vm._v(" "),
         _c("th", [_vm._v("Telefono")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Opcion")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/frmcuestionario.vue?vue&type=template&id=cc609e1e& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("main", [
+    _c("div", { staticClass: "container" }, [
+      _c("h3", [_vm._v("Cuestionario ")]),
+      _vm._v(" "),
+      _c("form", { attrs: { action: "", method: "POST" } }, [
+        _c("table", [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.nombrecliente,
+                    expression: "nombrecliente"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { type: "text", placeholder: "Ficha Medica" },
+                domProps: { value: _vm.nombrecliente },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.nombrecliente = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                attrs: {
+                  href: "#",
+                  "data-toggle": "modal",
+                  "data-target": "#modalFichaMedica"
+                },
+                on: {
+                  click: function($event) {
+                    return _vm.frmBuscarFichaMedica()
+                  }
+                }
+              },
+              [_vm._v("Buscar Ficha Medica")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.enfermedadBase,
+                    expression: "enfermedadBase"
+                  }
+                ],
+                attrs: { type: "text", placeholder: "Rellenar" },
+                domProps: { value: _vm.enfermedadBase },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.enfermedadBase = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.anteFamiliares,
+                    expression: "anteFamiliares"
+                  }
+                ],
+                attrs: { type: "text", placeholder: "Rellenar" },
+                domProps: { value: _vm.anteFamiliares },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.anteFamiliares = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(3),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoAlcohol,
+                    expression: "consumoAlcohol"
+                  }
+                ],
+                attrs: { type: "radio", value: "4" },
+                domProps: { checked: _vm._q(_vm.consumoAlcohol, "4") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoAlcohol = "4"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Siempre")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoAlcohol,
+                    expression: "consumoAlcohol"
+                  }
+                ],
+                attrs: { type: "radio", value: "3" },
+                domProps: { checked: _vm._q(_vm.consumoAlcohol, "3") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoAlcohol = "3"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Frecuentemente")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoAlcohol,
+                    expression: "consumoAlcohol"
+                  }
+                ],
+                attrs: { type: "radio", value: "2" },
+                domProps: { checked: _vm._q(_vm.consumoAlcohol, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoAlcohol = "2"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("A veces")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoAlcohol,
+                    expression: "consumoAlcohol"
+                  }
+                ],
+                attrs: { type: "radio", value: "1" },
+                domProps: { checked: _vm._q(_vm.consumoAlcohol, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoAlcohol = "1"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Casi Nunca")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoAlcohol,
+                    expression: "consumoAlcohol"
+                  }
+                ],
+                attrs: { type: "radio", value: "0" },
+                domProps: { checked: _vm._q(_vm.consumoAlcohol, "0") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoAlcohol = "0"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Nunca")]),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(4),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoTabaco,
+                    expression: "consumoTabaco"
+                  }
+                ],
+                attrs: { type: "radio", value: "4" },
+                domProps: { checked: _vm._q(_vm.consumoTabaco, "4") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoTabaco = "4"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Siempre")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoTabaco,
+                    expression: "consumoTabaco"
+                  }
+                ],
+                attrs: { type: "radio", value: "3" },
+                domProps: { checked: _vm._q(_vm.consumoTabaco, "3") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoTabaco = "3"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Frecuentemente")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoTabaco,
+                    expression: "consumoTabaco"
+                  }
+                ],
+                attrs: { type: "radio", value: "2" },
+                domProps: { checked: _vm._q(_vm.consumoTabaco, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoTabaco = "2"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("A veces")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoTabaco,
+                    expression: "consumoTabaco"
+                  }
+                ],
+                attrs: { type: "radio", value: "1" },
+                domProps: { checked: _vm._q(_vm.consumoTabaco, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoTabaco = "1"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Casi Nunca")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoTabaco,
+                    expression: "consumoTabaco"
+                  }
+                ],
+                attrs: { type: "radio", value: "0" },
+                domProps: { checked: _vm._q(_vm.consumoTabaco, "0") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoTabaco = "0"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Nunca")]),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(5),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoCafe,
+                    expression: "consumoCafe"
+                  }
+                ],
+                attrs: { type: "radio", value: "4" },
+                domProps: { checked: _vm._q(_vm.consumoCafe, "4") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoCafe = "4"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Siempre")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoCafe,
+                    expression: "consumoCafe"
+                  }
+                ],
+                attrs: { type: "radio", value: "3" },
+                domProps: { checked: _vm._q(_vm.consumoCafe, "3") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoCafe = "3"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Frecuentemente")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoCafe,
+                    expression: "consumoCafe"
+                  }
+                ],
+                attrs: { type: "radio", value: "2" },
+                domProps: { checked: _vm._q(_vm.consumoCafe, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoCafe = "2"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("A veces")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoCafe,
+                    expression: "consumoCafe"
+                  }
+                ],
+                attrs: { type: "radio", value: "1" },
+                domProps: { checked: _vm._q(_vm.consumoCafe, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoCafe = "1"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Casi Nunca")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoCafe,
+                    expression: "consumoCafe"
+                  }
+                ],
+                attrs: { type: "radio", value: "0" },
+                domProps: { checked: _vm._q(_vm.consumoCafe, "0") },
+                on: {
+                  change: function($event) {
+                    _vm.consumoCafe = "0"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("Nunca")]),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(6),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.consumoMedicamentos,
+                    expression: "consumoMedicamentos"
+                  }
+                ],
+                attrs: { type: "text", placeholder: "Rellenar" },
+                domProps: { value: _vm.consumoMedicamentos },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.consumoMedicamentos = $event.target.value
+                  }
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(7),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.comidasDia,
+                    expression: "comidasDia"
+                  }
+                ],
+                attrs: { type: "radio", value: "0" },
+                domProps: { checked: _vm._q(_vm.comidasDia, "0") },
+                on: {
+                  change: function($event) {
+                    _vm.comidasDia = "0"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("0")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.comidasDia,
+                    expression: "comidasDia"
+                  }
+                ],
+                attrs: { type: "radio", value: "1" },
+                domProps: { checked: _vm._q(_vm.comidasDia, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.comidasDia = "1"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("1-2")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.comidasDia,
+                    expression: "comidasDia"
+                  }
+                ],
+                attrs: { type: "radio", value: "2" },
+                domProps: { checked: _vm._q(_vm.comidasDia, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.comidasDia = "2"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("3-5")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.comidasDia,
+                    expression: "comidasDia"
+                  }
+                ],
+                attrs: { type: "radio", value: "3" },
+                domProps: { checked: _vm._q(_vm.comidasDia, "3") },
+                on: {
+                  change: function($event) {
+                    _vm.comidasDia = "3"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("6 o mas")]),
+              _c("br")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _vm._m(8),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.actividadFisica,
+                    expression: "actividadFisica"
+                  }
+                ],
+                attrs: { type: "radio", value: "0" },
+                domProps: { checked: _vm._q(_vm.actividadFisica, "0") },
+                on: {
+                  change: function($event) {
+                    _vm.actividadFisica = "0"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("0")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.actividadFisica,
+                    expression: "actividadFisica"
+                  }
+                ],
+                attrs: { type: "radio", value: "1" },
+                domProps: { checked: _vm._q(_vm.actividadFisica, "1") },
+                on: {
+                  change: function($event) {
+                    _vm.actividadFisica = "1"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("1-2")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.actividadFisica,
+                    expression: "actividadFisica"
+                  }
+                ],
+                attrs: { type: "radio", value: "2" },
+                domProps: { checked: _vm._q(_vm.actividadFisica, "2") },
+                on: {
+                  change: function($event) {
+                    _vm.actividadFisica = "2"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("3-5")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.actividadFisica,
+                    expression: "actividadFisica"
+                  }
+                ],
+                attrs: { type: "radio", value: "3" },
+                domProps: { checked: _vm._q(_vm.actividadFisica, "3") },
+                on: {
+                  change: function($event) {
+                    _vm.actividadFisica = "3"
+                  }
+                }
+              }),
+              _c("label", [_vm._v("6 o mas")]),
+              _c("br")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("table", [
+          _c("br"),
+          _vm._v(" "),
+          _c("tr", [
+            _c("td", { attrs: { colspan: "3" } }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.nuevo()
+                    }
+                  }
+                },
+                [_vm._v("Nuevo")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.guardar()
+                    }
+                  }
+                },
+                [_vm._v("Guardar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.eliminar()
+                    }
+                  }
+                },
+                [_vm._v("Eliminar")]
+              ),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: { type: "button" },
+                  on: {
+                    click: function($event) {
+                      return _vm.modificar()
+                    }
+                  }
+                },
+                [_vm._v("Modificar")]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.buscar,
+              expression: "buscar"
+            }
+          ],
+          attrs: { type: "text", placeholder: "Nombre Cliente" },
+          domProps: { value: _vm.buscar },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.buscar = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.listar(_vm.buscar)
+              }
+            }
+          },
+          [_vm._v("Buscar cliente por Nombre")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
+      _c(
+        "table",
+        { staticClass: "table table-dark table-hover", attrs: { border: "2" } },
+        [
+          _vm._m(9),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.arrayCuestionario, function(cuestionario) {
+              return _c("tr", { key: cuestionario.id }, [
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.id) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.nom_cliente) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.enfermedadBase) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.anteFamiliares) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.consumoAlcohol) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.consumoTabaco) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.consumoCafe) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: {
+                    textContent: _vm._s(cuestionario.consumoMedicamentos)
+                  }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: { textContent: _vm._s(cuestionario.comidasDia) }
+                }),
+                _vm._v(" "),
+                _c("td", {
+                  domProps: {
+                    textContent: _vm._s(cuestionario.actividadFisica)
+                  }
+                }),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.llenar(cuestionario)
+                        }
+                      }
+                    },
+                    [_vm._v("Seleccionar")]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
+        ]
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        staticStyle: { display: "none" },
+        attrs: {
+          id: "modalFichaMedica",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "myModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog modal-primary modal-lg" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _vm._m(10),
+            _vm._v(" "),
+            _c("div", { staticClass: "modal-body" }, [
+              _c("div", { staticClass: "form-group row" }, [
+                _c("div", { staticClass: "col-md-8" }, [
+                  _c("div", { staticClass: "input-group" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.buscarFM,
+                          expression: "buscarFM"
+                        }
+                      ],
+                      attrs: { type: "text", placeholder: "Nombre" },
+                      domProps: { value: _vm.buscarFM },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.buscarFM = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: { type: "button" },
+                        on: {
+                          click: function($event) {
+                            return _vm.buscarFichaMedica(_vm.buscarFM)
+                          }
+                        }
+                      },
+                      [_vm._v("Buscar")]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "table",
+                {
+                  staticClass: "table table-dark table-hover",
+                  attrs: { border: "1" }
+                },
+                [
+                  _vm._m(11),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.arrayFichaMedica, function(ficha_medica) {
+                      return _c("tr", { key: ficha_medica.id }, [
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha_medica.id) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.nom_cliente)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.apellido)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.pesoInicial)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.pesoActual)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.alturaInicial)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: {
+                            textContent: _vm._s(ficha_medica.alturaActual)
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("td", {
+                          domProps: { textContent: _vm._s(ficha_medica.imc) }
+                        }),
+                        _vm._v(" "),
+                        _c("td", [
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "#", "data-dismiss": "modal" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.seleccionarFichaMedica(
+                                    ficha_medica
+                                  )
+                                }
+                              }
+                            },
+                            [_vm._v("Seleccionar")]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(12)
+          ])
+        ])
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [_c("td", [_vm._v("Ficha Medica del Cliente")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("1.  ¿Sufre usted de alguna enfermedad de base?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [
+        _vm._v(
+          "2.  ¿En su familia existe algun antecedente acerca de alguna enfermedad?"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("3.  ¿Con que frecuencia consume alcohol?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("4.  ¿Con que frecuencia consume tabaco?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("5.  ¿Con que frecuencia consume cafe?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [_vm._v("6.  ¿Usted ingiere algun medicamento recetado?")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [
+        _vm._v(
+          "7.  ¿Cuantas comidas acostumbra a consumir en el transcurso del dia?"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("td", [
+        _vm._v(
+          "8.  ¿Cuantas veces a la semana realiza alguna actividad fisica?"
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("th", [_vm._v("Id")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Cliente")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Enfermedad de base")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Antecedes Familiar")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Consumo de Alcohol")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Consumo de Tabaco ")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Consumo de Cafe")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Consumo de Medicamentos ")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Cant. comidas al dia")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Actividad Fisica ")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Opciones")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h4", { staticClass: "modal-title" }, [
+        _vm._v("Busqueda de Ficha Medica por Cliente")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("X")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("Id")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Nombre")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Apellido")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Peso Inicial")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Peso Actual")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Altura Inicial")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Altura Actual")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("IMC")]),
         _vm._v(" "),
         _c("th", [_vm._v("Opcion")])
       ])

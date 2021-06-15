@@ -40,6 +40,9 @@
                         <li @click="menu=7">
                             <a class="nav-link" href="#">Ficha Médica</a>
                         </li>
+                        <li @click="menu=10">
+                            <a class="nav-link" href="#">Cuestionario</a>
+                        </li>
                         <li @click="menu=8">
                             <a class="nav-link" href="#">Gestionar Dieta</a>
                         </li>
@@ -104,6 +107,10 @@
             <template v-if="menu==7">
                 <br><br>
                 <frmfichamedica></frmfichamedica>
+            </template>
+            <template v-if="menu==10">
+                <br><br>
+                <frmcuestionario></frmcuestionario>
             </template>
             <template v-if="menu==8">
                 <br><br>

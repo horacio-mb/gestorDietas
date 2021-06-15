@@ -27,10 +27,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  Vue.component('frmcliente', require('./components/frmcliente.vue').default);
  Vue.component('frmconsulta', require('./components/frmconsulta.vue').default);
  Vue.component('frmfichamedica', require('./components/frmfichamedica.vue').default);
+ Vue.component('frmcuestionario', require('./components/frmcuestionario.vue').default);
  Vue.component('frmgestdieta', require('./components/frmgestdieta.vue').default);
  Vue.component('frmgestrutina', require('./components/frmgestrutina.vue').default);
  Vue.component('frmdieta', require('./components/frmdieta.vue').default);
-
+//frmcuestionario
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

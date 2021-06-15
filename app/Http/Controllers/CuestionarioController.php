@@ -13,18 +13,24 @@ class CuestionarioController extends Controller
         $buscar= $request->buscar;
         if($buscar==''){
             $resultado=Cuestionario::join('ficha_medica','cuestionario.id_fichaMedica','=','ficha_medica.id')
-            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.enfermedadBase',
+            ->join('consulta','ficha_medica.id_consulta','=','consulta.id')
+            ->join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.anteFamiliares',
             'cuestionario.consumoAlcohol','cuestionario.consumoTabaco','cuestionario.consumoCafe','cuestionario.consumoMedicamentos',
-            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica')
+            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica',
+            'cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->orderBy('cuestionario.id','desc')
             ->get();
         }
         else{
             $resultado=Cuestionario::join('ficha_medica','cuestionario.id_fichaMedica','=','ficha_medica.id')
-            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.enfermedadBase',
+            ->join('consulta','ficha_medica.id_consulta','=','consulta.id')
+            ->join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.anteFamiliares',
             'cuestionario.consumoAlcohol','cuestionario.consumoTabaco','cuestionario.consumoCafe','cuestionario.consumoMedicamentos',
-            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica')
-            ->where('cuestionario.id','like','%'.$buscar.'%')
+            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica',
+            'cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
+            ->where('cliente.nombre','like','%'.$buscar.'%')
             ->orderBy('cuestionario.id','desc')
             ->get();
         }
@@ -48,7 +54,7 @@ class CuestionarioController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $cuestionario= Cuestionario::findOrFail($request->id);
         $cuestionario->enfermedadBase=$request->enfermedadBase;
@@ -74,18 +80,24 @@ class CuestionarioController extends Controller
         $buscar=$request->buscar;
         if($buscar==''){
             $cuestionario =Cuestionario::join('ficha_medica','cuestionario.id_fichaMedica','=','ficha_medica.id')
-            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.enfermedadBase',
+            ->join('consulta','ficha_medica.id_consulta','=','consulta.id')
+            ->join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.anteFamiliares',
             'cuestionario.consumoAlcohol','cuestionario.consumoTabaco','cuestionario.consumoCafe','cuestionario.consumoMedicamentos',
-            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica')
+            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica',
+            'cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
             ->orderBy('cuestionario.id','desc')
             ->get();
         }
         else{
             $cuestionario =Cuestionario::join('ficha_medica','cuestionario.id_fichaMedica','=','ficha_medica.id')
-            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.enfermedadBase',
+            ->join('consulta','ficha_medica.id_consulta','=','consulta.id')
+            ->join('cliente','consulta.id_cliente','=','cliente.id')
+            ->select('cuestionario.id','cuestionario.enfermedadBase','cuestionario.anteFamiliares',
             'cuestionario.consumoAlcohol','cuestionario.consumoTabaco','cuestionario.consumoCafe','cuestionario.consumoMedicamentos',
-            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica')
-            ->where('cuestionario.id','like','%'.$buscar.'%')
+            'cuestionario.comidasDia','cuestionario.actividadFisica','cuestionario.id_fichaMedica',
+            'cliente.nombre as nom_cliente','cliente.apellido_paterno as apellido')
+            ->where('cliente.nombre','like','%'.$buscar.'%')
             ->orderBy('cuestionario.id','desc')
             ->get();
         }
