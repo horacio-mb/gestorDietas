@@ -33,10 +33,15 @@ use App\Http\Controllers\DiaRutinaController;
 */
 
 Route::get('/', function () {
+    return view('auth/login');
+});
+Route::get('/casa', function () {
     return view('index');
 });
 
 Auth::routes();
+Route::get('/login',[SessionController::class,'create'])->name('login.index');
+Route::get('/register',[RegisterController::class,'create'])->name('register.index');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Rutas para tipo Comida
@@ -148,6 +153,10 @@ Route::put('/dieta/modificar',[DietaController::class,'update']);
 Route::get('/dieta/obtenerDetalles2',[DietaController::class,'obtenerDetalles2']);
 Route::put('/detalle/eliminar',[DietaController::class,'eliminarDetalle']);
 */
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

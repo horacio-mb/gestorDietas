@@ -5538,8 +5538,6 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js"
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-//frmgestdieta
-//frmgestrutina
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('frmtipocomida', __webpack_require__(/*! ./components/frmtipocomida.vue */ "./resources/js/components/frmtipocomida.vue").default);

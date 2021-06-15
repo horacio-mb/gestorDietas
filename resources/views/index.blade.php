@@ -46,9 +46,24 @@
                         <li @click="menu=9">
                             <a class="nav-link" href="#">Gestionar Rutina</a>
                         </li>
-                        <li @click="menu=10">
-                            <a class="nav-link" href="#">Dietas</a>
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                         </li>
+
                     </ul>
                 </div>
             </nav>
@@ -97,10 +112,6 @@
             <template v-if="menu==9">
                 <br><br>
                 <frmgestrutina></frmgestrutina>
-            </template>
-            <template v-if="menu==10">
-                <br><br>
-                <frmdieta></frmdieta>
             </template>
             <!-- Fin Menu Principal --> 
         </div>
