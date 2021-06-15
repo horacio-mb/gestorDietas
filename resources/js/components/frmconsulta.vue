@@ -215,6 +215,10 @@ export default{
        },
        guardar(){
             let me= this;
+            var url= '/consulta/buscaUsuario';
+           axios.get(url).then(function(response){
+                me.id_usuario = response.data;  
+            })
             axios.post('/consulta/registrar',{
                 'fecha': this.fecha,
                 'fecha_reconsulta': this.fecha_reconsulta,

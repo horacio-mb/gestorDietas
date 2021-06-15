@@ -2461,6 +2461,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     guardar: function guardar() {
       var me = this;
+      var url = '/consulta/buscaUsuario';
+      axios.get(url).then(function (response) {
+        me.id_usuario = response.data;
+      });
       axios.post('/consulta/registrar', {
         'fecha': this.fecha,
         'fecha_reconsulta': this.fecha_reconsulta,

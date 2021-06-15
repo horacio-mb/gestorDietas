@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Consulta;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ConsultaController extends Controller
 {
@@ -47,7 +49,11 @@ class ConsultaController extends Controller
         }
         return $resultado;
     }
-    //buscacliente
+    //buscaUsuario
+    public function buscaUsuario(){
+        $resultado= User::all();
+        return $resultado;
+    }
 
    
     public function store(Request $request)
@@ -56,7 +62,7 @@ class ConsultaController extends Controller
         $consulta->fecha=$request->fecha;
         $consulta->fecha_reconsulta=$request->fecha_reconsulta;
         $consulta->id_cliente=$request->id_cliente;
-        $consulta->id_usuario=$request->id_usuario;
+        $consulta->id_usuario=auth()->id();
         $consulta->save();
 
     }
